@@ -1,10 +1,16 @@
 import Image from 'next/image';
-import HeaderTabs from './HeaderTabs';
+import dynamic from 'next/dynamic';
+import ToggleLanguage from './ToggleLanguage';
+
+const HeaderTabs = dynamic(
+  () => import('./HeaderTabs'),
+  { ssr: false }
+);
 
 const Header: React.FC = () => {
   return (
     <header className='fixed top-0 w-full'>
-      <div className='flex justify-between max-w-screen-xxl mx-auto px-4 h-20 '>
+      <div className='flex justify-between items-center md:mx-[110px] px-4 h-20 '>
         <Image
           src='/images/sci-logo.svg'
           width={118}
@@ -12,6 +18,7 @@ const Header: React.FC = () => {
           alt='sci-logo'
         />
         <HeaderTabs />
+        <ToggleLanguage />
       </div>
     </header>
   );

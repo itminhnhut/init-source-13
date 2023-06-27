@@ -1,44 +1,54 @@
-
+'use client';
+import useLanguage from '@/hooks/useLanguage';
 import colors from '@/styles/colors';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import { styled } from 'styled-components';
-
 const Tabs = [
   {
     route: '/',
     title: 'Intro',
   },
   {
-    route: '/',
+    route: '/home',
     title: 'Home',
   },
   {
-    route: '/',
+    route: '/about-us',
     title: 'About Us',
   },
   {
-    route: '/',
+    route: '/blogs',
     title: 'Blogs',
   },
   {
-    route: '/',
+    route: '/portfolio',
     title: 'Portfolio',
   },
   {
-    route: '/',
+    route: '/team',
     title: 'Team',
   },
   {
-    route: '/',
+    route: '/partners',
     title: 'Partners',
   },
 ];
 
 const HeaderTabs = () => {
+  const router = useRouter();
+
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center gap-8'>
       {Tabs.map((tab, i) => (
-        <Tab key={i} active={i === 1}>
+        <Tab
+          as={Link}
+          href={tab.route}
+          className='cursor-pointer transition-colors'
+          key={i}
+          $active={router.pathname === tab.route}
+        >
           {tab.title}
         </Tab>
       ))}
@@ -46,13 +56,11 @@ const HeaderTabs = () => {
   );
 };
 
-const Tab = styled.div.attrs({
-  className: 'mx-4',
-})<{ active?: boolean }>`
-  color: ${({ active }) =>
-      active ? 'white' : 'white'};
-    ${({ active }) =>
-      active && `font-weight:500;`};
+const Tab = styled.div<{ $active?: boolean }>`
+  color: ${({ $active }) =>
+    $active ? 'white' : colors.gray[2]};
+  ${({ $active }) =>
+    $active && `font-weight:500;`};
 `;
 
 export default HeaderTabs;
