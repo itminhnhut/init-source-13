@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import Button from "@/components/Button";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -16,6 +17,7 @@ export default function Home() {
           SCI Labs invests in technical teams that build and support the
           decentralised web.
         </p>
+        <Button>Apply Now</Button>
       </section>
     </main>
   );
