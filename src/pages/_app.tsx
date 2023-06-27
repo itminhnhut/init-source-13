@@ -1,6 +1,6 @@
 import { appWithTranslation } from "next-i18next";
 
-import Layout from "@/components/Layout";
+import Layout from "@/components/layout";
 
 import type { AppProps } from "next/app";
 
