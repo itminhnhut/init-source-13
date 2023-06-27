@@ -30,7 +30,7 @@ const ToggleLanguage = () => {
           className={classNames(
             'w-1/2 z-[1] text-center uppercase transition-colors text-white',
             {
-              'text-black':
+              '!text-black':
                 LANGUAGE_TAG[
                   key as LANGUAGE_KEY
                 ] === currentLanguage,

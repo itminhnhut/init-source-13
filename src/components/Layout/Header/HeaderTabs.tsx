@@ -1,5 +1,4 @@
-'use client';
-import useLanguage from '@/hooks/useLanguage';
+
 import colors from '@/styles/colors';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
