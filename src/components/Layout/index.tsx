@@ -16,13 +16,13 @@ export const metadata: Metadata = {
 
 const Layout: FC<LayoutI> = ({ children }) => {
   return (
-    <>
+    <div className="bg-[#0E0E12]">
       <Header />
       <main>
         <section>{children}</section>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
