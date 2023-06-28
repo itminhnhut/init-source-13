@@ -6,10 +6,10 @@ import { styled } from 'styled-components'
 
 import dynamic from 'next/dynamic'
 
-const Button = dynamic(() => import('@/components/Button'), { ssr: false })
-const Modal = dynamic(() => import('@/components/Modal'), { ssr: false })
-const InputField = dynamic(() => import('@/components/InputField'), { ssr: false })
-const TextAreaField = dynamic(() => import('@/components/TextAreaField'), { ssr: false })
+const Button = dynamic(() => import('@/components/Elements/Button'), { ssr: false })
+const Modal = dynamic(() => import('@/components/Elements/Modal'), { ssr: false })
+const InputField = dynamic(() => import('@/components/Form/InputField'), { ssr: false })
+const TextAreaField = dynamic(() => import('@/components/Form/TextAreaField'), { ssr: false })
 
 import { Montserrat } from 'next/font/google'
 import { useState } from 'react'
