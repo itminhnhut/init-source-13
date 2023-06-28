@@ -28,9 +28,7 @@ const Layout: FC<LayoutI> = ({ children }) => {
     return (
         <WrapperLayout className={lexend.className}>
             <Header />
-            <main>
-                <section>{children}</section>
-            </main>
+            {children}
             {pathname === 'footer' ? <Footer /> : null}
         </WrapperLayout>
     )
