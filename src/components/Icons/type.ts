@@ -1,4 +1,6 @@
-export interface SVGTypes extends React.SVGProps<SVGElement> {
+import { SVGProps } from 'react'
+
+export interface SVGTypes extends SVGProps<SVGElement> {
     size: number
     fill?: string
 }

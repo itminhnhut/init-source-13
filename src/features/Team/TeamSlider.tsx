@@ -1,5 +1,5 @@
 import React from 'react'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
+import { Swiper, SwiperClass, SwiperSlide, useSwiper } from 'swiper/react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 import { EffectCoverflow, Pagination, Navigation } from 'swiper'
@@ -9,6 +9,8 @@ import classNames from 'classnames'
 import { styled } from 'styled-components'
 import Facebook from '@/components/Icons/Facebook'
 import Twitter from '@/components/Icons/Twitter'
+import ChevronLeft from '@/components/Icons/ChevronLeft'
+import ChevronRight from '@/components/Icons/ChevronRight'
 
 const ImageWrapper = styled.div`
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #ffffff 100%);
@@ -26,11 +28,13 @@ const IconWrapper = styled.div`
 `
 
 const TeamSlider = () => {
+    const [swiper, setSwiper] = useState<SwiperClass | null>(null)
     const [activeIndex, setActiveIndex] = useState(0)
 
     return (
         <>
             <Swiper
+                onSwiper={(swiper) => setSwiper(swiper)}
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
@@ -136,7 +140,24 @@ const TeamSlider = () => {
                 })}
             </Swiper>
 
-            <div className="text-white">asdasdas</div>
+            <div className=" mt-4 flex w-full justify-center">
+                <div
+                    onClick={() => {
+                        swiper?.slidePrev()
+                    }}
+                    className="border border-gray-1 rounded-[10px] p-2 bg-black-1 w-10 h-10 flex justify-center items-center"
+                >
+                    <ChevronLeft size={16} color="white" />
+                </div>
+                <div
+                    onClick={() => {
+                        swiper?.slideNext()
+                    }}
+                    className="border  border-gray-1 rounded-[10px] p-2 bg-black-1 w-10 h-10 flex justify-center items-center ml-3"
+                >
+                    <ChevronRight size={16} color="white" />
+                </div>
+            </div>
         </>
     )
 }
