@@ -7,11 +7,11 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import dynamic from 'next/dynamic'
 
-const TeamSlider = dynamic(() => import('@/features/Team/TeamSlider'), { ssr: false })
+const TeamSlider = dynamic(() => import('@/features/team/TeamSlider'), { ssr: false })
 
 export default function Team() {
     return (
-        <main className={`flex h-screen flex-col justify-center items-center w-full `}>
+        <main className={`flex h-screen w-full flex-col items-center justify-center `}>
             <TeamSlider />
         </main>
     )

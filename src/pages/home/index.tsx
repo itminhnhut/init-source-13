@@ -6,10 +6,10 @@ import { styled } from 'styled-components'
 
 import dynamic from 'next/dynamic'
 
-const Button = dynamic(() => import('@/components/Button'), { ssr: false })
-const Modal = dynamic(() => import('@/components/Modal'), { ssr: false })
-const InputField = dynamic(() => import('@/components/InputField'), { ssr: false })
-const TextAreaField = dynamic(() => import('@/components/TextAreaField'), { ssr: false })
+const Button = dynamic(() => import('@/components/Elements/Button'), { ssr: false })
+const Modal = dynamic(() => import('@/components/Elements/Modal'), { ssr: false })
+const InputField = dynamic(() => import('@/components/Form/InputField'), { ssr: false })
+const TextAreaField = dynamic(() => import('@/components/Form/TextAreaField'), { ssr: false })
 
 import { Montserrat } from 'next/font/google'
 import { useState } from 'react'
@@ -26,7 +26,7 @@ export default function Home() {
     const toggle = () => setIsOpen((prev) => !prev)
 
     return (
-        <main className="relative z-0 flex min-h-screen flex-col items-center">
+        <main className="relative z-10 flex min-h-screen flex-col items-center">
             <section className="w-[600px] pt-[129px] text-center text-white">
                 <motion.h1
                     initial={{
