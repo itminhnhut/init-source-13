@@ -12,10 +12,10 @@ interface LayoutI {
 const Button: FC<LayoutI> = ({ children, className }) => {
     return (
         <StyledButton
-            className={classNames('px-6 py-4 text-lg font-medium rounded-full w-[190px] bg-gradient-2 cursor-pointer relative flex flex-row', className)}
+            className={classNames('group px-6 py-4 text-lg font-medium rounded-full w-[190px] bg-gradient-2 cursor-pointer relative flex flex-row', className)}
         >
             {children}
-            <Image className="ml-[10px]" width={24} height={24} src="/images/button/ic_vector.svg" alt="vector" />
+            <Image className="group-hover:ml-[14px] transition-all duration-200 ml-[10px]" width={24} height={24} src="/images/button/ic_vector.svg" alt="vector" />
         </StyledButton>
     )
 }
