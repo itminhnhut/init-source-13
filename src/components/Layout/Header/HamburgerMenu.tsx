@@ -32,7 +32,7 @@ HamburgerMenu.defaultProps = {
     lineSpacing: 4,
     lineWidth: 2,
     color: '#fff',
-    size: 18,
+    size: 16,
 }
 
 const HamburgerWrapper = styled.div<{ size?: number; lineSpacing?: number; lineWidth?: number; color?: string }>`
