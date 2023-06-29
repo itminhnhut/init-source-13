@@ -10,11 +10,7 @@ import dynamic from 'next/dynamic'
 const Team = dynamic(() => import('@/features/team'), { ssr: false })
 
 export default function index() {
-    return (
-        <main className={`flex z-10 h-screen w-full flex-col items-center justify-center `}>
-            <Team />
-        </main>
-    )
+    return <Team />
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

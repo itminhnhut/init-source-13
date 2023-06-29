@@ -24,7 +24,7 @@ const Header: React.FC = () => {
         () => (
             <div
                 className={classNames(
-                    'z-[999] transition-all duration-300 ease-in-out w-full h-full flex justify-center items-center text-white fixed backdrop-blur-[15px] bg-[#151515]/30',
+                    'fixed z-[999] flex h-full w-full items-center justify-center bg-[#151515]/30 text-white backdrop-blur-[15px] transition-all duration-300 ease-in-out',
                     {
                         '-right-full opacity-0': !isOpenMBHeader,
                         'right-0 opacity-100': isOpenMBHeader,
@@ -42,11 +42,11 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <header className="sticky top-0 w-full z-[1000]">
-                <div className="flex justify-between items-center xxl:mx-[110px] px-4 h-20 ">
+            <header className="sticky top-0 z-[1000] w-full">
+                <div className="flex h-20 items-center justify-between px-4 xxl:mx-[110px] ">
                     {/* LOGO */}
                     <div
-                        className={classNames('transition-opacity duration-300 delay-100', {
+                        className={classNames('transition-opacity delay-100 duration-300', {
                             'opacity-0': isOpenMBHeader,
                         })}
                     >
@@ -64,7 +64,10 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* MOBILE HAMBURGER */}
-                    <div onClick={() => setOpenMBHeader((prev) => !prev)} className="mb:hidden border border-gray-1 p-3 rounded-xl cursor-pointer">
+                    <div
+                        onClick={() => setOpenMBHeader((prev) => !prev)}
+                        className="cursor-pointer rounded-xl border border-gray-1 p-3 mb:hidden"
+                    >
                         <HamburgerMenu open={isOpenMBHeader} />
                     </div>
                 </div>

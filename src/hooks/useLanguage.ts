@@ -7,7 +7,7 @@ export const LANGUAGE_TAG = {
 
 export type LANGUAGE_KEY = keyof typeof LANGUAGE_TAG
 
-const useLanguage = () => {
+const useLanguage = (): [string | undefined, (nextLanguage?: string) => void] => {
     const router = useRouter()
     const { locale: currentLanguage } = router
     // Language toggle
@@ -24,7 +24,7 @@ const useLanguage = () => {
         })
     }
 
-    return { currentLanguage, setLanguage }
+    return [currentLanguage, setLanguage]
 }
 
 export default useLanguage

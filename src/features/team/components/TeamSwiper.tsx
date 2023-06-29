@@ -1,17 +1,19 @@
 import React from 'react'
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
-import { EffectCoverflow, Navigation, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { EffectCoverflow } from 'swiper'
 import TeamSlide from './TeamSlide'
 import { SetTeamState } from '../types'
 
 interface ITeamSwiper {
     setState: (_state: SetTeamState) => void
     activeIndex: number
+    setShowModal: React.Dispatch<boolean>
 }
 
-const TeamSwiper: React.FC<ITeamSwiper> = ({ setState, activeIndex }) => {
+const TeamSwiper: React.FC<ITeamSwiper> = ({ setState, activeIndex, setShowModal }) => {
     return (
         <Swiper
+            slideToClickedSlide
             onSwiper={(swiper) => setState({ swiper })}
             effect="coverflow"
             grabCursor={true}
@@ -23,30 +25,24 @@ const TeamSwiper: React.FC<ITeamSwiper> = ({ setState, activeIndex }) => {
                     slidesPerView: 2,
                 },
                 1440: {
-                    slidesPerView: 3.6,
+                    slidesPerView: 3.1,
                 },
             }}
             onRealIndexChange={(swiper) => setState({ activeIndex: swiper.realIndex })}
             coverflowEffect={{
-                slideShadows: true,
                 rotate: 0,
                 stretch: 0,
                 depth: 100,
-                modifier: 1,
+                modifier: 1.5,
             }}
-            pagination={{ el: '.swiper-pagination', clickable: true }}
-            navigation={{
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }}
-            modules={[EffectCoverflow, Pagination, Navigation]}
-            className="swiper_container w-full"
+            modules={[EffectCoverflow]}
+            className="w-full"
         >
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e, index) => {
                 const isActive = activeIndex === index
                 return (
                     <SwiperSlide key={e}>
-                        <TeamSlide isActive={isActive} />
+                        <TeamSlide setShowModal={setShowModal} isActive={isActive} />
                     </SwiperSlide>
                 )
             })}

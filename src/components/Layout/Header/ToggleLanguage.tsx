@@ -1,47 +1,38 @@
-import React from 'react';
-import classNames from 'classnames';
-import useLanguage, {
-  LANGUAGE_KEY,
-  LANGUAGE_TAG,
-} from '@/hooks/useLanguage';
+import React from 'react'
+import classNames from 'classnames'
+import useLanguage, { LANGUAGE_KEY, LANGUAGE_TAG } from '@/hooks/useLanguage'
 const ToggleLanguage = () => {
-  const { currentLanguage, setLanguage } =
-    useLanguage();
+    const [currentLanguage, setLanguage] = useLanguage()
 
-  return (
-    <div
-      onClick={() => setLanguage()}
-      className='cursor-pointer flex items-center justify-center relative rounded-full bg-gray-1 h-9 w-24'
-    >
-      <div
-        className={classNames(
-          'w-12 h-full  rounded-full transition-all bg-white absolute  top-1/2 -translate-y-1/2',
-          {
-            'left-0':
-              currentLanguage === LANGUAGE_TAG.VI,
-            'left-1/2':
-              currentLanguage === LANGUAGE_TAG.EN,
-          }
-        )}
-      />
-      {Object.keys(LANGUAGE_TAG).map((key) => (
+    return (
         <div
-          key={key}
-          className={classNames(
-            'w-1/2 z-[1] text-center uppercase transition-colors text-white',
-            {
-              '!text-black':
-                LANGUAGE_TAG[
-                  key as LANGUAGE_KEY
-                ] === currentLanguage,
-            }
-          )}
+            onClick={() => setLanguage()}
+            className="relative flex h-9 w-24 cursor-pointer items-center justify-center rounded-full bg-gray-1"
         >
-          {LANGUAGE_TAG[key as LANGUAGE_KEY]}
+            <div
+                className={classNames(
+                    'absolute top-1/2 h-[calc(100%-4px)] w-12 -translate-y-1/2 rounded-full  bg-white transition-all',
+                    {
+                        'left-0.5': currentLanguage === LANGUAGE_TAG.VI,
+                        'left-[calc(50%-2px)]': currentLanguage === LANGUAGE_TAG.EN,
+                    },
+                )}
+            />
+            {Object.keys(LANGUAGE_TAG).map((key) => (
+                <div
+                    key={key}
+                    className={classNames(
+                        'z-[1] w-1/2 text-center font-medium uppercase text-white transition-colors',
+                        {
+                            '!text-black': LANGUAGE_TAG[key as LANGUAGE_KEY] === currentLanguage,
+                        },
+                    )}
+                >
+                    {LANGUAGE_TAG[key as LANGUAGE_KEY]}
+                </div>
+            ))}
         </div>
-      ))}
-    </div>
-  );
-};
+    )
+}
 
-export default ToggleLanguage;
+export default ToggleLanguage
