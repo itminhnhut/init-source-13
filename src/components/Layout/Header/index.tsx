@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import ToggleLanguage from './ToggleLanguage'
 import { useCallback, useEffect, useState } from 'react'
 import classNames from 'classnames'
+import Link from 'next/link'
 
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
@@ -45,13 +46,15 @@ const Header: React.FC = () => {
             <header className="sticky top-0 z-[1000] w-full">
                 <div className="flex h-20 items-center justify-between px-4 xxl:mx-[110px] ">
                     {/* LOGO */}
-                    <div
-                        className={classNames('transition-opacity delay-100 duration-300', {
-                            'opacity-0': isOpenMBHeader,
-                        })}
-                    >
-                        <Image src="/images/sci-logo.svg" width={118} height={46} alt="sci-logo" />
-                    </div>
+                    <Link href="/" passHref>
+                        <div
+                            className={classNames('transition-opacity delay-100 duration-300', {
+                                'opacity-0': isOpenMBHeader,
+                            })}
+                        >
+                            <Image src="/images/sci-logo.svg" width={118} height={46} alt="sci-logo" />
+                        </div>
+                    </Link>
 
                     {/* MENU TAB */}
                     <div className=" hidden mb:flex">

@@ -38,9 +38,15 @@ const HeaderTabs = () => {
     const router = useRouter()
 
     return (
-        <div className="flex mb:flex-row flex-col justify-center mb:justify-start items-center gap-8">
+        <div className="flex flex-col items-center justify-center gap-8 mb:flex-row mb:justify-start">
             {Tabs.map((tab, i) => (
-                <Tab as={Link} href={tab.route} className="cursor-pointer transition-colors" key={i} $active={router.pathname === tab.route}>
+                <Tab
+                    as={Link}
+                    href={tab.route}
+                    className="cursor-pointer transition-colors"
+                    key={i}
+                    $active={router.pathname === tab.route}
+                >
                     {tab.title}
                 </Tab>
             ))}
@@ -51,6 +57,9 @@ const HeaderTabs = () => {
 const Tab = styled.div<{ $active?: boolean }>`
     color: ${({ $active }) => ($active ? 'white' : colors.gray[2])};
     font-weight: ${({ $active }) => ($active ? 500 : 300)};
+    &:hover {
+        color: white;
+    }
 `
 
 export default HeaderTabs

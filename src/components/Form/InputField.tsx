@@ -1,4 +1,5 @@
 import classNames from 'classnames'
+import { styled } from 'styled-components'
 
 type inputFieldProps = {
     className?: string
@@ -19,13 +20,15 @@ const inputField = ({ className, label, isRequired, placeholder }: inputFieldPro
             >
                 {label}
             </label>
-            <input
+            {/* <StyledInputWrapper className="relative"> */}
+            <StyledInputWrapper
                 required
                 type="text"
                 id="first_name"
                 placeholder={placeholder}
-                className="border-[1px]border-solid	 h-12 w-full rounded-[10px] border-gray-1 bg-black px-4 py-3 text-white opacity-50 outline-0"
+                className="relative h-12 w-full rounded-[10px] bg-black px-4 py-3 text-white opacity-50 outline-0"
             />
+            {/* </StyledInputWrapper> */}
         </div>
     )
 }
@@ -33,5 +36,9 @@ const inputField = ({ className, label, isRequired, placeholder }: inputFieldPro
 inputField.defaultProps = {
     placeholder: 'Enter',
 }
+
+const StyledInputWrapper = styled.input`
+   
+`
 
 export default inputField

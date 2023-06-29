@@ -35,7 +35,8 @@ const modalVariants = {
         top: 0,
         opacity: 1,
         transition: {
-            delay: 0.3,
+            delay: 0.25,
+            type: 'tween',
         },
     },
 }
@@ -83,6 +84,7 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                         >
                             <section
                                 className="relative
+                                w-full
                         rounded-lg border-[1px] border-solid 
                         border-gray-1 bg-black-1 px-6
                         py-4 text-white

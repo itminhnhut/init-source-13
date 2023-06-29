@@ -14,6 +14,7 @@ const TextAreaField = dynamic(() => import('@/components/Form/TextAreaField'), {
 import { Montserrat } from 'next/font/google'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -67,6 +68,7 @@ export default function Home() {
                 >
                     <div className="mt-[82px] flex justify-center">
                         <WrapperButton
+                            onClick={toggle}
                             iconType="vector"
                             className="relative flex cursor-pointer flex-row rounded-full text-lg"
                         >
@@ -75,18 +77,29 @@ export default function Home() {
                     </div>
                 </motion.div>
                 <Modal isOpen={isOpen} onClose={toggle}>
-                    <h1 className={`${montserrat.className} mt-2 text-center text-[20px] font-semibold leading-6`}>
-                        Your Information
-                    </h1>
-                    <h2 className="mt-1 text-center opacity-50">Description</h2>
-                    <form className="mt-[22px]">
-                        <InputField label="Your Name" />
-                        <InputField className="mt-4" label="Your Email" isRequired />
-                        <TextAreaField className="mt-4 " label="Your Email" rows={3} />
-                        <Button iconType="send" className="mt-6 flex w-full justify-center rounded-[10px] !py-3">
-                            Send
-                        </Button>
-                    </form>
+                    <div className="text-center">
+                        <div className="text-lg font-semibold">Thank you!</div>
+                        <div className=" mb-6 text-gray-2">Description</div>
+                        <div className="flex justify-center">
+                            <Image src="/images/Modal/check_success.png" width={332} height={332} alt="check_success" />
+                        </div>
+                    </div>
+                    {/* <div>
+                        <h1 className={`
+                        // ${montserrat.className}
+                         mt-2 text-center text-[20px] font-semibold leading-6`}>
+                            Your Information
+                        </h1>
+                        <h2 className="mt-1 text-center opacity-50">Description</h2>
+                        <form className="mt-[22px]">
+                            <InputField label="Your Name" />
+                            <InputField className="mt-4" label="Your Email" isRequired />
+                            <TextAreaField className="mt-4 " label="Your Description" rows={3} />
+                            <Button iconType="send" className="mt-6 flex w-full justify-center rounded-[10px] !py-3">
+                                Send
+                            </Button>
+                        </form>
+                    </div> */}
                 </Modal>
             </section>
         </main>
