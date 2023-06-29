@@ -9,6 +9,10 @@ import NProgress from 'nprogress'
 import type { AppProps } from 'next/app'
 import '@/styles/globals.css'
 import 'nprogress/nprogress.css'
+import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 NProgress.configure({ showSpinner: false })
 

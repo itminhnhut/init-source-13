@@ -4,6 +4,7 @@ import TeamSwiper from './components/TeamSwiper'
 import NavigateSlider from './components/NavigateSlider'
 import type { SetTeamState, TeamState } from './types'
 import Modal from '@/components/Elements/Modal'
+import Navigator from '@/components/Elements/SwiperNavigator'
 
 const initState = {
     swiper: null,
@@ -20,7 +21,7 @@ const Team = () => {
         <main className={`z-10 flex min-h-[calc(100vh-80px)] w-full flex-col items-center justify-center`}>
             <div className="z-[1] mb-3 text-[64px] font-semibold leading-[80px] text-white">Team</div>
             <TeamSwiper setState={setState} activeIndex={state.activeIndex} setShowModal={setShowModal} />
-            <NavigateSlider slideNext={() => state.swiper?.slideNext()} slidePrev={() => state.swiper?.slidePrev()} />
+            <Navigator slideNext={() => state.swiper?.slideNext()} slidePrev={() => state.swiper?.slidePrev()} />
             <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
                 <div className="pb-[112px]">
                     <div className="mb-1 text-center text-2xl font-medium">DAVID</div>

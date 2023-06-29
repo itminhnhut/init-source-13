@@ -1,16 +1,18 @@
 import IconButton from '@/components/Elements/Button/IconButton'
 import ChevronLeft from '@/components/Icons/ChevronLeft'
 import ChevronRight from '@/components/Icons/ChevronRight'
+import classNames from 'classnames'
 import React from 'react'
 
-interface INavigateSlider {
+interface INavigator {
     slidePrev: () => void
     slideNext: () => void
+    className?: string
 }
 
-const NavigateSlider: React.FC<INavigateSlider> = ({ slidePrev, slideNext }) => {
+const Navigator: React.FC<INavigator> = ({ slidePrev, slideNext, className }) => {
     return (
-        <div className="z-[1] mt-10 flex w-full justify-center space-x-6">
+        <div className={classNames('z-[1] mt-10 flex w-full justify-center gap-6', className)}>
             <IconButton onClick={slidePrev}>
                 <ChevronLeft size={16} />
             </IconButton>
@@ -22,4 +24,4 @@ const NavigateSlider: React.FC<INavigateSlider> = ({ slidePrev, slideNext }) => 
     )
 }
 
-export default NavigateSlider
+export default Navigator
