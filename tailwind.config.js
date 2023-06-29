@@ -16,10 +16,12 @@ module.exports = {
             lg: ['1.125rem', '1.5rem'] /* 18px */,
             xl: ['1.25rem', '1.75rem'] /* 21px */,
             '2xl': ['1.5rem', '1.875rem'], // 24px
-            '3xl': ['1.75rem', '2.25rem'], //  28px
-            '4xl': ['2rem', '2.375rem'], //32px
-            '5xl': ['2.25rem', '3rem'], //36px
-            '6xl': ['2.75rem', '3.625rem'], //44px
+            '3xl': ['1.875rem', '2.25rem'], //  30px
+            '3xl2': ['2rem', '2.5rem'], //  32px
+            '4xl': ['2.25rem', '2.5rem'], //36px
+            '5xl': ['3rem', '1rem'], //48px
+            '6xl': ['3.75rem', '1rem'], //60px
+            '6xl4': ['4rem', '5rem'], //64px
         },
         extend: {
             backgroundImage: {
