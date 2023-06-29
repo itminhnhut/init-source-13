@@ -38,7 +38,7 @@ export default function Home() {
                         y: '0',
                         opacity: 1,
                     }}
-                    className="text-[64px] font-semibold"
+                    className="text-6xl4 font-semibold"
                 >
                     Empowering the decentralised Web
                 </motion.h1>
@@ -77,17 +77,18 @@ export default function Home() {
                     </div>
                 </motion.div>
                 <Modal isOpen={isOpen} onClose={toggle}>
-                    <div className="text-center">
+                    {/* <div className="text-center">
                         <div className="text-lg font-semibold">Thank you!</div>
                         <div className=" mb-6 text-gray-2">Description</div>
                         <div className="flex justify-center">
                             <Image src="/images/Modal/check_success.png" width={332} height={332} alt="check_success" />
                         </div>
-                    </div>
-                    {/* <div>
-                        <h1 className={`
-                        // ${montserrat.className}
-                         mt-2 text-center text-[20px] font-semibold leading-6`}>
+                    </div> */}
+                    <div>
+                        <h1
+                            className={`${montserrat.className}
+                         mt-2 text-center text-[20px] font-semibold leading-6`}
+                        >
                             Your Information
                         </h1>
                         <h2 className="mt-1 text-center opacity-50">Description</h2>
@@ -99,7 +100,7 @@ export default function Home() {
                                 Send
                             </Button>
                         </form>
-                    </div> */}
+                    </div>
                 </Modal>
             </section>
         </main>
