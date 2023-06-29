@@ -42,7 +42,7 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <header className="fixed top-0 w-full z-[1000]">
+            <header className="sticky top-0 w-full z-[1000]">
                 <div className="flex justify-between items-center xxl:mx-[110px] px-4 h-20 ">
                     {/* LOGO */}
                     <div

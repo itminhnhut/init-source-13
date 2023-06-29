@@ -1,18 +1,18 @@
 import type { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+
 import dynamic from 'next/dynamic'
 
-const TeamSlider = dynamic(() => import('@/features/team/TeamSlider'), { ssr: false })
+const Team = dynamic(() => import('@/features/team'), { ssr: false })
 
-export default function Team() {
+export default function index() {
     return (
-        <main className={`flex h-screen w-full flex-col items-center justify-center `}>
-            <TeamSlider />
+        <main className={`flex z-10 h-screen w-full flex-col items-center justify-center `}>
+            <Team />
         </main>
     )
 }
