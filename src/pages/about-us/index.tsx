@@ -1,4 +1,14 @@
+import { NextSeo } from 'next-seo'
+import dynamic from 'next/dynamic'
+
+const TabsAbout = dynamic(() => import('@/features/about/components/tabs'))
+
 const About = () => {
-    return <h1>about</h1>
+    return (
+        <>
+            <NextSeo title="about us" />
+            <TabsAbout />
+        </>
+    )
 }
 export default About
