@@ -44,7 +44,7 @@ const TabsAbout = () => {
         return dataTabs?.map((item: any, key: number) => {
             return (
                 <Tab
-                    className={classNames('text-white', {
+                    className={classNames('text-lg text-white', {
                         'text-gradient-1': key === tabIndex,
                     })}
                     key={`tab_${item.title}`}
