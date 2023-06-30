@@ -1,9 +1,9 @@
 import { useEffect } from 'react'
 
-import { useRouter } from 'next/router'
 import { appWithTranslation } from 'next-i18next'
 
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
 import { Lexend } from 'next/font/google'
 
 import Layout from '@/components/Layout'
