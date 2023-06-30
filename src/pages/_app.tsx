@@ -1,12 +1,17 @@
 import { useEffect } from 'react'
 
 import { appWithTranslation } from 'next-i18next'
-import Layout from '@/components/Layout'
-
-import { useRouter } from 'next/router'
-import NProgress from 'nprogress'
 
 import type { AppProps } from 'next/app'
+import { useRouter } from 'next/router'
+import { Lexend } from 'next/font/google'
+
+
+import Layout from '@/components/Layout'
+
+import NProgress from 'nprogress'
+
+
 import '@/styles/globals.css'
 import 'nprogress/nprogress.css'
 import 'swiper/css'
@@ -15,6 +20,11 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 NProgress.configure({ showSpinner: false })
+
+
+const lexend = Lexend({
+    subsets: ['latin'],
+})
 
 const App = ({ Component, pageProps }: AppProps) => {
     const router = useRouter()
@@ -36,9 +46,12 @@ const App = ({ Component, pageProps }: AppProps) => {
     }, [])
 
     return (
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
+        <>
+            <style jsx global>{`:root:{--lexend-font:${lexend.style.fontFamily}}`} </style>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
+        </>
     )
 }
 
