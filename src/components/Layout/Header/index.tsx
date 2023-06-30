@@ -4,10 +4,10 @@ import ToggleLanguage from './ToggleLanguage'
 import { useCallback, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
-import IconButton from '../../Elements/Button/IconButton'
 
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
+const IconButton = dynamic(() => import('@/components/Elements/Button/IconButton'), { ssr: false })
 
 const Header: React.FC = () => {
     const [isOpenMBHeader, setOpenMBHeader] = useState(false)
@@ -45,13 +45,16 @@ const Header: React.FC = () => {
     return (
         <>
             <header className="sticky top-0 z-[1000] w-full">
-                <div className="flex mb:h-20 h-[60px] items-center justify-between px-4 xxl:mx-[110px] ">
+                <div className="flex h-[60px] items-center justify-between px-4 mb:h-20 xxl:mx-[110px] ">
                     {/* LOGO */}
                     <Link href="/" passHref>
                         <div
-                            className={classNames('transition-opacity w-[90px] h-[34px] mb:w-[118px] mb:h-[46px] delay-100 duration-300', {
-                                'opacity-0': isOpenMBHeader,
-                            })}
+                            className={classNames(
+                                'h-[34px] w-[90px] transition-opacity delay-100 duration-300 mb:h-[46px] mb:w-[118px]',
+                                {
+                                    'opacity-0': isOpenMBHeader,
+                                },
+                            )}
                         >
                             <Image src="/images/sci-logo.svg" width={118} height={46} alt="sci-logo" />
                         </div>
