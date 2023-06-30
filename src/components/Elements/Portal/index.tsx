@@ -1,11 +1,7 @@
-import { Lexend } from 'next/font/google'
 import { ReactNode, useState, useLayoutEffect } from 'react'
 import { createPortal } from 'react-dom'
 import classNames from 'classnames'
 
-const lexend = Lexend({
-    subsets: ['latin'],
-})
 
 const defaultPortalReact = {
     wrapperId: 'react-portal',
@@ -16,9 +12,10 @@ type ReactPortalProps = {
     children: ReactNode
     wrapperId: string
     className: string
+    font?: any
 } & typeof defaultPortalReact
 
-const ReactPortal = ({ children, wrapperId, className }: ReactPortalProps) => {
+const ReactPortal = ({ children, wrapperId, className, font }: ReactPortalProps) => {
     const [wrapper, setWrapper] = useState<Element | null>(null)
 
     useLayoutEffect(() => {
@@ -29,7 +26,7 @@ const ReactPortal = ({ children, wrapperId, className }: ReactPortalProps) => {
             created = true
             const wrapper = document.createElement('div')
             wrapper.setAttribute('id', wrapperId)
-            wrapper.setAttribute('class', classNames(lexend.className, className))
+            font && wrapper.setAttribute('class', classNames(font?.className, className))
             document.body.appendChild(wrapper)
             element = wrapper
         }

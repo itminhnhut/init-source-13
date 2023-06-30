@@ -10,6 +10,7 @@
 
 html,
 body {
+    font-family: var(--lexend-font);
     @apply font-light text-white text-base;
     overflow-x: hidden;
 }

@@ -1,5 +1,4 @@
 import { FC, ReactNode } from 'react'
-import { Lexend } from 'next/font/google'
 
 import { usePathname } from 'next/navigation'
 
@@ -14,15 +13,12 @@ interface LayoutI {
     children: ReactNode
 }
 
-const lexend = Lexend({
-    subsets: ['latin'],
-})
 
 const Layout: FC<LayoutI> = ({ children }) => {
     const pathname = usePathname()
 
     return (
-        <WrapperLayout className={lexend.className}>
+        <WrapperLayout>
             <div className="video-container">
                 <video
                     src="https://s3-figma-videos-production-sig.figma.com/video/1242043184777721116/TEAM/e437/c462/-ccfe-402b-9909-8fc5b107edca?Expires=1688947200&Signature=o7NW~iDaBsL0QSQZw2lp8yvpQiCi7HOyBFdLiG5s6Nfq9WaYoi~ZhfCxdizhhdriddjIRhqER9Qi2o5RdEnfyIHeYlpmRJSP-2NYRoTe6xy2LSwPxTlTvKrY75VtODhcXh0rgPhrMurqOmGbRtMhG2TtYzPmNPlVebzV3fME9vfphvSXwtmJLnGNid-gGqU5neUYeyxh297UbNvcKnmi2BBR~q9N1vODfiNnkHENembLk-a0pkN392zB8QNs7x7zDCPCrJEvEeuxUxJSnN3EdcCKHhPwK8Tlg9yoRZRfRbMEXsmIIxmMo3UbMymLGr3rLXlqiCnVi8J42BmniZ7Riw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
