@@ -43,8 +43,7 @@ const contentVariants = {
     },
 }
 
-const TeamSlide = forwardRef<HTMLDivElement, ITeamSlide>(({ isActive, setShowModal }, ref) => {
-    const size = useWindowSize()
+const TeamSlide: React.FC<ITeamSlide> = ({ isActive, setShowModal }) => {
     return (
         <div
             className={classNames('relative transition-all duration-200', {
@@ -53,7 +52,7 @@ const TeamSlide = forwardRef<HTMLDivElement, ITeamSlide>(({ isActive, setShowMod
         >
             <div className="relative flex justify-center">
                 <ImageWrapper className="relative flex w-1/2 items-center">
-                    {size.width >= 820 && (
+                    <div className="hidden mb:block">
                         <AnimatePresence>
                             {isActive && (
                                 <motion.div
@@ -67,11 +66,12 @@ const TeamSlide = forwardRef<HTMLDivElement, ITeamSlide>(({ isActive, setShowMod
                                 </motion.div>
                             )}
                         </AnimatePresence>
-                    )}
-                    <div className="" ref={ref}>
+                    </div>
+
+                    <div className="">
                         <Image src={'/images/avatar.png'} width={296} height={400} alt="avtar" />
                     </div>
-                    {size.width >= 820 && (
+                    <div className="hidden mb:block">
                         <AnimatePresence>
                             {isActive && (
                                 <motion.div
@@ -93,7 +93,7 @@ const TeamSlide = forwardRef<HTMLDivElement, ITeamSlide>(({ isActive, setShowMod
                                 </motion.div>
                             )}
                         </AnimatePresence>
-                    )}
+                    </div>
                 </ImageWrapper>
             </div>
             {isActive && (
@@ -123,7 +123,7 @@ const TeamSlide = forwardRef<HTMLDivElement, ITeamSlide>(({ isActive, setShowMod
             )}
         </div>
     )
-})
+}
 
 const ImageWrapper = styled.div`
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #ffffff 100%);

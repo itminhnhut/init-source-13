@@ -14,8 +14,6 @@ interface ITeamSwiper {
 }
 
 const TeamSwiper: React.FC<ITeamSwiper> = ({ setState, activeIndex, setShowModal }) => {
-    const teamImgRef = useRef<HTMLDivElement>(null)
-
     return (
         <div className="relative h-full w-full">
             {/* <div className="absolute left-0 top-1/2 z-[10] flex w-full -translate-y-1/2 justify-between">
@@ -56,11 +54,7 @@ const TeamSwiper: React.FC<ITeamSwiper> = ({ setState, activeIndex, setShowModal
                     const isActive = activeIndex === index
                     return (
                         <SwiperSlide key={e} className=" px-4 mb:px-0">
-                            <TeamSlide
-                                ref={index === 0 ? teamImgRef : null}
-                                setShowModal={setShowModal}
-                                isActive={isActive}
-                            />
+                            <TeamSlide setShowModal={setShowModal} isActive={isActive} />
                         </SwiperSlide>
                     )
                 })}
