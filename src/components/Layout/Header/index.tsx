@@ -4,6 +4,7 @@ import ToggleLanguage from './ToggleLanguage'
 import { useCallback, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
+import IconButton from '../../Elements/Button/IconButton'
 
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
@@ -44,11 +45,11 @@ const Header: React.FC = () => {
     return (
         <>
             <header className="sticky top-0 z-[1000] w-full">
-                <div className="flex h-20 items-center justify-between px-4 xxl:mx-[110px] ">
+                <div className="flex mb:h-20 h-[60px] items-center justify-between px-4 xxl:mx-[110px] ">
                     {/* LOGO */}
                     <Link href="/" passHref>
                         <div
-                            className={classNames('transition-opacity delay-100 duration-300', {
+                            className={classNames('transition-opacity w-[90px] h-[34px] mb:w-[118px] mb:h-[46px] delay-100 duration-300', {
                                 'opacity-0': isOpenMBHeader,
                             })}
                         >
@@ -67,12 +68,9 @@ const Header: React.FC = () => {
                     </div>
 
                     {/* MOBILE HAMBURGER */}
-                    <div
-                        onClick={() => setOpenMBHeader((prev) => !prev)}
-                        className="cursor-pointer rounded-xl border border-gray-1 p-3 mb:hidden"
-                    >
+                    <IconButton className="mb:hidden" onClick={() => setOpenMBHeader((prev) => !prev)}>
                         <HamburgerMenu open={isOpenMBHeader} />
-                    </div>
+                    </IconButton>
                 </div>
             </header>
 

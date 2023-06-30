@@ -17,8 +17,8 @@ const Team = () => {
     const setState = useCallback((_state: SetTeamState) => set((prev) => ({ ...prev, ..._state })), [])
 
     return (
-        <main className={`z-10 flex min-h-[calc(100vh-80px)] w-full flex-col items-center justify-center`}>
-            <div className="z-[1] mb-3 text-[64px] font-semibold leading-[80px] text-white">Team</div>
+        <main className={`z-10 flex min-h-[calc(100vh-80px)] w-full flex-col items-center justify-center `}>
+            <div className="z-[1] mb-3 font-semibold text-white mb:text-[64px] mb:leading-[80px] text-[40px] leading-[50px]">Team</div>
             <TeamSwiper setState={setState} activeIndex={state.activeIndex} setShowModal={setShowModal} />
             <Navigator slideNext={() => state.swiper?.slideNext()} slidePrev={() => state.swiper?.slidePrev()} />
             <Modal isOpen={showModal} onClose={() => setShowModal(false)}>

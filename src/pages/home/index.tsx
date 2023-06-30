@@ -66,15 +66,13 @@ export default function Home() {
                     }}
                     className="mt-[82px] flex justify-center"
                 >
-                    <div className="mt-[82px] flex justify-center">
-                        <WrapperButton
-                            onClick={toggle}
-                            iconType="vector"
-                            className="relative flex cursor-pointer flex-row rounded-full text-lg"
-                        >
-                            Apply Now
-                        </WrapperButton>
-                    </div>
+                    <WrapperButton
+                        onClick={toggle}
+                        iconType="vector"
+                        className="relative flex cursor-pointer flex-row rounded-full text-lg"
+                    >
+                        Apply Now
+                    </WrapperButton>
                 </motion.div>
                 <Modal isOpen={isOpen} onClose={toggle}>
                     {/* <div className="text-center">

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { RefObject, useEffect } from 'react'
 
 export function useOnClickOutside<T extends HTMLElement = HTMLElement>(ref: RefObject<T>, handler: () => void): void {
@@ -12,5 +13,5 @@ export function useOnClickOutside<T extends HTMLElement = HTMLElement>(ref: RefO
         window.addEventListener('mousedown', handlerClick)
 
         return () => window.removeEventListener('mousedown', handlerClick)
-    }, [handler, ref])
+    }, [ref])
 }
