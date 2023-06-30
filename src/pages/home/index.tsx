@@ -27,7 +27,7 @@ export default function Home() {
     const toggle = () => setIsOpen((prev) => !prev)
 
     return (
-        <main className="relative z-10 flex flex-col items-center">
+        <main className="main">
             <section className="w-[600px] pt-[129px] text-center text-white">
                 <motion.h1
                     initial={{
