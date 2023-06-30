@@ -5,7 +5,7 @@ const Blogs = dynamic(() => import('@/features/blogs'), { ssr: false })
 
 const index = () => {
     return (
-        <section className="mx-auto flex min-h-[calc(100vh-80px)] max-w-screen-xxl items-center justify-center px-4 mb:px-0">
+        <section className="mx-auto flex min-h-[calc(100vh-80px)] max-w-screen-xxl items-center justify-center px-4 mb:px-0 ">
             <Blogs />
         </section>
     )
