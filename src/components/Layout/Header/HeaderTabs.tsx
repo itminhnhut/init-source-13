@@ -1,45 +1,21 @@
+import React from 'react'
+
 import colors from '@/styles/colors'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React from 'react'
+
+import { MENU } from '@/constants'
 import { styled } from 'styled-components'
-const Tabs = [
-    {
-        route: '/',
-        title: 'Intro',
-    },
-    {
-        route: '/home',
-        title: 'Home',
-    },
-    {
-        route: '/about-us',
-        title: 'About Us',
-    },
-    {
-        route: '/blogs',
-        title: 'Blogs',
-    },
-    {
-        route: '/portfolio',
-        title: 'Portfolio',
-    },
-    {
-        route: '/team',
-        title: 'Team',
-    },
-    {
-        route: '/partners',
-        title: 'Partners',
-    },
-]
 
 const HeaderTabs = () => {
     const router = useRouter()
 
     return (
         <div className="flex flex-col items-center justify-center gap-8 mb:flex-row mb:justify-start">
-            {Tabs.map((tab, i) => (
+            {MENU.map((tab: {
+                route: string,
+                title: string
+            }, i) => (
                 <Tab
                     as={Link}
                     href={tab.route}

@@ -27,6 +27,9 @@
       ],
       "@/features/*": [
         "./src/features/*"
+      ],
+      "@/constants/*": [
+        "./src/constants/*"
       ]
     }
   },

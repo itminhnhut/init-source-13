@@ -6,7 +6,12 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { Lexend } from 'next/font/google'
 
+import BreadcrumbJsonLd from '@/components/SEO/BreadcrumbJsonLd';
+
+
 import Layout from '@/components/Layout'
+
+import { BREAD_CRUMB_JSON_LD } from '@/constants'
 
 import NProgress from 'nprogress'
 
@@ -44,6 +49,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     return (
         <>
+            <BreadcrumbJsonLd data={BREAD_CRUMB_JSON_LD} />
             <style jsx global>{`:root:{--lexend-font:${lexend.style.fontFamily}}`} </style>
             <Layout>
                 <Component {...pageProps} />
