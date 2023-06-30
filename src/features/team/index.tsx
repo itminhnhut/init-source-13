@@ -1,7 +1,6 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 import TeamSwiper from './components/TeamSwiper'
-import NavigateSlider from './components/NavigateSlider'
 import type { SetTeamState, TeamState } from './types'
 import Modal from '@/components/Elements/Modal'
 import Navigator from '@/components/Elements/SwiperNavigator'

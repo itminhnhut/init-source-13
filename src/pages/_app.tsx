@@ -1,8 +1,5 @@
 import { useEffect } from 'react'
 
-import { appWithTranslation } from 'next-i18next'
-import Layout from '@/components/Layout'
-
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 
@@ -13,6 +10,8 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import Layout from '@/components/layout'
+import { appWithTranslation } from 'next-i18next'
 
 NProgress.configure({ showSpinner: false })
 

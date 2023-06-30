@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic'
 import React from 'react'
 
-const Blogs = dynamic(() => import('@/features/blogs'))
+const Blogs = dynamic(() => import('@/features/blogs'), { ssr: false })
 
 const index = () => {
     return (
