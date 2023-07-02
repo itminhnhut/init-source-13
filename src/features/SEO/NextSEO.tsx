@@ -1,15 +1,15 @@
 import { useMemo } from 'react';
 
-import DEFAULT_SEO from '@/config/seo-config'
+import DEFAULT_SEO from '@/configs/SEO'
 
-import runEnv from '@/config/env';
+import runEnv from '@/configs/env';
 const { NEXT_PUBLIC_APP_URL } = runEnv();
 
 import { NextSeo } from 'next-seo';
 
 type NextSeoProps = {
     pathname: string,
-    locale: string,
+    locale: string | any,
 }
 
 const NextSEO = ({ pathname, locale }: NextSeoProps) => {
