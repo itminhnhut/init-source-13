@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "eslint '*/**/*.{ts,tsx}'",
     "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "postbuild": "next-sitemap --config ./src/configs/Sitemap/index.js",
     "prepare": "husky install"
   },
