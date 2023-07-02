@@ -5,10 +5,7 @@ const TabsAbout = dynamic(() => import('@/features/about/components/tabs'))
 
 const About = () => {
     return (
-        <>
-            <NextSeo title="about us" />
-            <TabsAbout />
-        </>
+        <TabsAbout />
     )
 }
 export default About
