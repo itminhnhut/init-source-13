@@ -9,6 +9,14 @@
     "lint": "next lint",
     "postbuild": "next-sitemap --config ./src/configs/Sitemap/index.js"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*": "prettier --write & yarn build"
+  },
   "dependencies": {
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",
@@ -35,6 +43,8 @@
   },
   "devDependencies": {
     "@types/nprogress": "^0.2.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
     "next-sitemap": "^4.1.3",
     "prettier": "2.4.1",
     "prettier-plugin-tailwindcss": "^0.3.0"
