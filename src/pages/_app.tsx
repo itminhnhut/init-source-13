@@ -32,7 +32,6 @@ const App = ({ Component, pageProps }: AppProps) => {
     const router = useRouter()
 
     const { locale, pathname } = router
-
     useEffect(() => {
         const handleRouteStart = () => NProgress.start()
         const handleRouteDone = () => NProgress.done()
