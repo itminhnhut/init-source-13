@@ -32,7 +32,7 @@ const App = ({ Component, pageProps }: AppProps) => {
     const router = useRouter()
 
     const { locale, pathname } = router
-    console.log(router)
+
     useEffect(() => {
         const handleRouteStart = () => NProgress.start()
         const handleRouteDone = () => NProgress.done()
@@ -47,7 +47,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             router.events.off('routeChangeComplete', handleRouteDone)
             router.events.off('routeChangeError', handleRouteDone)
         }
-    }, [])
+    }, [router.events])
 
     return (
         <>

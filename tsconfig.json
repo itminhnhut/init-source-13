@@ -31,11 +31,11 @@
       "@/constants/*": [
         "./src/constants/*"
       ],
-      "@/config/*": [
-        "./src/config/*"
+      "@/configs/*": [
+        "./src/configs/*"
       ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "next-sitemap.config.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/configs/Sitemap/index.js"],
   "exclude": ["node_modules"]
 }

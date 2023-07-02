@@ -38,7 +38,7 @@ const ReactPortal = ({ children, wrapperId, className, font }: ReactPortalProps)
                 element.parentNode.removeChild(element)
             }
         }
-    }, [wrapperId])
+    }, [className, font, wrapperId])
 
     if (!wrapper) return null
     return createPortal(children, wrapper)

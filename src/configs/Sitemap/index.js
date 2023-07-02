@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 
-import runEnv from '@/config/env'
-const { NEXT_PUBLIC_APP_URL } = runEnv()
+const { runEnv } = require('../env')
+const { NEXT_PUBLIC_APP_URL } = runEnv
 
 const siteUrl = NEXT_PUBLIC_APP_URL
 
