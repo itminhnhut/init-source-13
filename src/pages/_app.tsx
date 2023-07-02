@@ -31,6 +31,8 @@ const lexend = Lexend({
 const App = ({ Component, pageProps }: AppProps) => {
     const router = useRouter()
 
+    const { locale, pathname } = router
+    console.log(router)
     useEffect(() => {
         const handleRouteStart = () => NProgress.start()
         const handleRouteDone = () => NProgress.done()
@@ -49,7 +51,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 
     return (
         <>
-            <NextSEO />
+            <NextSEO pathname={pathname} locale={locale} />
             <BreadcrumbJsonLd data={BREAD_CRUMB_JSON_LD} />
             <style jsx global>{`:root:{--lexend-font:${lexend.style.fontFamily}}`} </style>
             <Layout>

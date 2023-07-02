@@ -1,6 +1,9 @@
 /** @type {import('next-sitemap').IConfig} */
 
-const siteUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+import runEnv from '@/config/env'
+const { NEXT_PUBLIC_APP_URL } = runEnv()
+
+const siteUrl = NEXT_PUBLIC_APP_URL
 
 module.exports = {
     changefreq: 'daily',

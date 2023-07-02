@@ -1,10 +1,33 @@
+import { useMemo } from 'react';
+
+import DEFAULT_SEO from '@/config/seo-config'
+
+import runEnv from '@/config/env';
+const { NEXT_PUBLIC_APP_URL } = runEnv();
+
 import { NextSeo } from 'next-seo';
 
-const NextSEO = () => {
+type NextSeoProps = {
+    pathname: string,
+    locale: string,
+}
+
+const NextSEO = ({ pathname, locale }: NextSeoProps) => {
+
+    const SEO = useMemo(() => {
+        const getData = DEFAULT_SEO?.[pathname]
+        const title = getData?.title?.[locale]
+        const des = getData?.des?.[locale]
+        const canonical = NEXT_PUBLIC_APP_URL + pathname
+
+        return { title, des, canonical }
+
+    }, [pathname, locale])
+
     return <NextSeo
-        title="Using More of Config"
-        description="This example uses more of the available config options."
-        canonical="https://www.canonical.ie/"
+        title={SEO.title}
+        description={SEO.des}
+        canonical={SEO.canonical}
         openGraph={{
             url: 'https://www.url.ie/a',
             title: 'Open Graph Title',
@@ -24,8 +47,6 @@ const NextSEO = () => {
                     alt: 'Og Image Alt Second',
                     type: 'image/jpeg',
                 },
-                { url: 'https://www.example.ie/og-image-03.jpg' },
-                { url: 'https://www.example.ie/og-image-04.jpg' },
             ],
             siteName: 'SiteName',
         }}
