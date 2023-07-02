@@ -1,4 +1,4 @@
 const Portfolio = () => {
-    return 'Portfolio 1'
+    return 'Portfolio'
 }
 export default Portfolio 
