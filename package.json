@@ -6,16 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postbuild": "next-sitemap --config ./src/configs/Sitemap/index.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*": "prettier --write & yarn build"
+    "lint": "eslint '*/**/*.{ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
+    "postbuild": "next-sitemap --config ./src/configs/Sitemap/index.js",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.3.1",
