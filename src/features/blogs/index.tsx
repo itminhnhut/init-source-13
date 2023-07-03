@@ -24,7 +24,6 @@ const Blogs = () => {
             <div className="mb-4">
                 <Swiper
                     onSwiper={(swiper) => setSwiper(swiper)}
-                    grabCursor={true}
                     centeredSlides={true}
                     loop={true}
                     slidesPerView={1}
