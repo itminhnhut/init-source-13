@@ -52,7 +52,11 @@ const App = ({ Component, pageProps }: AppProps) => {
         <>
             <NextSEO pathname={pathname} locale={locale} />
             <BreadcrumbJsonLd data={BREAD_CRUMB_JSON_LD} />
-            <style jsx global>{`:root:{--lexend-font:${lexend.style.fontFamily}}`} </style>
+            <style jsx global>{`
+                html {
+                font-family: ${lexend.style.fontFamily};
+                }
+            `}</style>
             <Layout>
                 <Component {...pageProps} />
             </Layout>
