@@ -2,7 +2,6 @@ const MENU = [
     {
         route: '/',
         title: { vi: 'Intro', en: 'Intro' },
-        hide: true,
     },
     {
         route: '/home',
