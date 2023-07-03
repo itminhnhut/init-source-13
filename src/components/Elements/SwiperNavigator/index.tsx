@@ -12,7 +12,7 @@ interface INavigator {
 
 const Navigator: React.FC<INavigator> = ({ slidePrev, slideNext, className }) => {
     return (
-        <div className={classNames('z-[1] mt-10 flex w-full justify-center gap-6', className)}>
+        <div className={classNames('z-[1] flex w-full justify-center gap-6', className)}>
             <IconButton onClick={slidePrev}>
                 <ChevronLeft size={16} />
             </IconButton>
