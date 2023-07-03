@@ -35,7 +35,9 @@ module.exports = {
             colors: {
                 ...colors,
             },
-
+            fontFamily: {
+                primary: ['var(--font-lexend)'],
+            },
             screens: {
                 '2k': '2160px',
                 xxl: '1216px',

@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 
 import { MENU } from '@/constants'
 import { styled } from 'styled-components'
+import classNames from 'classnames'
 
 const HeaderTabs = () => {
     const router = useRouter()
@@ -15,11 +16,12 @@ const HeaderTabs = () => {
             {MENU.map((tab: {
                 route: string,
                 title: string
+                hide?: boolean,
             }, i) => (
                 <Tab
                     as={Link}
                     href={tab.route}
-                    className="cursor-pointer transition-colors"
+                    className={classNames('cursor-pointer transition-colors', { 'hidden': tab.hide })}
                     key={i}
                     $active={router.pathname === tab.route}
                 >
