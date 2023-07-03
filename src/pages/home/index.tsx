@@ -27,8 +27,8 @@ export default function Home() {
     const toggle = () => setIsOpen((prev) => !prev)
 
     return (
-        <main className="main">
-            <section className="w-[600px] pt-[129px] text-center text-white">
+        <main className="main max-w-screen-xxl mx-auto  h-full ">
+            <section className="pt-[129px]  h-full text-center text-white">
                 <motion.h1
                     initial={{
                         y: '-300px',

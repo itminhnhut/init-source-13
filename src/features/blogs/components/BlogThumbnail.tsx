@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const BlogThumbnail = () => {
+const BlogThumbnail: React.FC = () => {
     return (
-        <Link href="/blogs/1" passHref>
+        <Link href="/blogs/1" passHref className="inline-block">
             <div className="relative h-full rounded-[20px] bg-black-1 p-4 transition hover:bg-black-1 mb:bg-transparent">
                 <div className="space-y-2">
                     <Image

@@ -4,6 +4,7 @@ import ToggleLanguage from './ToggleLanguage'
 import { useCallback, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
@@ -11,6 +12,7 @@ const IconButton = dynamic(() => import('@/components/Elements/Button/IconButton
 
 const Header: React.FC = () => {
     const [isOpenMBHeader, setOpenMBHeader] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         const toggleMBHeader = (e: UIEvent) => {
@@ -21,6 +23,10 @@ const Header: React.FC = () => {
         window.addEventListener('resize', toggleMBHeader)
         return () => window.removeEventListener('resize', toggleMBHeader)
     }, [isOpenMBHeader])
+
+    useEffect(() => {
+        setOpenMBHeader(false)
+    }, [router.pathname])
 
     const renderMobileHeader = useCallback(
         () => (
