@@ -50,7 +50,7 @@ const WrapperLayout = styled.section`
     .video-container video {
         min-width: 100%;
         min-height: 100%;
-        position: absolute;
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
