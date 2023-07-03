@@ -44,7 +44,7 @@ const TabsAbout = () => {
         return dataTabs?.map((item: any, key: number) => {
             return (
                 <Tab
-                    className={classNames('text-lg text-white', {
+                    className={classNames('text-base lg:text-lg font-medium text-white', {
                         'text-gradient-1': key === tabIndex,
                     })}
                     key={`tab_${item.title}`}
@@ -58,21 +58,21 @@ const TabsAbout = () => {
 
     return (
         <main className="main text-white">
-            <h1 className="mt-32 text-center text-6xl4 font-semibold">About Us</h1>
-            <section className="mt-[47px] w-[806px]">
-                <Tabs defaultIndex={tabIndex}>
+            <h1 className="mt-[58px] lg:mt-32 text-center text-4xl4 lg:text-6xl4 font-semibold">About Us</h1>
+            <section className="mt-[47px] w-full lg:w-[806px]">
+                <Tabs defaultIndex={tabIndex} className="mx-4 lg:mx-0">
                     <TabList className="mb-6 flex cursor-pointer flex-row justify-center gap-x-6 text-lg font-medium">
                         {renderTab()}
                     </TabList>
                     <TabPanel>
                         <article>
-                            <h2 className="w-full text-center font-light leading-6">
+                            <h2 className="w-full text-center font-light text-base">
                                 Binance Labs identifies, invests, and empowers viable blockchain entrepreneurs,
                                 startups, and communities, providing financing to industry projects that help grow the
                                 wider blockchain ecosystem. Binance Labs is committed to supporting fast-executing,
                                 technical teams who positively impact the crypto space and build the decentralised web.
                             </h2>
-                            <section className="mt-[30px] flex flex-row justify-center gap-x-10">
+                            <section className="mt-[30px] flex flex-row justify-center gap-10 flex-wrap">
                                 {TAB_PANEL_1?.map((item: { title: string; subTitle: string }) => {
                                     return (
                                         <section className="cursor-pointer" key={`Our_Story_${item.subTitle}`}>
@@ -88,13 +88,13 @@ const TabsAbout = () => {
                     </TabPanel>
                     <TabPanel>
                         <article>
-                            <h2 className="w-full text-center font-light leading-6">
+                            <h2 className="w-full text-center font-light text-base">
                                 Labs identifies, invests, and empowers viable blockchain entrepreneurs, startups, and
                                 communities, providing financing to industry projects that help grow the wider
                                 blockchain ecosystem. Binance Labs is committed to supporting fast-executing, technical
                                 teams who positively impact the crypto space and build the decentralised web.
                             </h2>
-                            <section className="mt-[30px] flex flex-row justify-center gap-x-10">
+                            <section className="mt-[30px] flex flex-row justify-center gap-x-10 flex-wrap">
                                 {TAB_PANEL_1?.map((item: { title: string; subTitle: string }) => {
                                     return (
                                         <section className="cursor-pointer" key={`Our_Story_${item.subTitle}`}>
@@ -110,7 +110,7 @@ const TabsAbout = () => {
                     </TabPanel>
                     <TabPanel>
                         <article>
-                            <h2 className="w-full text-center font-light leading-6">
+                            <h2 className="w-full text-center font-light text-base">
                                 invests, and empowers viable blockchain entrepreneurs, startups, and communities,
                                 providing financing to industry projects that help grow the wider blockchain ecosystem.
                                 Binance Labs is committed to supporting fast-executing, technical teams who positively
