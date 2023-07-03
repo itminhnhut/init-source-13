@@ -14,10 +14,10 @@ const Footer = () => {
 
     const toggle = () => setIsOpen((prev) => !prev)
     return (
-        <main className='main mt-[121px]'>
-            <section className='text-center text-5xl font-semibold'>
+        <main className='main mt-[106px] lg:mt-[121px]'>
+            <section className='text-center text-4xl4 lg:text-5xl font-semibold px-3 lg:px-0'>
                 <h1>Apply to Sci labs</h1>
-                <h2>Calling founders and Buidlers!</h2>
+                <h2 className='font-medium'>Calling founders and Buidlers!</h2>
                 <section className='mt-10 flex justify-center'>
                     <Button onClick={toggle}
                         iconType="vector"
@@ -25,12 +25,12 @@ const Footer = () => {
                         Apply Now
                     </Button>
                 </section>
-                <section className='text-base flex flex-col gap-1 mt-[89px]'>
+                <section className='text-base flex flex-col gap-1 mt-10 lg:mt-[89px]'>
                     <div className='font-light'>Contact us at</div>
                     <div className='font-medium'>Support@sci.com</div>
                     <div className='font-light'>For inquiries and supplementary materials</div>
                 </section>
-                <section className='flex flex-row justify-center gap-x-2 mt-6'>
+                <section className='flex flex-row justify-center gap-x-2 mt-10 lg:mt-6'>
                     <IconButton className="border-0 !bg-[#d9d9d926]" rounded>
                         <In size={24} color="white" />
                     </IconButton>

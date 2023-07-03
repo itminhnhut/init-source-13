@@ -27,8 +27,8 @@ export default function Home() {
     const toggle = () => setIsOpen((prev) => !prev)
 
     return (
-        <main className="main max-w-screen-xxl mx-auto  h-full ">
-            <section className="pt-[129px]  h-full text-center text-white">
+        <main className="main">
+            <section className="w-full lg:w-[600px] pt-[149px] lg:pt-[129px] text-center text-white px-4 lg:mx-0">
                 <motion.h1
                     initial={{
                         y: '-300px',
@@ -38,7 +38,7 @@ export default function Home() {
                         y: '0',
                         opacity: 1,
                     }}
-                    className="text-6xl4 font-semibold"
+                    className="text-4xl4 lg:text-6xl4 font-semibold"
                 >
                     Empowering the decentralised Web
                 </motion.h1>
@@ -64,7 +64,7 @@ export default function Home() {
                         y: '0',
                         opacity: 1,
                     }}
-                    className="mt-[82px] flex justify-center"
+                    className="mt-[60px] lg:mt-[82px] flex justify-center"
                 >
                     <WrapperButton
                         onClick={toggle}

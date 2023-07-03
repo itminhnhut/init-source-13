@@ -18,6 +18,7 @@ html,
 body {
     @apply text-base font-light text-white;
     overflow-x: hidden;
+    @apply h-full
 }
 
 .main {
