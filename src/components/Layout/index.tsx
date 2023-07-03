@@ -29,7 +29,7 @@ const Layout: FC<LayoutI> = ({ children }) => {
                 <div className="relative">{children}</div>
             </div>
 
-            {pathname === 'footer' ? <Footer /> : null}
+            {pathname === '/footer' ? <Footer /> : null}
         </WrapperLayout>
     )
 }
