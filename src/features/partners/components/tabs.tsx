@@ -75,7 +75,7 @@ const TabsAbout = () => {
     }
 
     return (
-        <main className="relative z-10 flex flex-col items-center text-white">
+        <main className="main text-white">
             <h1 className="mt-32 text-center text-6xl4 font-semibold ">Partners</h1>
             <section className="mt-9 w-full px-[110px]">
                 <Tabs defaultIndex={tabIndex}>
