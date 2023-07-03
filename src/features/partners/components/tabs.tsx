@@ -76,8 +76,8 @@ const TabsAbout = () => {
 
     return (
         <main className="main text-white">
-            <h1 className="mt-32 text-center text-6xl4 font-semibold ">Partners</h1>
-            <section className="mt-9 w-full px-[110px]">
+            <h1 className="mt-[42.5px] lg:mt-32 text-center text-4xl4 lg:text-6xl4 font-semibold ">Partners</h1>
+            <section className="mt-9 w-full px-4 lg:px-[110px]">
                 <Tabs defaultIndex={tabIndex}>
                     <TabList className="mb-6 flex cursor-pointer flex-row justify-center gap-x-6 text-lg font-medium">
                         {renderTab()}
