@@ -8,7 +8,7 @@ import { Lexend } from 'next/font/google'
 
 import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
-import Layout from '@/components/Layout'
+const Layout = dynamic(() => import('@/components/Layout'), { ssr: false })
 
 import { BREAD_CRUMB_JSON_LD } from '@/constants'
 
@@ -20,6 +20,7 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
+import dynamic from 'next/dynamic'
 
 NProgress.configure({ showSpinner: false })
 

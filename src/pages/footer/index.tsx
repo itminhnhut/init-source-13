@@ -8,27 +8,29 @@ import Twitter from '@/components/Icons/Twitter'
 
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'next-i18next'
 
 const Footer = () => {
+    const { t } = useTranslation()
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const toggle = () => setIsOpen((prev) => !prev)
     return (
         <main className='main mt-[106px] lg:mt-[121px]'>
-            <section className='text-center text-4xl4 lg:text-5xl font-semibold px-3 lg:px-0'>
-                <h1>Apply to Sci labs</h1>
-                <h2 className='font-medium'>Calling founders and Buidlers!</h2>
+            <section className='text-center text-4xl4 lg:text-5xl font-semibold px-3 lg:px-0  w-full lg:w-[807px]'>
+                <h1>{t('footer:title')}</h1>
+                <h2 className='font-medium'>{t('footer:subTitle')}</h2>
                 <section className='mt-10 flex justify-center'>
                     <Button onClick={toggle}
                         iconType="vector"
                         className="relative flex cursor-pointer flex-row rounded-full text-lg wrapper-button">
-                        Apply Now
+                        {t('common:button.start')}
                     </Button>
                 </section>
                 <section className='text-base flex flex-col gap-1 mt-10 lg:mt-[89px]'>
-                    <div className='font-light'>Contact us at</div>
-                    <div className='font-medium'>Support@sci.com</div>
-                    <div className='font-light'>For inquiries and supplementary materials</div>
+                    <div className='font-light'>{t('footer:contact')}</div>
+                    <div className='font-medium'>{t('footer:contact_us')}</div>
+                    <div className='font-light'>{t('footer:contact_sub')}</div>
                 </section>
                 <section className='flex flex-row justify-center gap-x-2 mt-10 lg:mt-6'>
                     <IconButton className="border-0 !bg-[#d9d9d926]" rounded>
@@ -49,7 +51,7 @@ const Footer = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
         props: {
-            ...(await serverSideTranslations(locale as string, ['common'])),
+            ...(await serverSideTranslations(locale as string, ['common', 'footer'])),
         },
     }
 }

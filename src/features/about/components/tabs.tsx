@@ -4,38 +4,46 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import classNames from 'classnames'
 
+// ** Types
+import LANGUAGE from '@/types/language'
+import { useTranslation } from 'next-i18next'
+
 const dataTabs = [
     {
-        title: 'Our Story',
+        title: { vi: 'Câu chuyện', en: 'Our Story' },
     },
     {
-        title: 'Mission',
+        title: { vi: 'Mission', en: 'Mission' },
     },
     {
-        title: 'Vision',
+        title: { vi: 'Vision', en: 'Vision' },
     },
 ]
 
 const TAB_PANEL_1 = [
     {
         title: '25+',
-        subTitle: 'Countries',
+        subTitle: { vi: 'Khối lượng giao dịch', en: 'Volume' }
     },
     {
         title: '200+',
-        subTitle: 'Projects',
+        subTitle: { vi: 'Dự án', en: 'Projects' }
     },
     {
         title: '5+',
-        subTitle: 'Continents',
+        subTitle: { vi: 'Số lượng người dùng', en: 'Unique Wallet/Unique User' }
     },
     {
         title: '3+',
-        subTitle: 'Year',
+        subTitle: { vi: 'Giao dịch', en: 'Transaction' }
     },
 ]
 
 const TabsAbout = () => {
+    const {
+        t,
+        i18n: { language },
+    } = useTranslation()
     const [tabIndex, setTabIndex] = useState(0)
 
     const handleChangTab = (key: number) => setTabIndex(key)
@@ -44,13 +52,13 @@ const TabsAbout = () => {
         return dataTabs?.map((item: any, key: number) => {
             return (
                 <Tab
-                    className={classNames('text-base lg:text-lg font-medium text-white', {
+                    className={classNames('text-base font-medium text-white lg:text-lg', {
                         'text-gradient-1': key === tabIndex,
                     })}
-                    key={`tab_${item.title}`}
+                    key={`tab_${item.title?.[language as keyof LANGUAGE]}`}
                     onClick={() => handleChangTab(key)}
                 >
-                    {item.title}
+                    {item.title?.[language as keyof LANGUAGE]}
                 </Tab>
             )
         })
@@ -58,7 +66,7 @@ const TabsAbout = () => {
 
     return (
         <main className="main text-white">
-            <h1 className="mt-[58px] lg:mt-32 text-center text-4xl4 lg:text-6xl4 font-semibold">About Us</h1>
+            <h1 className="mt-[108px] text-center text-4xl4 font-semibold lg:mt-[108px] lg:text-6xl4">About Us</h1>
             <section className="mt-[47px] w-full lg:w-[806px]">
                 <Tabs defaultIndex={tabIndex} className="mx-4 lg:mx-0">
                     <TabList className="mb-6 flex cursor-pointer flex-row justify-center gap-x-6 text-lg font-medium">
@@ -66,20 +74,17 @@ const TabsAbout = () => {
                     </TabList>
                     <TabPanel>
                         <article>
-                            <h2 className="w-full text-center font-light text-base">
-                                Binance Labs identifies, invests, and empowers viable blockchain entrepreneurs,
-                                startups, and communities, providing financing to industry projects that help grow the
-                                wider blockchain ecosystem. Binance Labs is committed to supporting fast-executing,
-                                technical teams who positively impact the crypto space and build the decentralised web.
+                            <h2 className="w-full text-center text-base font-light">
+                                {t('about:our_story_tile')}
                             </h2>
-                            <section className="mt-[30px] flex flex-row justify-center gap-10 flex-wrap">
-                                {TAB_PANEL_1?.map((item: { title: string; subTitle: string }) => {
+                            <section className="mt-[78px] flex flex-row flex-wrap justify-center gap-10">
+                                {TAB_PANEL_1?.map((item: { title: string; subTitle: LANGUAGE }) => {
                                     return (
-                                        <section className="cursor-pointer" key={`Our_Story_${item.subTitle}`}>
+                                        <section className="cursor-pointer" key={`Our_Story_${item.title}`}>
                                             <section className="text-gradient-1 text-3xl2 font-medium">
                                                 {item.title}
                                             </section>
-                                            <section className="font-medium">{item.subTitle}</section>
+                                            <section className="font-medium">{item.subTitle?.[language as keyof LANGUAGE]}</section>
                                         </section>
                                     )
                                 })}
@@ -88,47 +93,17 @@ const TabsAbout = () => {
                     </TabPanel>
                     <TabPanel>
                         <article>
-                            <h2 className="w-full text-center font-light text-base">
-                                Labs identifies, invests, and empowers viable blockchain entrepreneurs, startups, and
-                                communities, providing financing to industry projects that help grow the wider
-                                blockchain ecosystem. Binance Labs is committed to supporting fast-executing, technical
-                                teams who positively impact the crypto space and build the decentralised web.
+                            <h2 className="w-full text-center text-base font-light">
+                                {t('about:mission_tile')}
                             </h2>
-                            <section className="mt-[30px] flex flex-row justify-center gap-x-10 flex-wrap">
-                                {TAB_PANEL_1?.map((item: { title: string; subTitle: string }) => {
-                                    return (
-                                        <section className="cursor-pointer" key={`Our_Story_${item.subTitle}`}>
-                                            <section className="text-gradient-1 text-[32px] font-medium">
-                                                {item.title}
-                                            </section>
-                                            <section className="font-medium">{item.subTitle}</section>
-                                        </section>
-                                    )
-                                })}
-                            </section>
                         </article>
                     </TabPanel>
                     <TabPanel>
-                        <article>
-                            <h2 className="w-full text-center font-light text-base">
-                                invests, and empowers viable blockchain entrepreneurs, startups, and communities,
-                                providing financing to industry projects that help grow the wider blockchain ecosystem.
-                                Binance Labs is committed to supporting fast-executing, technical teams who positively
-                                impact the crypto space and build the decentralised web.
+                        <Tabs>
+                            <h2 className="w-full text-center text-base font-light">
+                                {t('about:vision_title')}
                             </h2>
-                            <section className="mt-[30px] flex flex-row justify-center gap-x-10">
-                                {TAB_PANEL_1?.map((item: { title: string; subTitle: string }) => {
-                                    return (
-                                        <section className="cursor-pointer" key={`Our_Story_${item.subTitle}`}>
-                                            <section className="text-gradient-1 text-[32px] font-medium">
-                                                {item.title}
-                                            </section>
-                                            <section className="font-medium">{item.subTitle}</section>
-                                        </section>
-                                    )
-                                })}
-                            </section>
-                        </article>
+                        </Tabs>
                     </TabPanel>
                 </Tabs>
             </section>

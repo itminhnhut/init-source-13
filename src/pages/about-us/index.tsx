@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import dynamic from 'next/dynamic'
 
-const TabsAbout = dynamic(() => import('@/features/about/components/tabs'))
+const TabsAbout = dynamic(() => import('@/features/about/components/Tabs'), { ssr: false })
 
 const About = () => {
     return (
@@ -15,7 +15,7 @@ const About = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
         props: {
-            ...(await serverSideTranslations(locale as string, ['common', 'home'])),
+            ...(await serverSideTranslations(locale as string, ['common', 'about'])),
         },
     }
 }

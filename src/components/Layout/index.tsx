@@ -21,7 +21,7 @@ const Layout: FC<LayoutI> = ({ children }) => {
             <Header />
             <div className="video-container">
                 <video
-                    src="https://s3-figma-videos-production-sig.figma.com/video/1242043184777721116/TEAM/e437/c462/-ccfe-402b-9909-8fc5b107edca?Expires=1688947200&Signature=o7NW~iDaBsL0QSQZw2lp8yvpQiCi7HOyBFdLiG5s6Nfq9WaYoi~ZhfCxdizhhdriddjIRhqER9Qi2o5RdEnfyIHeYlpmRJSP-2NYRoTe6xy2LSwPxTlTvKrY75VtODhcXh0rgPhrMurqOmGbRtMhG2TtYzPmNPlVebzV3fME9vfphvSXwtmJLnGNid-gGqU5neUYeyxh297UbNvcKnmi2BBR~q9N1vODfiNnkHENembLk-a0pkN392zB8QNs7x7zDCPCrJEvEeuxUxJSnN3EdcCKHhPwK8Tlg9yoRZRfRbMEXsmIIxmMo3UbMymLGr3rLXlqiCnVi8J42BmniZ7Riw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                    src="https://s3-figma-videos-production-sig.figma.com/video/1242043184777721116/TEAM/adae/55c5/-7560-4d1d-90c5-b99c93fd3f2f?Expires=1689552000&Signature=qIn5qA90ttZts54J4Wr5~c6u31ZQxVtpaHSkn9irzkd9tFS8hQN61ijOsKm18EGqrwBFkx-pLe2iikV7q7q33EgGNBnWkSPQy6KYPp6qcHgGWxX7IVuYtI861eRc46t5fAY1SQcETrstBURO6lCmf5tm0f7KVny6JzcMON08VWRR6DCjP06Tgg0xfMZu5ANfk7FhkPy52h25Bz6upIp74rHVP58p26TVh15xBONR26f~NObJb-1oLApQWVew4hUNzlm9T1B5~hKCHhf0UGhE5vNOCw2qGEF3UPanmw2oP1arbtsm96kEepZAjlkKBBbGCGAKL6cwnA33S6wnVyxCdw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                     autoPlay
                     muted
                     loop
