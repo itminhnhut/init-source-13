@@ -1,33 +1,4 @@
-const MENU = [
-    {
-        route: '/',
-        title: 'Intro',
-    },
-    {
-        route: '/home',
-        title: 'Home',
-    },
-    {
-        route: '/about-us',
-        title: 'About Us',
-    },
-    {
-        route: '/blogs',
-        title: 'Blogs',
-    },
-    {
-        route: '/portfolio',
-        title: 'Portfolio',
-    },
-    {
-        route: '/team',
-        title: 'Team',
-    },
-    {
-        route: '/partners',
-        title: 'Partners',
-    },
-]
+import MENU from './Menu'
 
 const BREAD_CRUMB_JSON_LD = [
     {
@@ -99,6 +70,16 @@ const BREAD_CRUMB_JSON_LD = [
         position: 1,
         name: 'Partners',
         item: 'http://localhost:3000/vi/partners',
+    },
+    {
+        position: 1,
+        name: 'Footer',
+        item: 'http://localhost:3000/footer',
+    },
+    {
+        position: 1,
+        name: 'Footer',
+        item: 'http://localhost:3000/vi/footer',
     },
 ]
 

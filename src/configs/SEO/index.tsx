@@ -28,6 +28,10 @@ const DEFAULT_SEO: Record<SEO_PAGE, { title: { vi: string, en: string } | any, d
     "/partners": {
         title: { vi: 'partners', en: 'partners' },
         des: { vi: 'partners', en: 'partners' }
+    },
+    "/footer": {
+        title: { vi: 'footer', en: 'footer' },
+        des: { vi: 'footer', en: 'footer' }
     }
 }
 

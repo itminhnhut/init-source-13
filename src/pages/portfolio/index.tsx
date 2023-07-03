@@ -18,8 +18,8 @@ const TAB_PANEL_1 = [
 ]
 
 const Portfolio = () => {
-    return <main className="main">
-        <h1 className="mt-32 text-center text-6xl4 font-semibold ">Portfolio</h1>
+    return <main className="main mt-[128px]">
+        <Image src="/images/portfolio/ic_title.png" width={686} height={37} alt="title portfolio" />
         <article>
             <section className="mt-[30px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8">
                 {TAB_PANEL_1?.map((item: { src: string }, key: number) => {
@@ -35,8 +35,8 @@ const Portfolio = () => {
                     )
                 })}
             </section>
-        </article>
-    </main>
+        </article >
+    </main >
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

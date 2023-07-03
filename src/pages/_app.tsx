@@ -8,13 +8,13 @@ import { Lexend } from 'next/font/google'
 
 import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
-import Layout from '@/components/layout'
+import Layout from '@/components/Layout'
 
 import { BREAD_CRUMB_JSON_LD } from '@/constants'
 
 import NProgress from 'nprogress'
 
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import 'nprogress/nprogress.css'
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
@@ -25,6 +25,7 @@ NProgress.configure({ showSpinner: false })
 
 const lexend = Lexend({
     subsets: ['latin'],
+    variable: "--font-lexend",
 })
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -52,8 +53,8 @@ const App = ({ Component, pageProps }: AppProps) => {
             <NextSEO pathname={pathname} locale={locale} />
             <BreadcrumbJsonLd data={BREAD_CRUMB_JSON_LD} />
             <style jsx global>{`
-                html {
-                    font-family: ${lexend.style.fontFamily};
+                :root {
+                --lexend-font: ${lexend.style.fontFamily};
                 }
             `}</style>
             <Layout>
