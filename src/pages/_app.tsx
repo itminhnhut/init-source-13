@@ -9,7 +9,7 @@ import { Lexend } from 'next/font/google'
 import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO';
 
 
-import Layout from '@/components/Layout'
+import Layout from '@/components/layout'
 
 import { BREAD_CRUMB_JSON_LD } from '@/constants'
 
