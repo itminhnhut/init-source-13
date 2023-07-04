@@ -34,13 +34,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
                 params: { slug },
             };
         }),
-        fallback: 'blocking',
+        fallback: true,
     };
 }
 
 export const getStaticProps: GetStaticProps<props> = async ({ locale, params }) => {
     const result = await BlogsApi.getSinglePost(params?.slug as string);
-    const filter = `id:-${result.id}+tag:${result?.primary_tag.slug}`
+    const filter = `id:-${result.id}+tag:${result?.primary_tag?.slug}`
     const options = {
         page: 1,
         limit: 4,
