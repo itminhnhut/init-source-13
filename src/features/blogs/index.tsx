@@ -5,12 +5,13 @@ import React, { useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import BlogThumbnail from './components/BlogThumbnail'
 
-const Blogs = () => {
+const Blogs = ({ dataBlogs }) => {
     const [swiper, setSwiper] = useState<SwiperClass | null>(null)
 
+    console.log(dataBlogs)
     return (
         <div className="z-10 w-full">
-            <div className="relative mb-[46px] flex w-full justify-center mb:mb-8">
+            <div className="relative mb-[46px] flex w-full justify-center mb:mb-8 mt-[53px]">
                 <div className=" text-4xl4 font-semibold mb:text-6xl4">Blogs</div>
                 <div className="absolute bottom-0 right-0 hidden mb:block">
                     <Navigator
@@ -39,9 +40,9 @@ const Blogs = () => {
                     className="w-full"
                     spaceBetween={24}
                 >
-                    {[1, 2, 3, 4, 5, 6].map((e) => (
-                        <SwiperSlide key={e} className="">
-                            <BlogThumbnail />
+                    {dataBlogs.map((blog, index: key) => (
+                        <SwiperSlide key={index} >
+                            <BlogThumbnail featureImage={blog.feature_image} title={blog.title} slug={blog.slug} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

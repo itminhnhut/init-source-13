@@ -13,8 +13,8 @@ interface IHamburgerMenu {
 const HamburgerMenu: React.FC<IHamburgerMenu> = ({ open, lineSpacing, lineWidth, color, size }) => {
     return (
         <HamburgerWrapper
-            lineSpacing={lineSpacing}
-            lineWidth={lineWidth}
+            linespacing={lineSpacing}
+            linewidth={lineWidth}
             color={color}
             size={size}
             className={classNames({
@@ -35,11 +35,11 @@ HamburgerMenu.defaultProps = {
     size: 16,
 }
 
-const HamburgerWrapper = styled.div<{ size?: number; lineSpacing?: number; lineWidth?: number; color?: string }>`
+const HamburgerWrapper = styled.div<{ size?: number; linespacing?: number; linewidth?: number; color?: string }>`
     --size: ${({ size }) => size}px;
     --backgroundColor: ${({ color }) => color};
-    --lineWidth: ${({ lineWidth }) => lineWidth}px;
-    --lineSpace: ${({ lineSpacing, lineWidth }) => (lineWidth || 0) + (lineSpacing || 0)}px;
+    --lineWidth: ${({ linewidth }) => linewidth}px;
+    --lineSpace: ${({ linespacing, linewidth }) => (linewidth || 0) + (linespacing || 0)}px;
     cursor: pointer;
     width: var(--size);
     height: calc(var(--lineSpace) * 3);

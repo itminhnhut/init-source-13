@@ -6,14 +6,20 @@
  */
 const ENV = {
     development: {
-        API_BASE_HOST: 'https://jsonplaceholder.typicode.com',
+        GHOST_VERSION: 'v5.0',
+        GHOST_URL: 'https://demo.ghost.io',
+        GHOST_KEY: '22444f78447824223cefc48062',
         NEXT_PUBLIC_APP_URL: 'http://localhost:3000',
     },
     staging: {
-        API_BASE_HOST: 'https://jsonplaceholder.typicode.com',
+        GHOST_VERSION: 'v5.0',
+        GHOST_URL: 'https://blog.scilabs.io',
+        GHOST_KEY: '7cbcd42b3777ec6cacc94574c2',
     },
     production: {
-        API_BASE_HOST: 'https://jsonplaceholder.typicode.com',
+        GHOST_VERSION: 'v5.0',
+        GHOST_URL: 'https://blog.scilabs.io',
+        GHOST_KEY: '7cbcd42b3777ec6cacc94574c2',
     },
 }
 
