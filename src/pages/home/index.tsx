@@ -14,10 +14,44 @@ const InputField = dynamic(() => import('@/components/Form/InputField'), { ssr: 
 const TextAreaField = dynamic(() => import('@/components/Form/TextAreaField'), { ssr: false })
 
 import { Montserrat } from 'next/font/google'
+import { motion } from 'framer-motion'
 
 const montserrat = Montserrat({
     subsets: ['latin'],
 })
+
+const titleVariants = {
+    hidden: {
+        opacity: 0,
+        y: -300,
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+
+        transition: {
+            ease: [0.075, 0.82, 0.165, 1],
+            duration: 1.2,
+        },
+    },
+}
+
+const subTitleVarians = {
+    hidden: {
+        opacity: 0,
+        y: -300,
+        x: -100,
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        x: [50, 0],
+        transition: {
+            ease: [0.075, 0.82, 0.165, 1],
+            duration: 1,
+        },
+    },
+}
 
 export default function Home() {
     const { t } = useTranslation()
@@ -27,21 +61,40 @@ export default function Home() {
 
     return (
         <main className="main">
-            <section className="w-full lg:w-[600px] pt-[149px] lg:pt-[129px] text-center text-white px-4 lg:mx-0">
-                <h1 className="text-4xl4 lg:text-6xl4 font-semibold">
-                    {t('home:title')}
-                </h1>
-                <p className="mt-4 text-lg">
-                    {t('home:subTitle')}
-                </p>
-                <div className="mt-[60px] lg:mt-[82px] flex justify-center">
-                    <WrapperButton
-                        onClick={toggle}
-                        className="relative flex cursor-pointer flex-row  text-lg px-[42px] py-6 font-semibold bg-v2"
-                    >
-                        {t('common:button.apply')}
-                    </WrapperButton>
-                </div>
+            <section className="w-full px-4 pt-[149px] text-center text-white lg:mx-0 lg:w-[600px] lg:pt-[129px]">
+                <motion.div
+                    variants={{
+                        hidden: { opacity: 0 },
+                        show: {
+                            opacity: 1,
+                            transition: {
+                                type: 'spring',
+                                bounce: 0,
+                                duration: 0.7,
+                                delayChildren: 0.3,
+                                staggerChildren: 0.1,
+                                staggerDirection: -1,
+                            },
+                        },
+                    }}
+                    initial="hidden"
+                    animate="show"
+                >
+                    <motion.h1 variants={titleVariants} className="text-4xl4 font-semibold lg:text-6xl4">
+                        {t('home:title')}
+                    </motion.h1>
+                    <motion.div variants={subTitleVarians}>
+                        <p className="mt-4 text-lg opacity-60">{t('home:subTitle')}</p>
+                        <div className="mt-[33px] flex justify-center">
+                            <WrapperButton
+                                onClick={toggle}
+                                className="relative flex cursor-pointer flex-row  bg-v2 px-[42px] py-6 text-lg font-semibold"
+                            >
+                                {t('common:button.apply')}
+                            </WrapperButton>
+                        </div>
+                    </motion.div>
+                </motion.div>
                 <Modal isOpen={isOpen} onClose={toggle}>
                     {/* <div className="text-center">
                         <div className="text-lg font-semibold">Thank you!</div>
@@ -76,7 +129,7 @@ const WrapperButton = styled(Button)`
     &:hover {
         box-shadow: 0px 5px 30px 0px #8e32d8;
         &::before {
-            background: linear-gradient(208deg, #FFA3F4 0%, #FD55E9 31.77%, #8F24FF 71.14%, #6BAFFF 100%);
+            background: linear-gradient(208deg, #ffa3f4 0%, #fd55e9 31.77%, #8f24ff 71.14%, #6bafff 100%);
         }
     }
 `

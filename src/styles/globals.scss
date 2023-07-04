@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .page-container {
+        @apply mx-auto max-w-screen-xxl px-4 xxl:px-0;
+    }
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -10,13 +16,13 @@
 
 html,
 body {
-    font-family: var(--manrope-font);
-    @apply font-light text-white text-base h-full;
+    font-family: var(--lexend-font);
+    @apply h-full text-base font-light text-white;
     overflow-x: hidden;
 }
 
-.main{
-    @apply relative z-10 flex flex-col items-center
+.main {
+    @apply relative z-10 flex flex-col items-center;
 }
 
 .viewport-header {
@@ -28,12 +34,13 @@ body {
     justify-content: center;
 }
 
-.swiper-3d .swiper-slide-shadow-left,.swiper-3d .swiper-slide-shadow-right {
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
     display: none !important;
 }
 
 .text-gradient-1 {
-    background: linear-gradient(90deg, #EE87FE 0%, #6E1FCE 100%) ;
+    background: linear-gradient(90deg, #ee87fe 0%, #6e1fce 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
