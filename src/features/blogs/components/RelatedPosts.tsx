@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 
-const RelatedThumbnail = ({ title, feature_image, slug }) => (
+const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
     <Link href={`/blogs/${slug}`} className="inline-block">
         <div className="flex gap-3">
             <Image
@@ -13,7 +13,7 @@ const RelatedThumbnail = ({ title, feature_image, slug }) => (
                 fill
                 alt="blog-image"
             />
-            <div className="text-sm text-gray-2">T{title}</div>
+            <div className="text-sm text-gray-2">{title}</div>
         </div>
     </Link>
 )
@@ -23,7 +23,7 @@ const RelatedPosts = ({ tabPosts }: any) => {
         <div className="space-y-6">
             <div className="text-xl">Related Posts</div>
             <div className="space-y-6">
-                {tabPosts?.map((tag) => (
+                {tabPosts?.map((tag: any) => (
                     <RelatedThumbnail key={tag.id} title={tag.title} feature_image={tag.feature_image} slug={tag.slug} />
                 ))}
             </div>
