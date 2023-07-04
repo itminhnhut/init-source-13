@@ -17,7 +17,7 @@ const Button: FC<LayoutI> = ({ children, className, iconType, ...props }) => {
 
     return (
         <button
-            className={classNames(className, 'flex cursor-pointer flex-row bg-gradient-2 px-6 py-4 font-medium ')}
+            className={classNames(className, 'flex cursor-pointer flex-row bg-gradient-2 px-6 py-4 font-medium rounded-[10px]')}
             {...props}
         >
             {children}
