@@ -10,8 +10,8 @@ export function useOnClickOutside<T extends HTMLElement = HTMLElement>(ref: RefO
             }
             handler()
         }
-        window.addEventListener('mousedown', handlerClick)
+        window.addEventListener('mouseup', handlerClick)
 
-        return () => window.removeEventListener('mousedown', handlerClick)
+        return () => window.removeEventListener('mouseup', handlerClick)
     }, [ref, handler])
 }
