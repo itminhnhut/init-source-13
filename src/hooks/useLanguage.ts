@@ -5,6 +5,11 @@ export const LANGUAGE_TAG = {
     EN: 'en',
 }
 
+export const LANGUAGE_NAME = {
+    [LANGUAGE_TAG.VI]: 'Vietnamese',
+    [LANGUAGE_TAG.EN]: 'English',
+} as const
+
 export type LANGUAGE_KEY = keyof typeof LANGUAGE_TAG
 
 const useLanguage = (): [string | undefined, (nextLanguage?: string) => void] => {
