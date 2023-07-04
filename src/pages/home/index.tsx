@@ -37,7 +37,7 @@ export default function Home() {
                 <div className="mt-[60px] lg:mt-[82px] flex justify-center">
                     <WrapperButton
                         onClick={toggle}
-                        className="relative flex cursor-pointer flex-row  text-lg px-[42px] py-6 font-semibold rounded-md bg-v2"
+                        className="relative flex cursor-pointer flex-row  text-lg px-[42px] py-6 font-semibold rounded-[10px] bg-v2"
                     >
                         {t('common:button.apply')}
                     </WrapperButton>
