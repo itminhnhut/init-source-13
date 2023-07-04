@@ -7,10 +7,13 @@ import { Params as GhostParams } from '@tryghost/content-api'
 
 import BlogsApi from '@/src/services/GhostClient'
 
+import GHOST_DETAIL from "@/types/blogs";
+
+
 const Blogs = dynamic(() => import('@/features/blogs'), { ssr: false })
 
 type Props = {
-    posts: {}
+    posts: GHOST_DETAIL[]
 }
 
 const index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {

@@ -1,8 +1,7 @@
-import React from 'react'
-
 import Image from 'next/image'
 import Link from 'next/link'
 
+import GHOST_DETAIL from "@/types/blogs";
 
 const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
     <Link href={`/blogs/${slug}`} className="inline-block">
@@ -18,12 +17,16 @@ const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
     </Link>
 )
 
-const RelatedPosts = ({ tabPosts }: any) => {
+type RelatedPostsProps = {
+    tabPosts: GHOST_DETAIL[]
+}
+
+const RelatedPosts = ({ tabPosts }: RelatedPostsProps) => {
     return (
         <div className="space-y-6">
             <div className="text-xl">Related Posts</div>
             <div className="space-y-6">
-                {tabPosts?.map((tag: any) => (
+                {tabPosts?.map((tag) => (
                     <RelatedThumbnail key={tag.id} title={tag.title} feature_image={tag.feature_image} slug={tag.slug} />
                 ))}
             </div>

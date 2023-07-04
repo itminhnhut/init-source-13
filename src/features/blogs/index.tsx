@@ -1,11 +1,12 @@
-import IconButton from '@/components/Elements/Button/IconButton'
 import Navigator from '@/components/Elements/SwiperNavigator'
-import Image from 'next/image'
 import React, { useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import BlogThumbnail from './components/BlogThumbnail'
 
-const Blogs = ({ dataBlogs }: any) => {
+import GHOST_DETAIL from "@/types/blogs";
+
+
+const Blogs = ({ dataBlogs }: { dataBlogs: GHOST_DETAIL[] }) => {
     const [swiper, setSwiper] = useState<SwiperClass | null>(null)
 
     return (
@@ -39,7 +40,7 @@ const Blogs = ({ dataBlogs }: any) => {
                     className="w-full"
                     spaceBetween={24}
                 >
-                    {dataBlogs.map((blog: any, index: number) => (
+                    {dataBlogs.map((blog, index: number) => (
                         <SwiperSlide key={index} >
                             <BlogThumbnail featureImage={blog.feature_image} title={blog.title} slug={blog.slug} />
                         </SwiperSlide>
