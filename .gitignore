@@ -57,4 +57,4 @@ yarn.lock
 package-lock.json
 
 # sitemap
-!/*.xml
+/public/sitemap*.xml
