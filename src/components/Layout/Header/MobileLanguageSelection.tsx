@@ -17,7 +17,7 @@ const MobileLanguageSelection: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                 },
             )}
         >
-            <div className="flex h-full flex-col items-center justify-center space-y-4">
+            <div className="flex h-full pt-[calc(80px+34px)] flex-col items-center space-y-4">
                 {Object.keys(LANGUAGE_TAG).map((key) => {
                     const language = LANGUAGE_TAG[key as LANGUAGE_KEY]
                     return (
@@ -25,8 +25,8 @@ const MobileLanguageSelection: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                             disabled={language === currentLanguage}
                             key={key}
                             onClick={() => setLanguage(key)}
-                            className={classNames('py-[10px]', {
-                                ' text-white': language === currentLanguage,
+                            className={classNames('py-[10px] text-gray-2 text-lg', {
+                                '!text-white !text-base': language === currentLanguage,
                             })}
                         >
                             {LANGUAGE_NAME[language]}
