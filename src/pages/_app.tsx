@@ -4,7 +4,7 @@ import { appWithTranslation } from 'next-i18next'
 
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import { Lexend } from 'next/font/google'
+import { Manrope } from 'next/font/google'
 
 import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
@@ -24,9 +24,9 @@ import dynamic from 'next/dynamic'
 
 NProgress.configure({ showSpinner: false })
 
-const lexend = Lexend({
+const manrope = Manrope({
     subsets: ['latin'],
-    variable: "--font-lexend",
+    variable: "--font-manrope",
 })
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -55,7 +55,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             <BreadcrumbJsonLd data={BREAD_CRUMB_JSON_LD} />
             <style jsx global>{`
                 :root {
-                --lexend-font: ${lexend.style.fontFamily};
+                --manrope-font: ${manrope.style.fontFamily};
                 }
             `}</style>
             <Layout>
