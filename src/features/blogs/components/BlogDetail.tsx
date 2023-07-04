@@ -3,7 +3,14 @@ import RelatedPosts from './RelatedPosts'
 import TeamSocials from '@/features/team/components/TeamSocials'
 import BackToSection from './BackToSection'
 
-const BlogDetail = ({ detail, tabPosts }: any) => {
+import GHOST_DETAIL from "@/types/blogs";
+
+type BlogDetailProps = {
+    detail: GHOST_DETAIL
+    tabPosts: GHOST_DETAIL[]
+}
+
+const BlogDetail = ({ detail, tabPosts }: BlogDetailProps) => {
     return (
         <div>
             <BackToSection />

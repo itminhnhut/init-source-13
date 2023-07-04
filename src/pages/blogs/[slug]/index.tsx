@@ -6,12 +6,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import BlogsApi from '@/src/services/GhostClient'
 
+import GHOST_DETAIL from "@/types/blogs";
+
 
 const BlogDetail = dynamic(() => import('@/features/blogs/components/BlogDetail'), { ssr: false })
 
 type props = {
-    posts: any
-    tabPosts: any
+    posts: GHOST_DETAIL
+    tabPosts: GHOST_DETAIL[]
 }
 
 const index = ({ posts, tabPosts }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -40,6 +42,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<props> = async ({ locale, params }) => {
     const result = await BlogsApi.getSinglePost(params?.slug as string);
+
     const filter = `id:-${result.id}+tag:${result?.primary_tag?.slug}`
     const options = {
         page: 1,

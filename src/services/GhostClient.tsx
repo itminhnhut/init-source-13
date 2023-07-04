@@ -13,7 +13,7 @@ const apiGhost = new GhostContentAPI({
 });
 
 const BlogsApi = {
-    getTagPosts: async (options: any): Promise<any> => {
+    getTagPosts: async (options: GhostParams | any): Promise<any> => {
         return await apiGhost.posts.browse(options)
             .catch(err => {
                 throw new Error(err)
