@@ -55,3 +55,6 @@ static/server
 # lock file
 yarn.lock
 package-lock.json
+
+# sitemap
+/public/sitemap*.xml

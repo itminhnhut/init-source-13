@@ -10,7 +10,7 @@
 
 html,
 body {
-    font-family: var(--lexend-font);
+    font-family: var(--manrope-font);
     @apply font-light text-white text-base h-full;
     overflow-x: hidden;
 }
@@ -37,6 +37,8 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
 }
 
 .wrapper-button {
