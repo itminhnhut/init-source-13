@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import dynamic from 'next/dynamic'
 
-const TabsAbout = dynamic(() => import('@/features/partners/components/tabs'))
+const TabsAbout = dynamic(() => import('@/features/partners/components/Tabs'), { ssr: false })
 
 const partner = () => {
     return (

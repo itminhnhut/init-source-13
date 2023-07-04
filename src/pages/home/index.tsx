@@ -14,7 +14,6 @@ const TextAreaField = dynamic(() => import('@/components/Form/TextAreaField'), {
 import { Montserrat } from 'next/font/google'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -40,7 +39,7 @@ export default function Home() {
                     }}
                     className="text-4xl4 lg:text-6xl4 font-semibold"
                 >
-                    Empowering the decentralised Web
+                    {t('home:title')}
                 </motion.h1>
                 <motion.p
                     initial={{
@@ -53,7 +52,7 @@ export default function Home() {
                     }}
                     className="mt-4 text-lg"
                 >
-                    SCI Labs invests in technical teams that build and support the decentralised web.
+                    {t('home:subTitle')}
                 </motion.p>
                 <motion.div
                     initial={{
@@ -71,7 +70,7 @@ export default function Home() {
                         iconType="vector"
                         className="relative flex cursor-pointer flex-row rounded-full text-lg"
                     >
-                        Apply Now
+                        {t('common:button.apply')}
                     </WrapperButton>
                 </motion.div>
                 <Modal isOpen={isOpen} onClose={toggle}>

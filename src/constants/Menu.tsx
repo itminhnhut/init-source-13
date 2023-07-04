@@ -1,36 +1,35 @@
 const MENU = [
     {
         route: '/',
-        title: 'Intro',
-        hide: true
+        title: { vi: 'Intro', en: 'Intro' },
     },
     {
         route: '/home',
-        title: 'Home',
+        title: { vi: 'Trang chủ', en: 'Home' }
     },
     {
         route: '/about-us',
-        title: 'About Us',
+        title: { vi: 'Về chúng tôi', en: 'About Us' }
     },
     {
         route: '/blogs',
-        title: 'Blogs',
+        title: { vi: 'Blog', en: 'Blog' }
     },
     {
         route: '/portfolio',
-        title: 'Portfolio',
+        title: { vi: 'Đội ngũ', en: 'Porfolio' }
     },
     {
         route: '/team',
-        title: 'Team',
+        title: { vi: 'Đội ngũ', en: 'Team' }
     },
     {
         route: '/partners',
-        title: 'Partners',
+        title: { vi: 'Đối tác', en: 'Partner' }
     },
     {
         route: '/footer',
-        title: 'Footer',
+        title: { vi: 'Liên hệ', en: 'Contact' }
     },
 ]
 export default MENU

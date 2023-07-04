@@ -1,16 +1,19 @@
 import { useState } from 'react'
-
+import Image from 'next/image'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 import classNames from 'classnames'
-import Image from 'next/image'
+
+// ** Types
+import LANGUAGE from '@/types/language'
+import { useTranslation } from 'next-i18next'
 
 const dataTabs = [
     {
-        title: 'Strategic',
+        title: { vi: 'Chiến lược', en: 'Strategic' }
     },
     {
-        title: 'Media',
+        title: { vi: 'Truyền thông', en: 'Media' }
     },
 ]
 
@@ -54,6 +57,10 @@ const TAB_PANEL_1 = [
 ]
 
 const TabsAbout = () => {
+    const {
+        t,
+        i18n: { language },
+    } = useTranslation()
     const [tabIndex, setTabIndex] = useState(0)
 
     const handleChangTab = (key: number) => setTabIndex(key)
@@ -65,10 +72,10 @@ const TabsAbout = () => {
                     className={classNames('text-lg text-white', {
                         'text-gradient-1': key === tabIndex,
                     })}
-                    key={`tab_${item.title}`}
+                    key={`tab_${item.title?.[language as keyof LANGUAGE]}`}
                     onClick={() => handleChangTab(key)}
                 >
-                    {item.title}
+                    {item.title?.[language as keyof LANGUAGE]}
                 </Tab>
             )
         })
