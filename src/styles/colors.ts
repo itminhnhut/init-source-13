@@ -7,5 +7,8 @@ const colors = {
         1: '#2F2E31',
         2: '#8A8A8E',
     },
+    red: {
+        default: '#FF3B30'
+    }
 }
 export default colors

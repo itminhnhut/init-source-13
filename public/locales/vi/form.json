@@ -1,0 +1,18 @@
+{
+    "title": "Cổng đăng ký SCI Labs",
+    "des": "Hãy cung cấp những thông tin được yêu cầu chính xác và đầy đủ. Xin hãy lưu ý việc xác nhận bạn đã nộp đơn đăng ký không đồng nghĩa với bất kỳ cam kết nào về đầu tư hoặc chấp thuận.",
+    "label": {
+        "full_name": "Tên đầy đủ",
+        "email": "Email",
+        "telegram": "Telegram",
+        "description": "Mô tả",
+        "link": "Đường dẫn (Website/Tài liệu)"
+    },
+    "placeholder": {
+        "full_name": "Nhập tên đầy đủ",
+        "email": "Nhập email",
+        "telegram": "Nhập telegram ID",
+        "description": "Nhập Mô tả",
+        "link": "Nhập đường dẫn (Website/Tài liệu)"
+    }
+}

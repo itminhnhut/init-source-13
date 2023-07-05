@@ -2,6 +2,7 @@
   "title": "common vi",
   "button": {
     "apply": "Talk with SCI Labs!",
-    "start": "Bắt đầu ngay"
+    "start": "Bắt đầu ngay",
+    "send": "Send"
   }
 }

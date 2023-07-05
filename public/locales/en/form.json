@@ -1,0 +1,18 @@
+{
+    "title": "SCI Labs Application Form",
+    "des": "Please provide all requested information in a precise and obvious way, and note that submission does not constitute a commitment to any responses or investment decisions.",
+    "label": {
+        "full_name": "Full Name",
+        "email": "Email",
+        "telegram": "Telegram",
+        "description": "Description",
+        "link": "Link (Website/Docs)"
+    },
+    "placeholder": {
+        "full_name": "Enter your full name",
+        "email": "Enter your email",
+        "telegram": "Enter your telegram ID",
+        "description": "Enter description",
+        "link": "Enter link (Website/Docs)"
+    }
+}

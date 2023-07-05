@@ -1,0 +1,6 @@
+{
+    "required": "Xin vui lòng nhập {{label}}",
+    "email": "{{label}} không hợp lệ",
+    "matches": "{{label}} không hợp lệ",
+    "typeError": "{{label}} không hợp lệ"
+}
