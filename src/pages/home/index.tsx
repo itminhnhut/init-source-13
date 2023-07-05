@@ -4,7 +4,6 @@ import { GetStaticProps } from 'next'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
-import { styled } from 'styled-components'
 
 import dynamic from 'next/dynamic'
 
@@ -86,12 +85,12 @@ export default function Home() {
                     <motion.div variants={subTitleVarians}>
                         <p className="mt-4 text-lg opacity-60">{t('home:subTitle')}</p>
                         <div className="mt-[33px] flex justify-center">
-                            <WrapperButton
+                            <Button
                                 onClick={toggle}
-                                className="relative flex cursor-pointer flex-row  bg-v2 px-[42px] py-6 text-lg font-semibold"
+                                className="relative flex cursor-pointer flex-row px-[42px] py-6 text-lg font-semibold btn-gradient"
                             >
                                 {t('common:button.apply')}
-                            </WrapperButton>
+                            </Button>
                         </div>
                     </motion.div>
                 </motion.div>
@@ -123,16 +122,6 @@ export default function Home() {
     )
 }
 
-const WrapperButton = styled(Button)`
-    position: relative;
-    transition: all 0.1s ease-out;
-    &:hover {
-        box-shadow: 0px 5px 30px 0px #8e32d8;
-        &::before {
-            background: linear-gradient(208deg, #ffa3f4 0%, #fd55e9 31.77%, #8f24ff 71.14%, #6bafff 100%);
-        }
-    }
-`
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
