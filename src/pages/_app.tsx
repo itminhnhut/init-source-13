@@ -8,7 +8,7 @@ import { Manrope } from 'next/font/google'
 
 import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
-const Layout = dynamic(() => import('@/components/layout'), { ssr: false })
+const Layout = dynamic(() => import('@/components/Layout'), { ssr: false })
 
 import { BREAD_CRUMB_JSON_LD } from '@/constants'
 
