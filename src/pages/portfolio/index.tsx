@@ -8,13 +8,14 @@ import { getOutScreenVariants, transitionProps } from '@/constants/motion-varian
 
 const TAB_PANEL_1 = [
     {
-        src: '/images/portfolio/ic_portfolio.png',
+        src: '/images/portfolio/logo_insurance.png',
+        width: 289,
+        height: 80
     },
     {
-        src: '/images/portfolio/ic_portfolio.png',
-    },
-    {
-        src: '/images/portfolio/ic_portfolio.png',
+        src: '/images/portfolio/logo.png',
+        width: 341,
+        height: 80
     },
 ]
 
@@ -45,15 +46,15 @@ const Portfolio = () => {
                     variants={getOutScreenVariants('bottom')}
                     initial="hidden"
                     animate="show"
-                    className="mt-[30px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8"
+                    className="mt-[82px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8"
                 >
-                    {TAB_PANEL_1?.map((item: { src: string }, key: number) => {
+                    {TAB_PANEL_1?.map((item: { src: string, width: number, height: number }, key: number) => {
                         return (
                             <Image
                                 key={`partners_${key}`}
                                 src={item.src}
-                                width={170}
-                                height={60}
+                                width={item.width}
+                                height={item.height}
                                 alt="partners"
                                 className="cursor-pointer opacity-50 hover:opacity-100"
                             />

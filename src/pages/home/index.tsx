@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 
 const Button = dynamic(() => import('@/components/Elements/Button'), { ssr: false })
 
-const FormRegister = dynamic(() => import('@/features/home/components/FormRegister'), { ssr: false })
+const FormRegister = dynamic(() => import('@/features/form-register/FormRegister'), { ssr: false })
 
 const wrapperVariants = {
     hidden: { opacity: 0 },
@@ -65,8 +65,8 @@ export default function Home() {
     const { t } = useTranslation()
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
-    const toggle = () => setIsOpen((prev) => !prev)
 
+    const toggle = () => setIsOpen((prev) => !prev)
     return (
         <main className="main">
             <section className="w-full px-4 pt-[149px] text-center text-white lg:mx-0 lg:w-[600px] lg:pt-[129px]">
@@ -87,31 +87,6 @@ export default function Home() {
                     </motion.div>
                 </motion.div>
                 <FormRegister isOpen={isOpen} onClose={toggle} />
-                {/* <Modal isOpen={!isOpen} onClose={toggle}>
-                    <div className="text-center">
-                        <div className="text-lg font-semibold">Thank you!</div>
-                        <div className=" mb-6 text-gray-2">Description</div>
-                        <div className="flex justify-center">
-                            <Image src="/images/Modal/check_success.png" width={332} height={332} alt="check_success" />
-                        </div>
-                    </div>
-                    <div>
-                        <h1 className={`${montserrat.className} mt-2 text-center text-[20px] font-semibold leading-6`}>
-                            {t('form:title')}
-                        </h1>
-                        <h2 className="mt-1 text-center opacity-50"> {t('form:des')}</h2>
-                        <form className="mt-[22px]">
-                            <InputField label={t('form:label:full_name')} placeholder={t('form:placeholder:full_name')} isRequired />
-                            <InputField className="mt-4" label={t('form:label:email')} placeholder={t('form:placeholder:email')} isRequired />
-                            <InputField className="mt-4" label={t('form:label:telegram')} placeholder={t('form:placeholder:telegram')} isRequired />
-                            <InputField className="mt-4" label={t('form:label:link')} placeholder={t('form:placeholder:link')} isRequired />
-                            <TextAreaField className="mt-4 " label={t('form:label:description')} rows={3} />
-                            <Button className="mt-6 flex w-full justify-center rounded-[10px] !py-3 btn-gradient">
-                                {t('common:button:send')}
-                            </Button>
-                        </form>
-                    </div>
-                </Modal> */}
             </section>
         </main >
     )

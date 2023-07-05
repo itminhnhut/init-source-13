@@ -7,9 +7,6 @@ import classNames from 'classnames'
 // ** Types
 import LANGUAGE from '@/types/language'
 import { useTranslation } from 'next-i18next'
-import { motion } from 'framer-motion'
-import { getOutScreenVariants } from '@/constants/motion-variants'
-import { transitionProps } from '../../../constants/motion-variants'
 
 const dataTabs = [
     {
@@ -20,43 +17,46 @@ const dataTabs = [
     },
 ]
 
-const TAB_PANEL_1 = [
+type TabPanelT = {
+    src: string,
+    width: number,
+    height: number
+}
+
+const TAB_PANEL_1: Array<TabPanelT> = [
     {
-        src: '/images/partners/ic_partner.png',
+        src: '/images/partners/strategic/logo_coin98.png',
+        width: 310,
+        height: 80
     },
     {
-        src: '/images/partners/ic_partner.png',
+        src: '/images/partners/strategic/logo_fizen.png',
+        width: 254,
+        height: 80
     },
     {
-        src: '/images/partners/ic_partner.png',
+        src: '/images/partners/strategic/logo_oxalus.png',
+        width: 226,
+        height: 80
+    },
+]
+
+const TAB_PANEL_2: Array<TabPanelT> = [
+    {
+        src: '/images/partners/media/logo_68.png',
+        width: 156,
+        height: 80
     },
     {
-        src: '/images/partners/ic_partner.png',
+        src: '/images/partners/media/logo_vic.png',
+        width: 226,
+        height: 80
     },
     {
-        src: '/images/partners/ic_partner.png',
-    },
-    {
-        src: '/images/partners/ic_partner.png',
-    },
-    {
-        src: '/images/partners/ic_partner.png',
-    },
-    {
-        src: '/images/partners/ic_partner.png',
-    },
-    {
-        src: '/images/partners/ic_partner.png',
-    },
-    {
-        src: '/images/partners/ic_partner.png',
-    },
-    {
-        src: '/images/partners/ic_partner.png',
-    },
-    {
-        src: '/images/partners/ic_partner.png',
-    },
+        src: '/images/partners/media/log_blckchn.png',
+        width: 260,
+        height: 80
+    }
 ]
 
 const TabsAbout = () => {
@@ -94,14 +94,14 @@ const TabsAbout = () => {
                     </TabList>
                     <TabPanel>
                         <article>
-                            <section className="mt-[30px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8">
-                                {TAB_PANEL_1?.map((item: { src: string }, key: number) => {
+                            <section className="mt-[75px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8">
+                                {TAB_PANEL_1?.map((item, key: number) => {
                                     return (
                                         <Image
-                                            key={`partners_${key}`}
+                                            key={`strategic_${key}`}
                                             src={item.src}
-                                            width={170}
-                                            height={60}
+                                            width={item.width}
+                                            height={item.height}
                                             alt="partners"
                                             className="cursor-pointer opacity-50 hover:opacity-100"
                                         />
@@ -111,20 +111,20 @@ const TabsAbout = () => {
                         </article>
                     </TabPanel>
                     <TabPanel>
-                        {/* <article>
-                            <section className="mt-[30px] flex flex-row justify-center gap-x-10">
-                                {TAB_PANEL_1?.map((item: { src: string }) => {
-                                    return (
-                                        <section className="cursor-pointer" key={`Our_Story_${item.subTitle}`}>
-                                            <section className="text-gradient-1 text-[32px] font-medium">
-                                                {item.title}
-                                            </section>
-                                            <section className="font-medium">{item.subTitle}</section>
-                                        </section>
-                                    )
-                                })}
-                            </section>
-                        </article> */}
+                        <section className="mt-[75px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8">
+                            {TAB_PANEL_2?.map((item, key: number) => {
+                                return (
+                                    <Image
+                                        key={`media_${key}`}
+                                        src={item.src}
+                                        width={item.width}
+                                        height={item.height}
+                                        alt="partners"
+                                        className="cursor-pointer opacity-50 hover:opacity-100"
+                                    />
+                                )
+                            })}
+                        </section>
                     </TabPanel>
                 </Tabs>
             </section>
