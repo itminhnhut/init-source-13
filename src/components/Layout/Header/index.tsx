@@ -1,18 +1,32 @@
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import ToggleLanguage from './ToggleLanguage'
 import { useCallback, useEffect, useState } from 'react'
 import classNames from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import LanguageSelection from './LanguageSelection'
-import { LANGUAGE_KEY, LANGUAGE_NAME, LANGUAGE_TAG } from '@/hooks/useLanguage'
 import MobileLanguageSelection from './MobileLanguageSelection'
 import Global from '@/components/Icons/Global'
+import { motion } from 'framer-motion'
 
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
 const IconButton = dynamic(() => import('@/components/Elements/Button/IconButton'), { ssr: false })
+
+const variants = {
+    hidden: {
+        opacity: 0,
+        y: -100,
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            ease: [0.075, 0.82, 0.165, 1],
+            duration: 1,
+        },
+    },
+}
 
 const Header: React.FC = () => {
     const [isOpenMBHeader, setOpenMBHeader] = useState(false)
@@ -57,7 +71,12 @@ const Header: React.FC = () => {
     return (
         <>
             <header className="sticky top-0 z-[1000] w-full">
-                <div className="flex h-[60px] items-center justify-between px-4 mb:h-20 xxl:mx-[110px] ">
+                <motion.div
+                    variants={variants}
+                    initial={'hidden'}
+                    animate={'show'}
+                    className="flex h-[60px] items-center justify-between px-4 mb:h-20 xxl:mx-[110px] "
+                >
                     {/* LOGO */}
                     <Link href="/" passHref>
                         <div
@@ -108,7 +127,7 @@ const Header: React.FC = () => {
                             <HamburgerMenu open={isOpenMBHeader || isShowMBLanguage} />
                         </IconButton>
                     </div>
-                </div>
+                </motion.div>
             </header>
 
             {/* MOBILE LANGUAGE SELECT */}
