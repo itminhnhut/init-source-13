@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { ReactElement, ReactNode, useEffect } from 'react'
 
 import { appWithTranslation } from 'next-i18next'
 
@@ -21,15 +21,24 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import dynamic from 'next/dynamic'
+import { NextPage } from 'next'
 
 NProgress.configure({ showSpinner: false })
 
 const manrope = Manrope({
     subsets: ['latin'],
-    variable: "--font-manrope",
+    variable: '--font-manrope',
 })
 
-const App = ({ Component, pageProps }: AppProps) => {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+    notGetLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+    Component: NextPageWithLayout
+}
+
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     const router = useRouter()
 
     const { locale, pathname } = router
@@ -49,18 +58,21 @@ const App = ({ Component, pageProps }: AppProps) => {
         }
     }, [router.events])
 
+    const getLayout = Component.notGetLayout || ((page) => <Layout>{page}</Layout>)
+
     return (
         <>
             <NextSEO pathname={pathname} locale={locale} />
             <BreadcrumbJsonLd data={BREAD_CRUMB_JSON_LD} />
             <style jsx global>{`
                 :root {
-                --manrope-font: ${manrope.style.fontFamily};
+                    --manrope-font: ${manrope.style.fontFamily};
                 }
             `}</style>
-            <Layout>
+            {getLayout(<Component {...pageProps} />)}
+            {/* <Layout>
                 <Component {...pageProps} />
-            </Layout>
+            </Layout> */}
         </>
     )
 }
