@@ -120,8 +120,6 @@ const WrapperMain = styled.main`
     min-width: 100%;
     min-height: 100%;
     position: fixed;
-    top: 0%;
-    right: 0%;
 `
 
 export default TabsAbout
