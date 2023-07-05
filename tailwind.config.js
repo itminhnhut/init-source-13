@@ -31,7 +31,6 @@ module.exports = {
                 'gradient-2': 'linear-gradient(270deg, #4D09BC 0%, #6E1FCE 32.29%, #CC55E9 67.23%, #FDBDF9 100%)',
                 'gradient-1': 'linear-gradient(0deg, rgba(240,135,255,0) 0%, rgba(240,135,255,1) 100%)',
                 'gradient-width': 'linear-gradient(0deg, rgba(240,135,255,0) 0%, rgba(240,135,255,1) 100%)',
-                v2: ' linear-gradient(208deg, #FFA3F4 0%, #FD55E9 31.77%, #8F24FF 71.14%, #6BAFFF 100%)',
             },
             colors: {
                 ...colors,

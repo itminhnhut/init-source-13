@@ -22,8 +22,7 @@ const Footer = () => {
                 <h2 className='font-medium'>{t('footer:subTitle')}</h2>
                 <section className='mt-10 flex justify-center'>
                     <Button onClick={toggle}
-                        iconType="vector"
-                        className="relative flex cursor-pointer flex-row rounded-full text-lg wrapper-button">
+                        className="relative flex cursor-pointer flex-row px-[42px] py-6 text-lg font-semibold btn-gradient">
                         {t('common:button.start')}
                     </Button>
                 </section>
