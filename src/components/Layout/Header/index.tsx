@@ -11,6 +11,7 @@ import { motion } from 'framer-motion'
 import { getOutScreenVariants } from '@/constants/motion-variants'
 import { styled } from 'styled-components'
 import { HEADER_DESKTOP_HEIGHT, HEADER_MOBILE_HEIGHT } from '@/styles/constants'
+import Drawer from '@/components/Elements/Modal/Drawer'
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
 const IconButton = dynamic(() => import('@/components/Elements/Button/IconButton'), { ssr: false })
@@ -38,19 +39,11 @@ const Header: React.FC = () => {
 
     const renderMobileHeader = useCallback(
         () => (
-            <div
-                className={classNames(
-                    'fixed top-0 z-[999] flex h-full w-full items-center justify-center bg-[#151515]/30 text-white backdrop-blur-[15px] transition-all duration-300 ease-in-out',
-                    {
-                        '-right-full opacity-0': !isOpenMBHeader,
-                        'right-0 opacity-100': isOpenMBHeader,
-                    },
-                )}
-            >
+            <Drawer isOpen={isOpenMBHeader}>
                 <div className="space-y-8">
                     <HeaderTabs />
                 </div>
-            </div>
+            </Drawer>
         ),
         [isOpenMBHeader],
     )
@@ -118,9 +111,9 @@ const Header: React.FC = () => {
                 </HeaderWrapper>
             </header>
 
-            {/* MOBILE LANGUAGE SELECT */}
+            {/* MOBILE LANG SELECTION */}
             <MobileLanguageSelection isShow={isShowMBLanguage} />
-            {/* MOBILE LANGUAGE SELECT */}
+            {/* MOBILE LANG SELECTION */}
 
             {/* MOBILE NAV */}
             {renderMobileHeader()}
