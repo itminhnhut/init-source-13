@@ -52,10 +52,10 @@ const Header: React.FC = () => {
         <>
             <header className="relative z-[1000] w-full">
                 <HeaderWrapper
-                    as={motion.div}
-                    variants={getOutScreenVariants('top')}
-                    initial="hidden"
-                    animate="show"
+                    // as={motion.div}
+                    // variants={getOutScreenVariants('top')}
+                    // initial="hidden"
+                    // animate="show"
                     className="flex items-center justify-between px-4 xxl:mx-[110px] "
                 >
                     {/* LOGO */}

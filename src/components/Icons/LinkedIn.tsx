@@ -1,7 +1,7 @@
 import React from 'react'
 import { SVGTypes } from './type'
 
-const In: React.FC<SVGTypes> = ({ size, color = 'currentColor' }) => {
+const LinkedIn: React.FC<SVGTypes> = ({ size, color = 'currentColor' }) => {
     return (
         <svg width={size} height={size} viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.2188 9.6875H5.24023V19.186H8.2188V9.6875Z" fill={color} />
@@ -11,4 +11,4 @@ const In: React.FC<SVGTypes> = ({ size, color = 'currentColor' }) => {
     )
 }
 
-export default In
+export default LinkedIn

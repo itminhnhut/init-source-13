@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import Button from '@/components/Elements/Button'
 import IconButton from '@/components/Elements/Button/IconButton'
-import In from '@/components/Icons/In'
+import In from '@/components/Icons/LinkedIn'
 import Facebook from '@/components/Icons/Facebook'
 import Twitter from '@/components/Icons/Twitter'
 

@@ -31,8 +31,7 @@ const Portfolio = () => {
                         scale: 1,
                         y: 0,
                         transition: {
-                            duration: 0.5,
-                            type: 'tween',
+                            ...transitionProps,
                         },
                     },
                 }}

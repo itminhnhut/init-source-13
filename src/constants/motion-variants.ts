@@ -1,3 +1,5 @@
+import { Variant } from 'framer-motion'
+
 export const easeArray = [0.075, 0.82, 0.165, 1]
 
 const defaultVariants = {
@@ -11,10 +13,13 @@ const defaultVariants = {
 
 export const transitionProps = {
     ease: easeArray,
-    duration: 1,
+    duration: 0.9,
 }
 
-export const getOutScreenVariants = (fromOutScreenPosition: 'left' | 'right' | 'bottom' | 'top') => {
+export const getOutScreenVariants = (
+    fromOutScreenPosition: 'left' | 'right' | 'bottom' | 'top',
+    extendVariants?: { hidden?: Variant; show?: Variant },
+) => {
     let initX: string | number = 0,
         initY: string | number = 0
 
@@ -31,6 +36,7 @@ export const getOutScreenVariants = (fromOutScreenPosition: 'left' | 'right' | '
             ...defaultVariants['hidden'],
             y: initY,
             x: initX,
+            ...extendVariants?.['hidden'],
         },
         show: {
             ...defaultVariants['show'],
@@ -39,6 +45,7 @@ export const getOutScreenVariants = (fromOutScreenPosition: 'left' | 'right' | '
             transition: {
                 ...transitionProps,
             },
+            ...extendVariants?.['show'],
         },
     }
 }
