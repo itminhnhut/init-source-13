@@ -17,7 +17,7 @@
 html,
 body {
     font-family: var(--manrope-font);
-    @apply h-full text-base font-light text-white;
+    @apply h-full text-base font-light text-white no-scrollbar;
     overflow-x: hidden;
 }
 

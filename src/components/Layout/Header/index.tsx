@@ -8,25 +8,12 @@ import LanguageSelection from './LanguageSelection'
 import MobileLanguageSelection from './MobileLanguageSelection'
 import Global from '@/components/Icons/Global'
 import { motion } from 'framer-motion'
-
+import { getOutScreenVariants } from '@/constants/motion-variants'
+import { styled } from 'styled-components'
+import { HEADER_DESKTOP_HEIGHT, HEADER_MOBILE_HEIGHT } from '@/styles/constants'
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
 const IconButton = dynamic(() => import('@/components/Elements/Button/IconButton'), { ssr: false })
-
-const variants = {
-    hidden: {
-        opacity: 0,
-        y: -100,
-    },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            ease: [0.075, 0.82, 0.165, 1],
-            duration: 1,
-        },
-    },
-}
 
 const Header: React.FC = () => {
     const [isOpenMBHeader, setOpenMBHeader] = useState(false)
@@ -70,12 +57,13 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <header className="sticky top-0 z-[1000] w-full">
-                <motion.div
-                    variants={variants}
-                    initial={'hidden'}
-                    animate={'show'}
-                    className="flex h-[60px] items-center justify-between px-4 mb:h-20 xxl:mx-[110px] "
+            <header className="relative z-[1000] w-full">
+                <HeaderWrapper
+                    as={motion.div}
+                    variants={getOutScreenVariants('top')}
+                    initial="hidden"
+                    animate="show"
+                    className="flex items-center justify-between px-4 xxl:mx-[110px] "
                 >
                     {/* LOGO */}
                     <Link href="/" passHref>
@@ -127,7 +115,7 @@ const Header: React.FC = () => {
                             <HamburgerMenu open={isOpenMBHeader || isShowMBLanguage} />
                         </IconButton>
                     </div>
-                </motion.div>
+                </HeaderWrapper>
             </header>
 
             {/* MOBILE LANGUAGE SELECT */}
@@ -140,5 +128,13 @@ const Header: React.FC = () => {
         </>
     )
 }
+
+const HeaderWrapper = styled.div`
+    height: ${HEADER_MOBILE_HEIGHT}px;
+
+    @media screen and (min-width: 820px) {
+        height: ${HEADER_DESKTOP_HEIGHT}px;
+    }
+`
 
 export default Header

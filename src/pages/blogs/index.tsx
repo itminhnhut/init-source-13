@@ -18,7 +18,7 @@ type Props = {
 
 const index = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
-        <section className="page-container flex items-center justify-center px-4 lg:px-[112px]">
+        <section className="page-container min-h-[calc(100vh-80px)] flex items-center justify-center px-4 lg:px-[112px]">
             <Blogs dataBlogs={posts} />
         </section>
     )
