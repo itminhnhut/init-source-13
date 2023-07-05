@@ -2,6 +2,7 @@
   "title": "common",
   "button": {
     "apply": "Talk with SCI Labs!",
-    "start": "Start Building"
+    "start": "Start Building",
+    "send": "Send"
   }
 }

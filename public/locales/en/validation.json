@@ -1,0 +1,6 @@
+{
+    "required": "Please enter {{label}}",
+    "email": "Invalid {{label}}",
+    "matches": "{{field}} is invalid",
+    "typeError": "{{label}} is invalid"
+}
