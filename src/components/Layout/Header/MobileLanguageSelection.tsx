@@ -5,7 +5,6 @@ import React from 'react'
 
 const MobileLanguageSelection: React.FC<{ isShow: boolean }> = ({ isShow }) => {
     const [currentLanguage, setLanguage] = useLanguage()
-    const { width } = useWindowSize()
 
     return (
         <div
@@ -17,7 +16,7 @@ const MobileLanguageSelection: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                 },
             )}
         >
-            <div className="flex h-full pt-[calc(80px+34px)] flex-col items-center space-y-4">
+            <div className="flex h-full flex-col items-center space-y-4 pt-[calc(80px+34px)]">
                 {Object.keys(LANGUAGE_TAG).map((key) => {
                     const language = LANGUAGE_TAG[key as LANGUAGE_KEY]
                     return (
@@ -25,8 +24,8 @@ const MobileLanguageSelection: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                             disabled={language === currentLanguage}
                             key={key}
                             onClick={() => setLanguage(key)}
-                            className={classNames('py-[10px] text-gray-2 text-lg', {
-                                '!text-white !text-base': language === currentLanguage,
+                            className={classNames('py-[10px] text-lg text-gray-2', {
+                                '!text-base !text-white': language === currentLanguage,
                             })}
                         >
                             {LANGUAGE_NAME[language]}

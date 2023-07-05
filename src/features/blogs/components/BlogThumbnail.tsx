@@ -11,7 +11,7 @@ type BlogThumbnailProps = {
 
 const BlogThumbnail: FC<BlogThumbnailProps> = ({ featureImage, title, slug }) => {
     return (
-        <Link href={`/blogs/${slug}`} passHref className="inline-block">
+        <Link href={`/blogs/${slug}`} passHref className="inline-block w-full">
             <div className="relative h-full rounded-[20px] bg-black-1 p-4 transition hover:bg-black-1 mb:bg-transparent">
                 <div className="space-y-2">
                     <Image
