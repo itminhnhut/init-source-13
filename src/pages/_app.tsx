@@ -31,7 +31,7 @@ const manrope = Manrope({
 })
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
-    notGetLayout?: (page: ReactElement) => ReactNode
+    notGetLayout?: boolean
 }
 
 type AppPropsWithLayout = AppProps & {
@@ -58,8 +58,6 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         }
     }, [router.events])
 
-    const getLayout = Component.notGetLayout || ((page) => <Layout>{page}</Layout>)
-
     return (
         <>
             <NextSEO pathname={pathname} locale={locale} />
@@ -69,10 +67,13 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
                     --manrope-font: ${manrope.style.fontFamily};
                 }
             `}</style>
-            {getLayout(<Component {...pageProps} />)}
-            {/* <Layout>
+            {Component.notGetLayout ? (
                 <Component {...pageProps} />
-            </Layout> */}
+            ) : (
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            )}
         </>
     )
 }

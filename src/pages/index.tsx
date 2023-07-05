@@ -5,13 +5,10 @@ import Image from 'next/image'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
 
-import { Inter } from 'next/font/google'
 import { motion } from 'framer-motion'
 import { transitionProps } from '../constants/motion-variants'
-import { ReactElement, useEffect } from 'react'
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
     const { t } = useTranslation()
@@ -44,10 +41,7 @@ export default function Home() {
     )
 }
 
-Home.notGetLayout = function notGetLayout(page: ReactElement) {
-    return page
-}
-
+Home.notGetLayout = true
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
         props: {
