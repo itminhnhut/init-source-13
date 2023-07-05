@@ -35,18 +35,6 @@ const Layout: FC<LayoutI> = ({ children }) => {
 }
 
 const WrapperLayout = styled.section`
-    .video-container {
-        /* position: absolute; */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        /* overflow: hidden; */
-        background-image: url('/images/layout/bg.png');
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
     .video-container video {
         min-width: 100%;
         min-height: 100%;
