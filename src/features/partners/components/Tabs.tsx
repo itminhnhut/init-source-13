@@ -7,13 +7,16 @@ import classNames from 'classnames'
 // ** Types
 import LANGUAGE from '@/types/language'
 import { useTranslation } from 'next-i18next'
+import { motion } from 'framer-motion'
+import { getOutScreenVariants } from '@/constants/motion-variants'
+import { transitionProps } from '../../../constants/motion-variants'
 
 const dataTabs = [
     {
-        title: { vi: 'Chiến lược', en: 'Strategic' }
+        title: { vi: 'Chiến lược', en: 'Strategic' },
     },
     {
-        title: { vi: 'Truyền thông', en: 'Media' }
+        title: { vi: 'Truyền thông', en: 'Media' },
     },
 ]
 
@@ -83,7 +86,7 @@ const TabsAbout = () => {
 
     return (
         <main className="main text-white">
-            <h1 className="mt-[42.5px] lg:mt-32 text-center text-4xl4 lg:text-6xl4 font-semibold ">Partners</h1>
+            <h1 className="mt-[42.5px] text-center text-4xl4 font-semibold lg:mt-32 lg:text-6xl4">Partners</h1>
             <section className="mt-9 w-full px-4 lg:px-[110px]">
                 <Tabs defaultIndex={tabIndex}>
                     <TabList className="mb-6 flex cursor-pointer flex-row justify-center gap-x-6 text-lg font-medium">

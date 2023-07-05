@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { ReactElement, ReactNode, useEffect } from 'react'
 
 import { appWithTranslation } from 'next-i18next'
 
@@ -8,7 +8,7 @@ import { Manrope } from 'next/font/google'
 
 import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
-const Layout = dynamic(() => import('@/components/Layout'), { ssr: false })
+const Layout = dynamic(() => import('@/components/layout'), { ssr: false })
 
 import { BREAD_CRUMB_JSON_LD } from '@/constants'
 
@@ -21,15 +21,24 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import dynamic from 'next/dynamic'
+import { NextPage } from 'next'
 
 NProgress.configure({ showSpinner: false })
 
 const manrope = Manrope({
     subsets: ['latin'],
-    variable: "--font-manrope",
+    variable: '--font-manrope',
 })
 
-const App = ({ Component, pageProps }: AppProps) => {
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+    notGetLayout?: boolean
+}
+
+type AppPropsWithLayout = AppProps & {
+    Component: NextPageWithLayout
+}
+
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     const router = useRouter()
 
     const { locale, pathname } = router
@@ -55,12 +64,16 @@ const App = ({ Component, pageProps }: AppProps) => {
             <BreadcrumbJsonLd data={BREAD_CRUMB_JSON_LD} />
             <style jsx global>{`
                 :root {
-                --manrope-font: ${manrope.style.fontFamily};
+                    --manrope-font: ${manrope.style.fontFamily};
                 }
             `}</style>
-            <Layout>
+            {Component.notGetLayout ? (
                 <Component {...pageProps} />
-            </Layout>
+            ) : (
+                <Layout>
+                    <Component {...pageProps} />
+                </Layout>
+            )}
         </>
     )
 }

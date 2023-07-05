@@ -1,19 +1,20 @@
 import IconButton from '@/components/Elements/Button/IconButton'
 import Facebook from '@/components/Icons/Facebook'
+import LinkedIn from '@/components/Icons/LinkedIn'
 import Twitter from '@/components/Icons/Twitter'
 import React from 'react'
 
 const TeamSocials = () => {
     return (
         <>
-            <IconButton className="border-0 !bg-[#d9d9d926]" rounded>
+            <IconButton className="border-0 " rounded>
                 <Facebook size={16} color="white" />
             </IconButton>
-            <IconButton className="border-0 !bg-[#d9d9d926]" rounded>
+            <IconButton className="border-0 " rounded>
                 <Twitter size={16} color="white" />
             </IconButton>
-            <IconButton className="border-0 !bg-[#d9d9d926]" rounded>
-                <Twitter size={16} color="white" />
+            <IconButton className="border-0 " rounded>
+                <LinkedIn size={16} color="white" />
             </IconButton>
         </>
     )

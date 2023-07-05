@@ -31,15 +31,14 @@ const Portfolio = () => {
                         scale: 1,
                         y: 0,
                         transition: {
-                            duration: 0.5,
-                            type: 'tween',
+                            ...transitionProps,
                         },
                     },
                 }}
                 initial="hidden"
                 animate="show"
             >
-                <Image src="/images/portfolio/ic_title.png" width={686} height={37} alt="title portfolio" />
+                <Image src="/images/portfolio/ic_title.png" width={686} height={100} alt="title portfolio" />
             </motion.div>
             <article>
                 <motion.section

@@ -56,7 +56,7 @@ const Tab = styled.div<{ $active?: boolean }>`
         color: ${({ $active }) => ($active ? colors.gray[2] : 'white')};
         font-weight: 500;
     }
-    font-style:normal;
+    font-style: normal;
 `
 
 export default HeaderTabs
