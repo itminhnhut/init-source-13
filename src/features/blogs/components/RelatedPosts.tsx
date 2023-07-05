@@ -8,7 +8,7 @@ const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
         <div className="flex gap-3">
             <Image
                 src={feature_image}
-                className="!static !h-[94px] rounded-lg object-cover"
+                className="!static !w-1/2 rounded-lg object-cover"
                 fill
                 alt="blog-image"
             />
