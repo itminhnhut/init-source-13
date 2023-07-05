@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 
-import { useForm, Controller } from 'react-hook-form'
+import { useForm, Controller, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 
@@ -65,13 +65,8 @@ const FormRegister = ({ isOpen, onClose }: FormProps) => {
     const { errors, isSubmitting, isValid } = formState
 
 
-    const onSubmit = async (data: FormValues): Promise<any> => {
-        try {
-            console.log('data', data)
-        } catch (err: any) {
-            console.error(err)
-        }
-    }
+    const onSubmit: SubmitHandler<FormValues> = (data) => console.log(data)
+
 
     const onInvalid = (errors: any) => console.error(errors)
 
@@ -93,43 +88,42 @@ const FormRegister = ({ isOpen, onClose }: FormProps) => {
                 <Controller
                     control={control}
                     name="name"
-                    render={({ field: { value, onChange, ref } }) => (
-                        <InputField ref={ref} name="name" t={t} errors={errors} label={t('form:label:full_name')} placeholder={t('form:placeholder:full_name')} value={value} onChange={onChange} isRequired />
+                    render={({ field: { value, onChange } }) => (
+                        <InputField name="name" t={t} errors={errors} label={t('form:label:full_name')} placeholder={t('form:placeholder:full_name')} value={value} onChange={onChange} isRequired />
                     )}
                 />
 
                 <Controller
                     control={control}
                     name="email"
-                    render={({ field: { onChange, value, ref } }) => (
-                        <InputField ref={ref} name="email" t={t} errors={errors} className="mt-4" label={t('form:label:email')} placeholder={t('form:placeholder:email')} value={value} onChange={onChange} isRequired />
+                    render={({ field: { onChange, value } }) => (
+                        <InputField name="email" t={t} errors={errors} className="mt-4" label={t('form:label:email')} placeholder={t('form:placeholder:email')} value={value} onChange={onChange} isRequired />
                     )}
                 />
 
                 <Controller
                     control={control}
                     name="telegram"
-                    render={({ field: { onChange, value, ref } }) => (
-                        <InputField ref={ref} name="telegram" t={t} errors={errors} className="mt-4" label={t('form:label:telegram')} placeholder={t('form:placeholder:telegram')} value={value} onChange={onChange} isRequired />
+                    render={({ field: { onChange, value } }) => (
+                        <InputField name="telegram" t={t} errors={errors} className="mt-4" label={t('form:label:telegram')} placeholder={t('form:placeholder:telegram')} value={value} onChange={onChange} isRequired />
                     )}
                 />
 
                 <Controller
                     control={control}
                     name="link"
-                    render={({ field: { onChange, value, ref } }) => (
-                        <InputField ref={ref} name="link" t={t} errors={errors} className="mt-4" label={t('form:label:link')} placeholder={t('form:placeholder:link')} value={value} onChange={onChange} isRequired />
+                    render={({ field: { onChange, value } }) => (
+                        <InputField name="link" t={t} errors={errors} className="mt-4" label={t('form:label:link')} placeholder={t('form:placeholder:link')} value={value} onChange={onChange} isRequired />
                     )}
                 />
 
                 <Controller
                     control={control}
                     name="description"
-                    render={({ field: { onChange, value, ref } }) => (
-                        <TextAreaField className="mt-4" placeholder={t('form:placeholder:description')} label={t('form:label:description')} {...{ onChange, value, ref }} rows={3} />
+                    render={({ field: { onChange, value } }) => (
+                        <TextAreaField className="mt-4" placeholder={t('form:placeholder:description')} label={t('form:label:description')} {...{ onChange, value }} rows={3} />
                     )}
                 />
-
                 <Button className="mt-6 flex w-full justify-center rounded-[10px] !py-3 btn-gradient" disabled={!isValid || isSubmitting} type="submit">
                     {t('common:button:send')}
                 </Button>

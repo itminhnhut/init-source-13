@@ -1,11 +1,12 @@
-import { ChangeEvent, useMemo } from 'react'
+import { ChangeEvent } from 'react'
 
 import { ErrorMessage } from "@hookform/error-message";
 
-
 import classNames from 'classnames'
 
-import { styled } from 'styled-components'
+const inputFieldDefault = {
+    placeholder: 'Enter',
+}
 
 type inputFieldProps = {
     t?: any
@@ -18,7 +19,7 @@ type inputFieldProps = {
     ref?: any
     errors?: any
     onChange: (data: any) => void
-}
+} & typeof inputFieldDefault
 
 
 const InputField = ({ className, label, name, isRequired, placeholder, value, onChange, ref, errors, t }: inputFieldProps) => {
@@ -44,8 +45,7 @@ const InputField = ({ className, label, name, isRequired, placeholder, value, on
                 >
                     {label}
                 </label>
-                <StyledInputWrapper
-                    ref={ref}
+                <input
                     type="text"
                     value={value}
                     id={name}
@@ -65,11 +65,5 @@ const InputField = ({ className, label, name, isRequired, placeholder, value, on
         </>
     )
 }
-
-InputField.defaultProps = {
-    placeholder: 'Enter',
-}
-
-const StyledInputWrapper = styled.input``
 
 export default InputField
