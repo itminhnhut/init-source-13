@@ -28,15 +28,21 @@ const backgroundVariants = {
 
 const modalVariants = {
     hide: {
-        top: '100%',
+        top: '150%',
         opacity: 0,
+        duration: {
+            duration: 0.4,
+        },
     },
     show: {
         top: 0,
         opacity: 1,
         transition: {
+            ease: [0.075, 0.82, 0.165, 1],
             delay: 0.25,
-            type: 'tween',
+            type: 'spring',
+            duration: 0.4,
+            bounce: 0,
         },
     },
 }
@@ -63,7 +69,7 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                         data-modal-backdrop="static"
                         aria-hidden="true"
                         className={classNames(
-                            'fixed left-0 right-0 top-0 z-50 h-[calc(100%-1rem)] max-h-full w-full overflow-y-hidden p-4 transition-all md:inset-0',
+                            'fixed inset-0 z-[1001] h-full max-h-full w-full overflow-y-hidden ',
                             {
                                 'backdrop-blur-[10px]': isOpen,
                             },
@@ -76,7 +82,7 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                             animate="show"
                             exit="hide"
                             className={classNames(
-                                'fixed flex h-full w-full max-w-2xl items-center justify-center px-4 mb:w-[500px] mb:px-0 ',
+                                'absolute overflow-y-auto no-scrollbar flex max-h-[95%] h-full w-full max-w-2xl items-center justify-center px-4 mb:w-[500px] mb:px-0 ',
 
                                 wrapperClassName,
                             )}

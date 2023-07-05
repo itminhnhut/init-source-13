@@ -52,10 +52,11 @@ const HeaderTabs = () => {
 const Tab = styled.div<{ $active?: boolean }>`
     color: ${({ $active }) => ($active ? 'white' : colors.gray[2])};
     font-weight: ${({ $active }) => ($active ? 500 : 600)};
-    @media screen and (min-width: 820) {
+    @media screen and (min-width: 820px) {
         color: ${({ $active }) => ($active ? colors.gray[2] : 'white')};
         font-weight: 500;
     }
+    font-style:normal;
 `
 
 export default HeaderTabs
