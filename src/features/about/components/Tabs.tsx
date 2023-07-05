@@ -9,7 +9,7 @@ import LANGUAGE from '@/types/language'
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { getOutScreenVariants } from '@/constants/motion-variants'
 const dataTabs = [
     {
@@ -68,15 +68,13 @@ const TabsAbout = () => {
     }
 
     return (
-        <WrapperMain className="main text-white">
+        <WrapperMain as={motion.div} initial="hidden" animate="show" className="main relative text-white">
             <motion.div
                 variants={getOutScreenVariants('top', {
                     show: {
                         y: '-50%',
                     },
                 })}
-                initial="hidden"
-                animate="show"
                 className="fixed left-[112px] top-1/2 -translate-y-1/2"
             >
                 <div className=" -rotate-180 text-5xl font-semibold uppercase opacity-10 [writing-mode:vertical-lr]">
@@ -86,7 +84,7 @@ const TabsAbout = () => {
             <motion.h1
                 variants={getOutScreenVariants('top', {
                     hidden: {
-                        y:-200,
+                        y: -200,
                         scale: 1.5,
                     },
                     show: {
@@ -101,28 +99,50 @@ const TabsAbout = () => {
             </motion.h1>
             <section className="mt-[47px] w-full lg:w-[806px]">
                 <Tabs defaultIndex={tabIndex} className="mx-4 lg:mx-0">
-                    <TabList className="mb-6 flex cursor-pointer flex-row justify-center gap-x-6 text-lg font-medium">
-                        {renderTab()}
-                    </TabList>
-                    <TabPanel>
-                        <article>
-                            <h2 className="w-full text-center text-base font-light">{t('about:our_story_tile')}</h2>
-                            <section className="mt-[78px] flex flex-row flex-wrap justify-center gap-10">
-                                {TAB_PANEL_1?.map((item: { title: string; subTitle: LANGUAGE }) => {
-                                    return (
-                                        <section className="cursor-pointer" key={`Our_Story_${item.title}`}>
-                                            <section className="text-gradient-1 text-3xl2 font-medium">
-                                                {item.title}
+                    <motion.div
+                        variants={getOutScreenVariants('bottom', {
+                            hidden: {
+                                x: -100,
+                            },
+                            show: {
+                                x: 0,
+                            },
+                        })}
+                    >
+                        <TabList className="mb-6 flex cursor-pointer flex-row justify-center gap-x-6 text-lg font-medium">
+                            {renderTab()}
+                        </TabList>
+                    </motion.div>
+                    <motion.div
+                        variants={getOutScreenVariants('bottom', {
+                            hidden: {
+                                x: -100,
+                            },
+                            show: {
+                                x: 0,
+                            },
+                        })}
+                    >
+                        <TabPanel>
+                            <article>
+                                <h2 className="w-full text-center text-base font-light">{t('about:our_story_tile')}</h2>
+                                <section className="mt-[78px] flex flex-row flex-wrap justify-center gap-10">
+                                    {TAB_PANEL_1?.map((item: { title: string; subTitle: LANGUAGE }, index) => {
+                                        return (
+                                            <section className="cursor-pointer" key={`Our_Story_${item.title}`}>
+                                                <section className="text-gradient-1 text-3xl2 font-medium">
+                                                    {item.title}
+                                                </section>
+                                                <section className="font-medium">
+                                                    {item.subTitle?.[language as keyof LANGUAGE]}
+                                                </section>
                                             </section>
-                                            <section className="font-medium">
-                                                {item.subTitle?.[language as keyof LANGUAGE]}
-                                            </section>
-                                        </section>
-                                    )
-                                })}
-                            </section>
-                        </article>
-                    </TabPanel>
+                                        )
+                                    })}
+                                </section>
+                            </article>
+                        </TabPanel>
+                    </motion.div>
                     <TabPanel>
                         <article>
                             <h2 className="w-full text-center text-base font-light">{t('about:mission_tile')}</h2>
