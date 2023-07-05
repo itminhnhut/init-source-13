@@ -112,7 +112,12 @@ const Header: React.FC = () => {
             </header>
 
             {/* MOBILE LANG SELECTION */}
-            <MobileLanguageSelection isShow={isShowMBLanguage} />
+            <MobileLanguageSelection
+                isShow={isShowMBLanguage}
+                setShow={(boolean: boolean) => {
+                    setShowMBLanguage(boolean)
+                }}
+            />
             {/* MOBILE LANG SELECTION */}
 
             {/* MOBILE NAV */}

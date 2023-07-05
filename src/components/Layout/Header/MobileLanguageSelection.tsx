@@ -3,7 +3,10 @@ import useLanguage, { LANGUAGE_KEY, LANGUAGE_NAME, LANGUAGE_TAG } from '@/hooks/
 import classNames from 'classnames'
 import React from 'react'
 
-const MobileLanguageSelection: React.FC<{ isShow: boolean }> = ({ isShow }) => {
+const MobileLanguageSelection: React.FC<{ isShow: boolean; setShow: (boolean: boolean) => void }> = ({
+    isShow,
+    setShow,
+}) => {
     const [currentLanguage, setLanguage] = useLanguage()
 
     return (
@@ -15,7 +18,10 @@ const MobileLanguageSelection: React.FC<{ isShow: boolean }> = ({ isShow }) => {
                         <button
                             disabled={language === currentLanguage}
                             key={key}
-                            onClick={() => setLanguage(key)}
+                            onClick={() => {
+                                setLanguage(language)
+                                setShow(false)
+                            }}
                             className={classNames('py-[10px] text-lg text-gray-2', {
                                 '!text-base !text-white': language === currentLanguage,
                             })}
