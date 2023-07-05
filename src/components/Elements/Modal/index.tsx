@@ -1,14 +1,12 @@
-import { ReactNode, useRef, useState, useEffect, Dispatch, SetStateAction } from 'react'
+import { ReactNode, useRef } from 'react'
 import classNames from 'classnames'
 import { styled } from 'styled-components'
-import Image from 'next/image'
 
 import ReactPortal from '@/components/Elements/Portal'
 import X from '@/components/Icons/X'
 import IconButton from '../Button/IconButton'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
-import { Lexend } from 'next/font/google'
 
 type ModalProps = {
     children: ReactNode

@@ -9,6 +9,7 @@ import Twitter from '@/components/Icons/Twitter'
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { useTranslation } from 'next-i18next'
+import FormRegister from '@/features/form-register/FormRegister'
 
 const Footer = () => {
     const { t } = useTranslation()
@@ -43,6 +44,8 @@ const Footer = () => {
                     </IconButton>
                 </section>
             </section>
+            <FormRegister isOpen={isOpen} onClose={toggle} />
+
         </main>
     )
 }
@@ -50,7 +53,7 @@ const Footer = () => {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
     return {
         props: {
-            ...(await serverSideTranslations(locale as string, ['common', 'footer'])),
+            ...(await serverSideTranslations(locale as string, ['common', 'footer', 'form', 'validation'])),
         },
     }
 }
