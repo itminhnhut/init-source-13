@@ -17,7 +17,7 @@ const MENU = [
     },
     {
         route: '/portfolio',
-        title: { vi: 'Đội ngũ', en: 'Porfolio' }
+        title: { vi: 'Danh mục', en: 'Porfolio' }
     },
     {
         route: '/team',

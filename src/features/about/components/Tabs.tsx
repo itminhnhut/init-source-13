@@ -7,7 +7,8 @@ import classNames from 'classnames'
 // ** Types
 import LANGUAGE from '@/types/language'
 import { useTranslation } from 'next-i18next'
-
+import styled from 'styled-components'
+import Image from 'next/image'
 const dataTabs = [
     {
         title: { vi: 'Câu chuyện', en: 'Our Story' },
@@ -65,7 +66,7 @@ const TabsAbout = () => {
     }
 
     return (
-        <main className="main text-white">
+        <WrapperMain className="main text-white">
             <h1 className="mt-[108px] text-center text-4xl4 font-semibold lg:mt-[108px] lg:text-6xl4">About Us</h1>
             <section className="mt-[47px] w-full lg:w-[806px]">
                 <Tabs defaultIndex={tabIndex} className="mx-4 lg:mx-0">
@@ -107,7 +108,18 @@ const TabsAbout = () => {
                     </TabPanel>
                 </Tabs>
             </section>
-        </main>
+        </WrapperMain>
     )
 }
+
+const WrapperMain = styled.main`
+    background-image: url('/images/about/bg_face.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+`
+
 export default TabsAbout
