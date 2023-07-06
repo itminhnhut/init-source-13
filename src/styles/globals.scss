@@ -2,23 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    html {
+        font-family: var(--manrope-font);
+        @apply no-scrollbar h-full text-base font-light text-white;
+        overflow-x: hidden;
+    
+    }
+  }
+
 @layer components {
     .page-container {
         @apply mx-auto max-w-screen-xxl px-4 xxl:px-0;
     }
 }
-
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-}
-
-html,
-body {
-    font-family: var(--manrope-font);
-    @apply no-scrollbar h-full text-base font-light text-white;
-    overflow-x: hidden;
 }
 
 .main {
