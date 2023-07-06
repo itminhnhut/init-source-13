@@ -47,7 +47,6 @@ const modalVariants = {
 
 const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
     const ref = useRef<HTMLDivElement | null>(null)
-
     useOnClickOutside(ref, () => {
         if (isOpen) {
             onClose()
@@ -66,12 +65,9 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                         id="staticModal"
                         data-modal-backdrop="static"
                         aria-hidden="true"
-                        className={classNames(
-                            'fixed inset-0 z-[1001] h-full max-h-full w-full overflow-y-hidden ',
-                            {
-                                'backdrop-blur-[10px]': isOpen,
-                            },
-                        )}
+                        className={classNames('fixed inset-0 z-[1001] h-full max-h-full w-full overflow-y-hidden ', {
+                            'backdrop-blur-[10px]': isOpen,
+                        })}
                     >
                         <WrapperContainer
                             as={motion.section}
@@ -80,18 +76,20 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                             animate="show"
                             exit="hide"
                             className={classNames(
-                                'absolute overflow-y-auto no-scrollbar flex max-h-[95%] h-full w-full max-w-2xl items-center justify-center px-4 mb:w-[500px] mb:px-0 ',
+                                'no-scrollbar absolute flex h-full max-h-[95%] w-full max-w-2xl items-center justify-center overflow-y-auto px-4 mb:w-[500px] mb:px-0 ',
                                 wrapperClassName,
                             )}
                             ref={ref}
                         >
                             <section
                                 className="relative
-                                w-full
-                        rounded-lg border-[1px] border-solid 
-                        border-gray-1 bg-black-1 px-6
-                        py-4 text-white
-                        shadow
+                                h-full
+                                w-full overflow-y-auto rounded-lg 
+                            border-[1px] border-solid border-gray-1
+                                bg-black-1 px-6
+                                py-4 text-white
+                                shadow
+                        lg:h-auto
                     "
                             >
                                 <section className="mb-2 flex cursor-pointer justify-end">

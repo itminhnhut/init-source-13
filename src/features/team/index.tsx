@@ -43,7 +43,12 @@ const Team = () => {
                 initial="hidden"
                 animate="show"
             >
-                <TeamSwiper navigate={navigate} setState={setState} activeIndex={state.activeIndex} setShowModal={setShowModal} />
+                <TeamSwiper
+                    navigate={navigate}
+                    setState={setState}
+                    activeIndex={state.activeIndex}
+                    setShowModal={setShowModal}
+                />
             </motion.div>
             <div className="mt-10 hidden mb:block">
                 <Navigator slideNext={navigate.next} slidePrev={navigate.prev} />

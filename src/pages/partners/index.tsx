@@ -7,9 +7,7 @@ import dynamic from 'next/dynamic'
 const TabsAbout = dynamic(() => import('@/features/partners/components/Tabs'), { ssr: false })
 
 const partner = () => {
-    return (
-        <TabsAbout />
-    )
+    return <TabsAbout />
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
@@ -19,6 +17,5 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         },
     }
 }
-
 
 export default partner

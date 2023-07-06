@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react'
+import { ChangeEvent } from 'react'
 
 import classNames from 'classnames'
 import { styled } from 'styled-components'

@@ -8,8 +8,7 @@ import classNames from 'classnames'
 import LANGUAGE from '@/types/language'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
-import { defaultVariants, getOutScreenVariants } from '@/constants/motion-variants'
-import { useRouter } from 'next/router'
+import { getOutScreenVariants } from '@/constants/motion-variants'
 
 const dataTabs = [
     {
@@ -22,53 +21,38 @@ const dataTabs = [
 
 type TabPanelT = {
     src: string
-    width: number
-    height: number
 }
 
 const TAB_PANEL_1: Array<TabPanelT> = [
     {
         src: '/images/partners/strategic/logo_coin98.png',
-        width: 310,
-        height: 80,
     },
     {
         src: '/images/partners/strategic/logo_fizen.png',
-        width: 254,
-        height: 80,
     },
     {
         src: '/images/partners/strategic/logo_oxalus.png',
-        width: 226,
-        height: 80,
     },
 ]
 
 const TAB_PANEL_2: Array<TabPanelT> = [
     {
         src: '/images/partners/media/logo_68.png',
-        width: 156,
-        height: 80,
     },
     {
         src: '/images/partners/media/logo_vic.png',
-        width: 226,
-        height: 80,
     },
     {
         src: '/images/partners/media/log_blckchn.png',
-        width: 260,
-        height: 80,
     },
 ]
 
 const TabsAbout = () => {
     const {
-        t,
         i18n: { language },
     } = useTranslation()
+
     const [tabIndex, setTabIndex] = useState(0)
-    const router = useRouter()
 
     const handleChangTab = (key: number) => setTabIndex(key)
 
@@ -122,10 +106,11 @@ const TabsAbout = () => {
                                             <Image
                                                 key={`strategic_${key}`}
                                                 src={item.src}
-                                                width={item.width}
-                                                height={item.height}
+                                                width={0}
+                                                height={0}
+                                                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 100vw"
                                                 alt="partners"
-                                                className="cursor-pointer opacity-50 hover:opacity-100"
+                                                className="h-auto w-auto cursor-pointer opacity-50 hover:opacity-100"
                                             />
                                         )
                                     })}
@@ -140,10 +125,11 @@ const TabsAbout = () => {
                                     <Image
                                         key={`media_${key}`}
                                         src={item.src}
-                                        width={item.width}
-                                        height={item.height}
-                                        alt="partners"
-                                        className="cursor-pointer opacity-50 hover:opacity-100"
+                                        width={0}
+                                        height={0}
+                                        sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 33vw"
+                                        alt="media"
+                                        className="h-auto w-auto cursor-pointer opacity-50 hover:opacity-100"
                                     />
                                 )
                             })}

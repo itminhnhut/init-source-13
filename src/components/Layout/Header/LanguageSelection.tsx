@@ -1,4 +1,3 @@
-import Modal from '@/components/Elements/Modal'
 import Global from '@/components/Icons/Global'
 import useLanguage, { LANGUAGE_KEY, LANGUAGE_NAME, LANGUAGE_TAG } from '@/hooks/useLanguage'
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'

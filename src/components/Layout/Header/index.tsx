@@ -7,8 +7,6 @@ import { useRouter } from 'next/router'
 import LanguageSelection from './LanguageSelection'
 import MobileLanguageSelection from './MobileLanguageSelection'
 import Global from '@/components/Icons/Global'
-import { motion } from 'framer-motion'
-import { getOutScreenVariants } from '@/constants/motion-variants'
 import { styled } from 'styled-components'
 import { HEADER_DESKTOP_HEIGHT, HEADER_MOBILE_HEIGHT } from '@/styles/constants'
 import Drawer from '@/components/Elements/Modal/Drawer'
@@ -23,7 +21,7 @@ const Header: React.FC = () => {
     const router = useRouter()
 
     useEffect(() => {
-        const toggleMobileModal = (e: UIEvent) => {
+        const toggleMobileModal = () => {
             if (window?.innerWidth >= 820) {
                 if (isOpenMBHeader) setOpenMBHeader(false)
                 if (isShowMBLanguage) setShowMBLanguage(false)

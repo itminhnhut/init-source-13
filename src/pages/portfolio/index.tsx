@@ -9,13 +9,9 @@ import { getOutScreenVariants, transitionProps } from '@/constants/motion-varian
 const TAB_PANEL_1 = [
     {
         src: '/images/portfolio/logo_insurance.png',
-        width: 289,
-        height: 80
     },
     {
         src: '/images/portfolio/logo.png',
-        width: 341,
-        height: 80
     },
 ]
 
@@ -39,24 +35,33 @@ const Portfolio = () => {
                 initial="hidden"
                 animate="show"
             >
-                <Image src="/images/portfolio/portfolio.png" width={686} height={100} alt="title portfolio" />
+                <Image
+                    key="title-portfolio"
+                    className="h-auto w-auto"
+                    sizes="(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 100vw"
+                    src="/images/portfolio/portfolio.png"
+                    width={0}
+                    height={0}
+                    alt="title portfolio"
+                />
             </motion.div>
             <article>
                 <motion.section
                     variants={getOutScreenVariants('bottom')}
                     initial="hidden"
                     animate="show"
-                    className="mt-[82px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8"
+                    className="mt-[82px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8 lg:flex-nowrap"
                 >
-                    {TAB_PANEL_1?.map((item: { src: string, width: number, height: number }, key: number) => {
+                    {TAB_PANEL_1?.map((item: { src: string }, key: number) => {
                         return (
                             <Image
                                 key={`partners_${key}`}
                                 src={item.src}
-                                width={item.width}
-                                height={item.height}
+                                width="0"
+                                height="0"
+                                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 100vw"
                                 alt="partners"
-                                className="cursor-pointer opacity-50 hover:opacity-100"
+                                className="h-auto w-auto cursor-pointer opacity-50 hover:opacity-100"
                             />
                         )
                     })}

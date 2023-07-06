@@ -1,6 +1,5 @@
 import { FC, ReactNode } from 'react'
 
-import Image from 'next/image'
 import classNames from 'classnames'
 
 interface IIconButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {

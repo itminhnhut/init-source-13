@@ -1,1 +1,4 @@
-export default interface LANGUAGE { vi: string, en: string }
+export default interface LANGUAGE {
+    vi: string
+    en: string
+}

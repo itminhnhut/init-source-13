@@ -1,11 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow } from 'swiper'
 import TeamSlide from './TeamSlide'
 import { SetTeamState } from '../types'
-import ChevronLeft from '@/components/Icons/ChevronLeft'
-import ChevronRight from '@/components/Icons/ChevronRight'
-import IconButton from '@/components/Elements/Button/IconButton'
 import Navigator from '@/components/Elements/SwiperNavigator'
 
 interface ITeamSwiper {
@@ -31,7 +28,7 @@ const TeamSwiper: React.FC<ITeamSwiper> = ({ navigate, setState, activeIndex, se
         <div className="relative h-full w-full">
             <div
                 style={{ top: imgHeight / 2 - NAVIGATOR_BUTTON_HEIGHT / 2 }}
-                className="absolute mb:hidden left-0 z-[10] w-full px-4"
+                className="absolute left-0 z-[10] w-full px-4 mb:hidden"
             >
                 <Navigator className="justify-between" slidePrev={navigate.prev} slideNext={navigate.next} />
             </div>

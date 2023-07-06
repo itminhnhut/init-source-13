@@ -6,9 +6,7 @@ import dynamic from 'next/dynamic'
 const TabsAbout = dynamic(() => import('@/features/about/components/Tabs'), { ssr: false })
 
 const About = () => {
-    return (
-        <TabsAbout />
-    )
+    return <TabsAbout />
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
@@ -18,6 +16,5 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
         },
     }
 }
-
 
 export default About

@@ -1,14 +1,10 @@
 /* eslint-disable react/display-name */
-import IconButton from '@/components/Elements/Button/IconButton'
-import Facebook from '@/components/Icons/Facebook'
-import Twitter from '@/components/Icons/Twitter'
 import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
 import Image from 'next/image'
-import React, { forwardRef } from 'react'
+import React from 'react'
 import { styled } from 'styled-components'
 import TeamSocials from './TeamSocials'
-import { useWindowSize } from '../../../hooks/useWindowSize'
 
 interface ITeamSlide {
     isActive: boolean
@@ -51,7 +47,7 @@ const TeamSlide: React.FC<ITeamSlide> = ({ isActive, setShowModal }) => {
             })}
         >
             <div className="relative flex justify-center">
-                <ImageWrapper className="relative flex w-1/2 mb:w-auto items-center">
+                <ImageWrapper className="relative flex w-1/2 items-center mb:w-auto">
                     <div className="hidden mb:block">
                         <AnimatePresence>
                             {isActive && (
@@ -85,7 +81,7 @@ const TeamSlide: React.FC<ITeamSlide> = ({ isActive, setShowModal }) => {
                                     <div className="mb-2 font-medium"> COO</div>
                                     <div className="mb-3">
                                         A scalable multi-gaming ecosystem buil on Unity A scalable multi-gaming
-                                        ecosystem built on Unity A{' '}
+                                        ecosystem built on Unity A
                                     </div>
                                     <div className="text-gray-2 underline" onClick={() => setShowModal(true)}>
                                         Learn More
@@ -103,7 +99,7 @@ const TeamSlide: React.FC<ITeamSlide> = ({ isActive, setShowModal }) => {
                         <div className="mb-2 font-medium"> COO</div>
                         <div className="mb-3">
                             A scalable multi-gaming ecosystem buil on Unity A scalable multi-gaming ecosystem built on
-                            Unity A{' '}
+                            Unity A
                         </div>
                         <div className="text-gray-2 underline" onClick={() => setShowModal(true)}>
                             Learn More

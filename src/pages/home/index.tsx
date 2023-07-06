@@ -8,7 +8,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { motion } from 'framer-motion'
 
-
 const Button = dynamic(() => import('@/components/Elements/Button'), { ssr: false })
 
 const FormRegister = dynamic(() => import('@/features/form-register/FormRegister'), { ssr: false })
@@ -65,7 +64,6 @@ export default function Home() {
     const { t } = useTranslation()
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
-
     const toggle = () => setIsOpen((prev) => !prev)
     return (
         <main className="main">
@@ -88,7 +86,7 @@ export default function Home() {
                 </motion.div>
                 <FormRegister isOpen={isOpen} onClose={toggle} />
             </section>
-        </main >
+        </main>
     )
 }
 

@@ -5,31 +5,31 @@ const MENU = [
     },
     {
         route: '/home',
-        title: { vi: 'Trang chủ', en: 'Home' }
+        title: { vi: 'Trang chủ', en: 'Home' },
     },
     {
         route: '/about-us',
-        title: { vi: 'Về chúng tôi', en: 'About Us' }
+        title: { vi: 'Về chúng tôi', en: 'About Us' },
     },
     {
         route: '/blogs',
-        title: { vi: 'Blog', en: 'Blog' }
+        title: { vi: 'Blog', en: 'Blog' },
     },
     {
         route: '/portfolio',
-        title: { vi: 'Danh mục', en: 'Porfolio' }
+        title: { vi: 'Danh mục', en: 'Porfolio' },
     },
     {
         route: '/team',
-        title: { vi: 'Đội ngũ', en: 'Team' }
+        title: { vi: 'Đội ngũ', en: 'Team' },
     },
     {
         route: '/partners',
-        title: { vi: 'Đối tác', en: 'Partner' }
+        title: { vi: 'Đối tác', en: 'Partner' },
     },
     {
         route: '/footer',
-        title: { vi: 'Liên hệ', en: 'Contact' }
+        title: { vi: 'Liên hệ', en: 'Contact' },
     },
 ]
 export default MENU
