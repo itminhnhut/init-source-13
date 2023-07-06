@@ -17,7 +17,7 @@
 html,
 body {
     font-family: var(--manrope-font);
-    @apply h-full text-base font-light text-white no-scrollbar;
+    @apply no-scrollbar h-full text-base font-light text-white;
     overflow-x: hidden;
 }
 
@@ -47,7 +47,13 @@ body {
 }
 
 .text-gradient-1 {
-    background: linear-gradient(90deg, #ee87fe 0%, #6e1fce 100%);
+    background: linear-gradient(
+        208deg,
+        #ffa3f4 0%,
+        #fd55e9 31.77%,
+        #8f24ff 71.14%,
+        #6bafff 100%
+    ); //linear-gradient(90deg, #ee87fe 0%, #6e1fce 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -81,7 +87,7 @@ body {
 .btn-gradient {
     position: relative;
     transition: all 0.1s ease-out;
-    background: linear-gradient(208deg, #FFA3F4 0%, #FD55E9 31.77%, #8F24FF 71.14%, #6BAFFF 100%);
+    background: linear-gradient(208deg, #ffa3f4 0%, #fd55e9 31.77%, #8f24ff 71.14%, #6bafff 100%);
     &:hover {
         box-shadow: 0px 5px 30px 0px #8e32d8;
         transform: translate3d(0px, -3px, 0.01px);

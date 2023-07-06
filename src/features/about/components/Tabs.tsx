@@ -69,18 +69,6 @@ const TabsAbout = () => {
 
     return (
         <WrapperMain as={motion.div} initial="hidden" animate="show" className="main relative text-white">
-            <motion.div
-                variants={getOutScreenVariants('top', {
-                    show: {
-                        y: '-50%',
-                    },
-                })}
-                className="fixed left-[112px] top-1/2 -translate-y-1/2"
-            >
-                <div className=" -rotate-180 text-5xl font-semibold uppercase opacity-10 [writing-mode:vertical-lr]">
-                    Our Story
-                </div>
-            </motion.div>
             <motion.h1
                 variants={getOutScreenVariants('top', {
                     hidden: {
@@ -91,8 +79,6 @@ const TabsAbout = () => {
                         scale: 1,
                     },
                 })}
-                initial="hidden"
-                animate="show"
                 className="mt-[108px] text-center text-4xl4 font-semibold lg:mt-[108px] lg:text-6xl4"
             >
                 About Us

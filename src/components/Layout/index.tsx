@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import styled from 'styled-components'
 
 import dynamic from 'next/dynamic'
+import { AnimatePresence } from 'framer-motion'
 
 const Header = dynamic(() => import('./Header'), { ssr: false })
 const Footer = dynamic(() => import('./Footer'), { ssr: false })
@@ -20,13 +21,10 @@ const Layout: FC<LayoutI> = ({ children }) => {
         <WrapperLayout>
             <Header />
             <div className="video-container">
-                <video
-                    src="/videos/video.webm"
-                    autoPlay
-                    muted
-                    loop
-                ></video>
-                <div className="relative">{children}</div>
+                <video src="/videos/video.webm" autoPlay muted loop></video>
+                <AnimatePresence mode="wait">
+                    <div className="relative">{children}</div>
+                </AnimatePresence>
             </div>
 
             {pathname === '/footer' ? <Footer /> : null}

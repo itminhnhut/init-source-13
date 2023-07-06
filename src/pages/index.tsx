@@ -14,7 +14,7 @@ export default function Home() {
     const { t } = useTranslation()
     const router = useRouter()
     useEffect(() => {
-        setTimeout(() => router.push('/home'), 1000)
+        setTimeout(() => router.push('/home'), 1300)
     }, [router])
 
     return (
@@ -27,6 +27,7 @@ export default function Home() {
                     show: {
                         rotate: -180,
                         transition: {
+                            delay: 0.3,
                             ...transitionProps,
                         },
                     },
