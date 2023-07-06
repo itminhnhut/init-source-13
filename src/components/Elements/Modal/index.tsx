@@ -88,9 +88,11 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                             <section
                                 className="relative
                                 w-full
-                        rounded-lg border-[1px] border-solid 
-                        border-gray-1 bg-black-1 px-6
-                        py-4 text-white
+                                rounded-lg border-[1px] border-solid 
+                            border-gray-1 bg-black-1 px-6
+                                py-4 text-white
+                                h-full lg:h-auto
+                                overflow-y-auto
                         shadow
                     "
                             >

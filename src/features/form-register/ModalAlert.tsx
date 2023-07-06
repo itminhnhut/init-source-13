@@ -20,7 +20,7 @@ const ModalAlert: FC<ModalProps> = ({ isOpen, onClose }) => {
             <div className="mt-1 text-gray-2">{t('success_title')}</div>
             <div className="mb-6 text-gray-2">{t('success_des')}</div>
             <div className="flex justify-center">
-                <Image src="/images/Modal/check_success.png" width={332} height={332} alt="check_success" />
+                <Image src="/images/modal/check_success.png" width={332} height={332} alt="check_success" />
             </div>
         </div>
     </Modal>
