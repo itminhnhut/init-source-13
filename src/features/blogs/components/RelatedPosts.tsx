@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import GHOST_DETAIL from "@/types/blogs";
+import GHOST_DETAIL from '@/types/blogs'
+import { motion } from 'framer-motion'
 
 const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
     <Link href={`/blogs/${slug}`} className="inline-block">
@@ -11,6 +12,9 @@ const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
                 className="!static !w-1/2 rounded-lg object-cover"
                 fill
                 alt="blog-image"
+                onLoad={(e) => {
+                    console.log('aaaa', slug)
+                }}
             />
             <div className="text-sm text-gray-2">{title}</div>
         </div>
@@ -25,11 +29,39 @@ const RelatedPosts = ({ tabPosts }: RelatedPostsProps) => {
     return (
         <div className="space-y-6">
             <div className="text-xl">Related Posts</div>
-            <div className="space-y-6">
+            <motion.div
+                variants={{
+                    hidden: {},
+                    show: {
+                        transition: {
+                            delayChildren: 0,
+                            staggerChildren: 0.05,
+                        },
+                    },
+                }}
+                initial="hidden"
+                animate="show"
+                className="space-y-6"
+            >
                 {tabPosts?.map((tag) => (
-                    <RelatedThumbnail key={tag.id} title={tag.title} feature_image={tag.feature_image} slug={tag.slug} />
+                    <motion.div
+                    className="hover:!opacity-80 transition-opacity"
+                        key={tag.id}
+                        variants={{
+                            hidden: {
+                                scale: 0.95,
+                                opacity: 0,
+                            },
+                            show: {
+                                scale: 1,
+                                opacity: 1,
+                            },
+                        }}
+                    >
+                        <RelatedThumbnail title={tag.title} feature_image={tag.feature_image} slug={tag.slug} />
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     )
 }
