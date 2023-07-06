@@ -48,7 +48,8 @@ const TAB_PANEL_2: Array<TabPanelT> = [
 ]
 
 const TabsAbout = () => {
-    const { t,
+    const {
+        t,
         i18n: { language },
     } = useTranslation()
 

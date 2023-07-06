@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 /* eslint-disable prettier/prettier */
 import GhostAdminAPI from '@tryghost/admin-api'
 
