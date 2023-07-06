@@ -112,7 +112,7 @@ const TabsAbout = () => {
                             <article>
                                 <h2 className="w-full text-center text-base font-light">{t('about:our_story_tile')}</h2>
                                 <section className="mt-[78px] flex flex-row flex-wrap justify-center gap-10">
-                                    {TAB_PANEL_1?.map((item: { title: string; subTitle: LANGUAGE }, index) => {
+                                    {TAB_PANEL_1?.map((item: { title: string; subTitle: LANGUAGE }) => {
                                         return (
                                             <section className="cursor-pointer" key={`Our_Story_${item.title}`}>
                                                 <section className="text-gradient-1 text-3xl2 font-medium">

@@ -16,7 +16,10 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-      "no-console": "error",
+    "no-console": [
+        "warn",
+        { "allow": ["clear", "info", "error", "dir", "trace"] }
+       ],
       "linebreak-style": ["error", "unix"],
       "semi": "off",
       "@typescript-eslint/semi": "off",

@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     const router = useRouter()
 
     useEffect(() => {
-        const toggleMobileModal = (e: UIEvent) => {
+        const toggleMobileModal = () => {
             if (window?.innerWidth >= 820) {
                 if (isOpenMBHeader) setOpenMBHeader(false)
                 if (isShowMBLanguage) setShowMBLanguage(false)

@@ -10,7 +10,6 @@ import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
 import { getOutScreenVariants } from '@/constants/motion-variants'
 
-
 const dataTabs = [
     {
         title: { vi: 'Chiến lược', en: 'Strategic' },
