@@ -22,7 +22,6 @@ const MENU = [
     {
         route: '/team',
         title: { vi: 'Đội ngũ', en: 'Team' },
-        hide: true,
     },
     {
         route: '/partners',
