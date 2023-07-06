@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import { appWithTranslation } from 'next-i18next'
 

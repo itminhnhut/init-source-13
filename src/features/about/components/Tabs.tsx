@@ -8,8 +8,7 @@ import classNames from 'classnames'
 import LANGUAGE from '@/types/language'
 import { useTranslation } from 'next-i18next'
 import styled from 'styled-components'
-import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { getOutScreenVariants } from '@/constants/motion-variants'
 const dataTabs = [
     {

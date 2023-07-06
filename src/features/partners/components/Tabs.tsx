@@ -8,8 +8,8 @@ import classNames from 'classnames'
 import LANGUAGE from '@/types/language'
 import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
-import { defaultVariants, getOutScreenVariants } from '@/constants/motion-variants'
-import { useRouter } from 'next/router'
+import { getOutScreenVariants } from '@/constants/motion-variants'
+
 
 const dataTabs = [
     {
@@ -50,9 +50,9 @@ const TAB_PANEL_2: Array<TabPanelT> = [
 
 const TabsAbout = () => {
     const {
-        t,
         i18n: { language },
     } = useTranslation()
+
     const [tabIndex, setTabIndex] = useState(0)
 
     const handleChangTab = (key: number) => setTabIndex(key)

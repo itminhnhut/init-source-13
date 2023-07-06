@@ -29,7 +29,6 @@ const InputField = ({
     placeholder,
     value,
     onChange,
-    ref,
     errors,
     t,
 }: inputFieldProps) => {

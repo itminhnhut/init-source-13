@@ -70,7 +70,7 @@ const FormRegister = ({ isOpen, onClose }: FormProps) => {
 
     const { errors, isSubmitting, isValid } = formState
 
-    const onSubmit: SubmitHandler<FormValues> = (data) => {
+    const onSubmit: SubmitHandler<FormValues> = (data: any) => {
         setIsAlertOpen(true)
         onClose()
         reset()

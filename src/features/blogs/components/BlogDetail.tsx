@@ -4,8 +4,6 @@ import TeamSocials from '@/features/team/components/TeamSocials'
 import BackToSection from './BackToSection'
 
 import GHOST_DETAIL from '@/types/blogs'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useRouter } from 'next/router'
 
 type BlogDetailProps = {
     detail: GHOST_DETAIL
@@ -13,8 +11,6 @@ type BlogDetailProps = {
 }
 
 const BlogDetail = ({ detail, tabPosts }: BlogDetailProps) => {
-    const router = useRouter()
-    const { slug } = router.query
     return (
         <div>
             <BackToSection />

@@ -5,9 +5,8 @@ import { GetStaticProps } from 'next'
 import Image from 'next/image'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
 
-import { motion, AnimatePresence, useMotionValue, useMotionValueEvent } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { transitionProps } from '@/constants/motion-variants'
 
 export default function Home() {

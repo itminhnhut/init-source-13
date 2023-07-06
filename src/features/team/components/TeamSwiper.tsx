@@ -1,11 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow } from 'swiper'
 import TeamSlide from './TeamSlide'
 import { SetTeamState } from '../types'
-import ChevronLeft from '@/components/Icons/ChevronLeft'
-import ChevronRight from '@/components/Icons/ChevronRight'
-import IconButton from '@/components/Elements/Button/IconButton'
 import Navigator from '@/components/Elements/SwiperNavigator'
 
 interface ITeamSwiper {
