@@ -2,7 +2,7 @@ import IconButton from '@/components/Elements/Button/IconButton'
 import ChevronLeft from '@/components/Icons/ChevronLeft'
 import ChevronRight from '@/components/Icons/ChevronRight'
 import classNames from 'classnames'
-import React from 'react'
+import React, { memo } from 'react'
 
 interface INavigator {
     slidePrev: () => void
@@ -24,4 +24,4 @@ const Navigator: React.FC<INavigator> = ({ slidePrev, slideNext, className }) =>
     )
 }
 
-export default Navigator
+export default memo(Navigator)

@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 import TeamSwiper from './components/TeamSwiper'
 import type { SetTeamState, TeamState } from './types'
@@ -19,6 +19,14 @@ const Team = () => {
 
     const setState = useCallback((_state: SetTeamState) => set((prev) => ({ ...prev, ..._state })), [])
 
+    const navigate = useMemo(
+        () => ({
+            next: () => state.swiper?.slideNext(),
+            prev: () => state.swiper?.slidePrev(),
+        }),
+        [state.swiper],
+    )
+
     return (
         <Page className="z-10 flex w-full flex-col items-center justify-center pb-[50px]">
             <motion.div
@@ -35,10 +43,10 @@ const Team = () => {
                 initial="hidden"
                 animate="show"
             >
-                <TeamSwiper setState={setState} activeIndex={state.activeIndex} setShowModal={setShowModal} />
+                <TeamSwiper navigate={navigate} setState={setState} activeIndex={state.activeIndex} setShowModal={setShowModal} />
             </motion.div>
-            <div className="mt-10">
-                <Navigator slideNext={() => state.swiper?.slideNext()} slidePrev={() => state.swiper?.slidePrev()} />
+            <div className="mt-10 hidden mb:block">
+                <Navigator slideNext={navigate.next} slidePrev={navigate.prev} />
             </div>
             <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
                 <div className="pb-[112px]">
