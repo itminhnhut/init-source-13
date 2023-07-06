@@ -10,7 +10,6 @@ import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
 import dynamic from 'next/dynamic'
 
-
 const Layout = dynamic(() => import('@/components/Layout'), { ssr: false })
 
 import { BREAD_CRUMB_JSON_LD } from '@/constants'
@@ -24,6 +23,7 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import { NextPage } from 'next'
+import { AnimatePresence, motion } from 'framer-motion'
 
 NProgress.configure({ showSpinner: false })
 
@@ -40,13 +40,11 @@ type AppPropsWithLayout = AppProps & {
     Component: NextPageWithLayout
 }
 
-const ReactPortal = dynamic(() => import('@/components/Elements/Portal'), { ssr: false })
-
-
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     const router = useRouter()
 
     const [loading, setLoading] = useState<boolean>(false)
+    console.log('loading:', loading)
 
     const { locale, pathname } = router
     useEffect(() => {
@@ -74,6 +72,24 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
                     --manrope-font: ${manrope.style.fontFamily};
                 }
             `}</style>
+            <AnimatePresence mode="wait">
+                {loading && (
+                    <motion.div
+                        variants={{
+                            hidden: {
+                                opacity: 0,
+                            },
+                            show: {
+                                opacity: 1,
+                            },
+                        }}
+                        initial="hidden"
+                        animate="show"
+                        exit="hidden"
+                        className="fixed z-[9999999999] h-full w-full bg-black"
+                    />
+                )}
+            </AnimatePresence>
             {Component.notGetLayout ? (
                 <Component {...pageProps} />
             ) : (
@@ -81,7 +97,6 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
                     <Component {...pageProps} />
                 </Layout>
             )}
-            {loading && <ReactPortal wrapperId="loading" className='' />}
         </>
     )
 }
