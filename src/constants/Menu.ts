@@ -22,6 +22,7 @@ const MENU = [
     {
         route: '/team',
         title: { vi: 'Đội ngũ', en: 'Team' },
+        hide: true,
     },
     {
         route: '/partners',
@@ -30,6 +31,7 @@ const MENU = [
     {
         route: '/footer',
         title: { vi: 'Liên hệ', en: 'Contact' },
+        hide: true,
     },
 ]
 export default MENU

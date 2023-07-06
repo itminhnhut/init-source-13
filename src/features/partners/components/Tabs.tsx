@@ -49,6 +49,7 @@ const TAB_PANEL_2: Array<TabPanelT> = [
 
 const TabsAbout = () => {
     const {
+        t,
         i18n: { language },
     } = useTranslation()
 
@@ -82,7 +83,7 @@ const TabsAbout = () => {
                 })}
                 className="mt-[42.5px] text-center text-4xl4 font-semibold lg:mt-32 lg:text-6xl4"
             >
-                Partners
+                {t('common:partner')}
             </motion.h1>
             <section className="mt-9 w-full px-4 lg:px-[110px]">
                 <Tabs defaultIndex={tabIndex}>
