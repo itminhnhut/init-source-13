@@ -44,7 +44,10 @@ const LanguageSelection = () => {
                                 <button
                                     disabled={language === currentLanguage}
                                     key={key}
-                                    onClick={() => setLanguage(language)}
+                                    onClick={() => {
+                                        setLanguage(language)
+                                        setShow(false)
+                                    }}
                                     className={classNames(
                                         'flex w-full cursor-pointer items-center justify-center bg-black-1 px-6 py-3 text-gray-2 transition hover:bg-gray-1 hover:text-white disabled:cursor-default',
                                         {
