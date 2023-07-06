@@ -13,7 +13,6 @@ import { transitionProps } from '@/constants/motion-variants'
 
 export default function Home() {
     const router = useRouter()
-
     return (
         <main className={`flex min-h-screen flex-col items-center justify-center bg-black p-24 `}>
             <motion.div
@@ -24,8 +23,8 @@ export default function Home() {
                     show: {
                         rotate: -180,
                         transition: {
+                            delay: 0.3,
                             ...transitionProps,
-                            delay: 0.2
                         },
                     },
 

@@ -1,8 +1,8 @@
 import { Variant } from 'framer-motion'
 
-export const easeArray = [0.33, 1, 0.68, 1]// [0.075, 0.82, 0.165, 1]
+export const easeArray = [0.075, 0.82, 0.165, 1]
 
-const defaultVariants = {
+export const defaultVariants = {
     hidden: {
         opacity: 0,
     },
