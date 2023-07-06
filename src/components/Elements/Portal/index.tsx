@@ -9,19 +9,17 @@ const defaultPortalReact = {
 }
 
 type ReactPortalProps = {
-    children: ReactNode
+    children?: ReactNode
     wrapperId: string
-    className: string
+    className?: string
     font?: any
 } & typeof defaultPortalReact
 
 const ReactPortal = ({ children, wrapperId, className, font }: ReactPortalProps) => {
     const [wrapper, setWrapper] = useState<Element | null>(null)
-
     useLayoutEffect(() => {
         let element = document.getElementById(wrapperId)
         let created: any = null
-
         if (!element) {
             created = true
             const wrapper = document.createElement('div')

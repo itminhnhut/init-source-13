@@ -13,7 +13,7 @@ export const defaultVariants = {
 
 export const transitionProps = {
     ease: easeArray,
-    duration: 0.9,
+    duration: 1.5,
 }
 
 export const getOutScreenVariants = (
