@@ -44,7 +44,6 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     const router = useRouter()
 
     const [loading, setLoading] = useState<boolean>(false)
-    console.log('loading:', loading)
 
     const { locale, pathname } = router
     useEffect(() => {

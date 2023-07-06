@@ -39,7 +39,7 @@ const Portfolio = () => {
                 initial="hidden"
                 animate="show"
             >
-                <Image src="/images/portfolio/ic_title.png" width={686} height={100} alt="title portfolio" />
+                <Image src="/images/portfolio/portfolio.png" width={686} height={100} alt="title portfolio" />
             </motion.div>
             <article>
                 <motion.section
