@@ -31,7 +31,7 @@ const TeamSwiper: React.FC<ITeamSwiper> = ({ navigate, setState, activeIndex, se
         <div className="relative h-full w-full">
             <div
                 style={{ top: imgHeight / 2 - NAVIGATOR_BUTTON_HEIGHT / 2 }}
-                className="absolute mb:hidden left-0 z-[10] w-full px-4"
+                className="absolute left-0 z-[10] w-full px-4 mb:hidden"
             >
                 <Navigator className="justify-between" slidePrev={navigate.prev} slideNext={navigate.next} />
             </div>

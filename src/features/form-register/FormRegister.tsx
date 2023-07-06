@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
@@ -6,8 +6,8 @@ import dynamic from 'next/dynamic'
 const ModalAlert = dynamic(() => import('@/features/form-register/ModalAlert'), { ssr: false })
 
 import { useForm, Controller, SubmitHandler } from 'react-hook-form'
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { yupResolver } from '@hookform/resolvers/yup'
+import * as yup from 'yup'
 
 const Button = dynamic(() => import('@/components/Elements/Button'), { ssr: false })
 const Modal = dynamic(() => import('@/components/Elements/Modal'), { ssr: false })
@@ -37,13 +37,13 @@ const schema = yup.object().shape({
     email: yup.string().email('email').required('required'),
     telegram: yup.number().required('required'),
     link: yup.string().required('required').matches(SOCIAL_REGEX, 'matches'),
-});
+})
 
 type FormValues = {
-    name: string,
-    link: string,
-    email: string,
-    telegram: number,
+    name: string
+    link: string
+    email: string
+    telegram: number
     description?: string
 }
 
@@ -52,7 +52,7 @@ const initForm = {
     link: '',
     email: '',
     telegram: 0,
-    description: ''
+    description: '',
 }
 
 const FormRegister = ({ isOpen, onClose }: FormProps) => {
@@ -60,16 +60,15 @@ const FormRegister = ({ isOpen, onClose }: FormProps) => {
 
     const [isAlertOpen, setIsAlertOpen] = useState<boolean>(false)
 
-    const onAlertClose = () => setIsAlertOpen(prev => !prev)
+    const onAlertClose = () => setIsAlertOpen((prev) => !prev)
 
     const { handleSubmit, control, formState, reset } = useForm<FormValues>({
         defaultValues: initForm,
         resolver: yupResolver(schema),
         mode: 'onChange',
-    });
+    })
 
     const { errors, isSubmitting, isValid } = formState
-
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         setIsAlertOpen(true)
@@ -79,62 +78,112 @@ const FormRegister = ({ isOpen, onClose }: FormProps) => {
 
     const onInvalid = (errors: any) => console.error(errors)
 
+    return (
+        <>
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <div>
+                    <h1 className={`${montserrat.className} mt-2 text-center text-[20px] font-semibold leading-6`}>
+                        {t('form:title')}
+                    </h1>
+                    <h2 className="mt-1 text-center opacity-50"> {t('form:des')}</h2>
+                    <form className="mt-[22px]" onSubmit={handleSubmit(onSubmit, onInvalid)}>
+                        <Controller
+                            control={control}
+                            name="name"
+                            render={({ field: { value, onChange } }) => (
+                                <InputField
+                                    name="name"
+                                    t={t}
+                                    errors={errors}
+                                    label={t('form:label:full_name')}
+                                    placeholder={t('form:placeholder:full_name')}
+                                    value={value}
+                                    onChange={onChange}
+                                    isRequired
+                                />
+                            )}
+                        />
 
-    return <>
-        <Modal isOpen={isOpen} onClose={onClose}>
-            <div>
-                <h1 className={`${montserrat.className} mt-2 text-center text-[20px] font-semibold leading-6`}>
-                    {t('form:title')}
-                </h1>
-                <h2 className="mt-1 text-center opacity-50"> {t('form:des')}</h2>
-                <form className="mt-[22px]" onSubmit={handleSubmit(onSubmit, onInvalid)}>
-                    <Controller
-                        control={control}
-                        name="name"
-                        render={({ field: { value, onChange } }) => (
-                            <InputField name="name" t={t} errors={errors} label={t('form:label:full_name')} placeholder={t('form:placeholder:full_name')} value={value} onChange={onChange} isRequired />
-                        )}
-                    />
+                        <Controller
+                            control={control}
+                            name="email"
+                            render={({ field: { onChange, value } }) => (
+                                <InputField
+                                    name="email"
+                                    t={t}
+                                    errors={errors}
+                                    className="mt-4"
+                                    label={t('form:label:email')}
+                                    placeholder={t('form:placeholder:email')}
+                                    value={value}
+                                    onChange={onChange}
+                                    isRequired
+                                />
+                            )}
+                        />
 
-                    <Controller
-                        control={control}
-                        name="email"
-                        render={({ field: { onChange, value } }) => (
-                            <InputField name="email" t={t} errors={errors} className="mt-4" label={t('form:label:email')} placeholder={t('form:placeholder:email')} value={value} onChange={onChange} isRequired />
-                        )}
-                    />
+                        <Controller
+                            control={control}
+                            name="telegram"
+                            render={({ field: { onChange, value } }) => (
+                                <InputField
+                                    name="telegram"
+                                    t={t}
+                                    errors={errors}
+                                    className="mt-4"
+                                    label={t('form:label:telegram')}
+                                    placeholder={t('form:placeholder:telegram')}
+                                    value={value}
+                                    onChange={onChange}
+                                    isRequired
+                                />
+                            )}
+                        />
 
-                    <Controller
-                        control={control}
-                        name="telegram"
-                        render={({ field: { onChange, value } }) => (
-                            <InputField name="telegram" t={t} errors={errors} className="mt-4" label={t('form:label:telegram')} placeholder={t('form:placeholder:telegram')} value={value} onChange={onChange} isRequired />
-                        )}
-                    />
+                        <Controller
+                            control={control}
+                            name="link"
+                            render={({ field: { onChange, value } }) => (
+                                <InputField
+                                    name="link"
+                                    t={t}
+                                    errors={errors}
+                                    className="mt-4"
+                                    label={t('form:label:link')}
+                                    placeholder={t('form:placeholder:link')}
+                                    value={value}
+                                    onChange={onChange}
+                                    isRequired
+                                />
+                            )}
+                        />
 
-                    <Controller
-                        control={control}
-                        name="link"
-                        render={({ field: { onChange, value } }) => (
-                            <InputField name="link" t={t} errors={errors} className="mt-4" label={t('form:label:link')} placeholder={t('form:placeholder:link')} value={value} onChange={onChange} isRequired />
-                        )}
-                    />
-
-                    <Controller
-                        control={control}
-                        name="description"
-                        render={({ field: { onChange, value } }) => (
-                            <TextAreaField className="mt-4" placeholder={t('form:placeholder:description')} label={t('form:label:description')} {...{ onChange, value }} rows={3} />
-                        )}
-                    />
-                    <Button className="mt-6 flex w-full justify-center rounded-[10px] !py-3 btn-gradient" disabled={!isValid || isSubmitting} type="submit">
-                        {t('common:button:send')}
-                    </Button>
-                </form>
-            </div>
-        </Modal >
-        <ModalAlert isOpen={isAlertOpen} onClose={onAlertClose} />
-    </>
+                        <Controller
+                            control={control}
+                            name="description"
+                            render={({ field: { onChange, value } }) => (
+                                <TextAreaField
+                                    className="mt-4"
+                                    placeholder={t('form:placeholder:description')}
+                                    label={t('form:label:description')}
+                                    {...{ onChange, value }}
+                                    rows={3}
+                                />
+                            )}
+                        />
+                        <Button
+                            className="btn-gradient mt-6 flex w-full justify-center rounded-[10px] !py-3"
+                            disabled={!isValid || isSubmitting}
+                            type="submit"
+                        >
+                            {t('common:button:send')}
+                        </Button>
+                    </form>
+                </div>
+            </Modal>
+            <ModalAlert isOpen={isAlertOpen} onClose={onAlertClose} />
+        </>
+    )
 }
 
 export default FormRegister

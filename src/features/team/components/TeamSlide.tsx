@@ -51,7 +51,7 @@ const TeamSlide: React.FC<ITeamSlide> = ({ isActive, setShowModal }) => {
             })}
         >
             <div className="relative flex justify-center">
-                <ImageWrapper className="relative flex w-1/2 mb:w-auto items-center">
+                <ImageWrapper className="relative flex w-1/2 items-center mb:w-auto">
                     <div className="hidden mb:block">
                         <AnimatePresence>
                             {isActive && (

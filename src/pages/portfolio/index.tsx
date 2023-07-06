@@ -35,14 +35,22 @@ const Portfolio = () => {
                 initial="hidden"
                 animate="show"
             >
-                <Image key="title-portfolio" className='w-auto h-auto' sizes="(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 100vw" src="/images/portfolio/portfolio.png" width={0} height={0} alt="title portfolio" />
+                <Image
+                    key="title-portfolio"
+                    className="h-auto w-auto"
+                    sizes="(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 100vw"
+                    src="/images/portfolio/portfolio.png"
+                    width={0}
+                    height={0}
+                    alt="title portfolio"
+                />
             </motion.div>
             <article>
                 <motion.section
                     variants={getOutScreenVariants('bottom')}
                     initial="hidden"
                     animate="show"
-                    className="mt-[82px] flex flex-row justify-center gap-x-10 gap-y-8 flex-wrap lg:flex-nowrap"
+                    className="mt-[82px] flex flex-row flex-wrap justify-center gap-x-10 gap-y-8 lg:flex-nowrap"
                 >
                     {TAB_PANEL_1?.map((item: { src: string }, key: number) => {
                         return (
@@ -53,7 +61,7 @@ const Portfolio = () => {
                                 height="0"
                                 sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 100vw"
                                 alt="partners"
-                                className="cursor-pointer opacity-50 hover:opacity-100 w-auto h-auto"
+                                className="h-auto w-auto cursor-pointer opacity-50 hover:opacity-100"
                             />
                         )
                     })}

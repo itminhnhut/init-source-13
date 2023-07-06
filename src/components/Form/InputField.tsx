@@ -1,6 +1,6 @@
 import { ChangeEvent } from 'react'
 
-import { ErrorMessage } from "@hookform/error-message";
+import { ErrorMessage } from '@hookform/error-message'
 
 import classNames from 'classnames'
 
@@ -10,7 +10,7 @@ const inputFieldDefault = {
 
 type inputFieldProps = {
     t?: any
-    name: string,
+    name: string
     className?: string
     label: string
     isRequired?: boolean
@@ -21,9 +21,18 @@ type inputFieldProps = {
     onChange: (data: any) => void
 } & typeof inputFieldDefault
 
-
-const InputField = ({ className, label, name, isRequired, placeholder, value, onChange, ref, errors, t }: inputFieldProps) => {
-
+const InputField = ({
+    className,
+    label,
+    name,
+    isRequired,
+    placeholder,
+    value,
+    onChange,
+    ref,
+    errors,
+    t,
+}: inputFieldProps) => {
     const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
         e.preventDefault()
         onChange(e.target.value)
@@ -38,10 +47,14 @@ const InputField = ({ className, label, name, isRequired, placeholder, value, on
             <div className={classNames(className)}>
                 <label
                     htmlFor={name}
-                    className={classNames('mb-2 block text-sm font-medium text-white', {
-                        hidden: !label,
-                        "after:pl-1 after:text-white after:content-['*']": isRequired,
-                    }, 'hover:bg-gradient-to-r')}
+                    className={classNames(
+                        'mb-2 block text-sm font-medium text-white',
+                        {
+                            hidden: !label,
+                            "after:pl-1 after:text-white after:content-['*']": isRequired,
+                        },
+                        'hover:bg-gradient-to-r',
+                    )}
                 >
                     {label}
                 </label>
@@ -51,17 +64,17 @@ const InputField = ({ className, label, name, isRequired, placeholder, value, on
                     id={name}
                     placeholder={placeholder}
                     onChange={(e: any) => handleOnChange(e)}
-                    className="relative h-12 w-full rounded-[10px] bg-black px-4 py-3 border-solid
-                 text-white opacity-50 outline-0 gradient-border-mask border-[1px] border-gray-1"
+                    className="gradient-border-mask relative h-12 w-full rounded-[10px] border-[1px] border-solid border-gray-1
+                 bg-black px-4 py-3 text-white opacity-50 outline-0"
                 />
             </div>
-            {errors?.[name] &&
+            {errors?.[name] && (
                 <ErrorMessage
                     errors={errors}
                     name={name}
-                    render={() => <div className='text-sm font-light text-red-default'>{msgErrByName()}</div>}
+                    render={() => <div className="text-sm font-light text-red-default">{msgErrByName()}</div>}
                 />
-            }
+            )}
         </>
     )
 }

@@ -27,26 +27,21 @@ type TabPanelT = {
 const TAB_PANEL_1: Array<TabPanelT> = [
     {
         src: '/images/partners/strategic/logo_coin98.png',
-
     },
     {
         src: '/images/partners/strategic/logo_fizen.png',
-
     },
     {
         src: '/images/partners/strategic/logo_oxalus.png',
-
     },
 ]
 
 const TAB_PANEL_2: Array<TabPanelT> = [
     {
         src: '/images/partners/media/logo_68.png',
-
     },
     {
         src: '/images/partners/media/logo_vic.png',
-
     },
     {
         src: '/images/partners/media/log_blckchn.png',
@@ -116,7 +111,7 @@ const TabsAbout = () => {
                                                 height={0}
                                                 sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 100vw"
                                                 alt="partners"
-                                                className="cursor-pointer opacity-50 hover:opacity-100 w-auto h-auto"
+                                                className="h-auto w-auto cursor-pointer opacity-50 hover:opacity-100"
                                             />
                                         )
                                     })}
@@ -135,7 +130,7 @@ const TabsAbout = () => {
                                         height={0}
                                         sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 33vw"
                                         alt="media"
-                                        className="cursor-pointer opacity-50 hover:opacity-100 w-auto h-auto"
+                                        className="h-auto w-auto cursor-pointer opacity-50 hover:opacity-100"
                                     />
                                 )
                             })}

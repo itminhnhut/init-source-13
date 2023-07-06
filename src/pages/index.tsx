@@ -10,7 +10,6 @@ import { useTranslation } from 'next-i18next'
 import { motion, AnimatePresence, useMotionValue, useMotionValueEvent } from 'framer-motion'
 import { transitionProps } from '@/constants/motion-variants'
 
-
 export default function Home() {
     const router = useRouter()
     return (
@@ -27,7 +26,6 @@ export default function Home() {
                             ...transitionProps,
                         },
                     },
-
                 }}
                 animate="show"
                 onAnimationComplete={() => {
