@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCoverflow } from 'swiper'
 import TeamSlide from './TeamSlide'
@@ -6,24 +6,35 @@ import { SetTeamState } from '../types'
 import ChevronLeft from '@/components/Icons/ChevronLeft'
 import ChevronRight from '@/components/Icons/ChevronRight'
 import IconButton from '@/components/Elements/Button/IconButton'
+import Navigator from '@/components/Elements/SwiperNavigator'
 
 interface ITeamSwiper {
     setState: (_state: SetTeamState) => void
     activeIndex: number
+    navigate: {
+        next: () => void | undefined
+        prev: () => void | undefined
+    }
     setShowModal: React.Dispatch<boolean>
 }
 
-const TeamSwiper: React.FC<ITeamSwiper> = ({ setState, activeIndex, setShowModal }) => {
+const NAVIGATOR_BUTTON_HEIGHT = 40
+
+const TeamSwiper: React.FC<ITeamSwiper> = ({ navigate, setState, activeIndex, setShowModal }) => {
+    const [imgHeight, setImgHeight] = useState(0)
+    useEffect(() => {
+        const image = document.getElementsByClassName('avatarImage')[0]
+        setImgHeight(image.clientHeight)
+    }, [])
+
     return (
         <div className="relative h-full w-full">
-            {/* <div className="absolute left-0 top-1/2 z-[10] flex w-full -translate-y-1/2 justify-between">
-                <IconButton>
-                    <ChevronLeft size={16} />
-                </IconButton>
-                <IconButton>
-                    <ChevronRight size={16} />
-                </IconButton>
-            </div> */}
+            <div
+                style={{ top: imgHeight / 2 - NAVIGATOR_BUTTON_HEIGHT / 2 }}
+                className="absolute mb:hidden left-0 z-[10] w-full px-4"
+            >
+                <Navigator className="justify-between" slidePrev={navigate.prev} slideNext={navigate.next} />
+            </div>
             <Swiper
                 slideToClickedSlide
                 onSwiper={(swiper) => setState({ swiper })}

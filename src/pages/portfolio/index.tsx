@@ -35,8 +35,7 @@ const Portfolio = () => {
                 initial="hidden"
                 animate="show"
             >
-                <Image key="title-portfolio" className='w-auto h-auto' sizes="(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 100vw" src="/images/portfolio/portfolio.png" width={0} height={0} alt="title portfolio"
-                />
+                <Image key="title-portfolio" className='w-auto h-auto' sizes="(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 100vw" src="/images/portfolio/portfolio.png" width={0} height={0} alt="title portfolio" />
             </motion.div>
             <article>
                 <motion.section

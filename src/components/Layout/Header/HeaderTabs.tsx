@@ -31,19 +31,23 @@ const HeaderTabs = () => {
                         hide?: boolean
                     },
                     index: number,
-                ) => (
-                    <Tab
-                        as={Link}
-                        href={tab.route}
-                        className={classNames('cursor-pointer text-lg transition-colors mb:text-base', {
-                            hidden: tab.hide,
-                        })}
-                        key={`header_${index}${tab.title?.[language as keyof LANGUAGE]}`}
-                        $active={router.pathname === tab.route}
-                    >
-                        {tab.title?.[language as keyof LANGUAGE]}
-                    </Tab>
-                ),
+                ) => {
+                    const isActiveRoute = router.pathname === tab.route
+                    return (
+                        <Tab
+                            as={Link}
+                            onClick={(e: any) => isActiveRoute && e.preventDefault()}
+                            href={tab.route}
+                            className={classNames('cursor-pointer text-lg transition-colors mb:text-base', {
+                                hidden: tab.hide,
+                            })}
+                            key={`header_${index}${tab.title?.[language as keyof LANGUAGE]}`}
+                            $active={isActiveRoute}
+                        >
+                            {tab.title?.[language as keyof LANGUAGE]}
+                        </Tab>
+                    )
+                },
             )}
         </div>
     )

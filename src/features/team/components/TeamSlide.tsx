@@ -68,7 +68,7 @@ const TeamSlide: React.FC<ITeamSlide> = ({ isActive, setShowModal }) => {
                         </AnimatePresence>
                     </div>
 
-                    <div className="">
+                    <div className="avatarImage">
                         <Image src={'/images/avatar.png'} width={296} height={400} alt="avtar" />
                     </div>
                     <div className="hidden mb:block">
