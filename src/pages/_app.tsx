@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode, useEffect } from 'react'
+import { ReactElement, ReactNode, useEffect, useState } from 'react'
 
 import { appWithTranslation } from 'next-i18next'
 
@@ -7,6 +7,9 @@ import { useRouter } from 'next/router'
 import { Manrope } from 'next/font/google'
 
 import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
+
+import dynamic from 'next/dynamic'
+
 
 const Layout = dynamic(() => import('@/components/Layout'), { ssr: false })
 
@@ -20,7 +23,6 @@ import 'swiper/css'
 import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import dynamic from 'next/dynamic'
 import { NextPage } from 'next'
 
 NProgress.configure({ showSpinner: false })
@@ -38,13 +40,18 @@ type AppPropsWithLayout = AppProps & {
     Component: NextPageWithLayout
 }
 
+const ReactPortal = dynamic(() => import('@/components/Elements/Portal'), { ssr: false })
+
+
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     const router = useRouter()
 
+    const [loading, setLoading] = useState<boolean>(false)
+
     const { locale, pathname } = router
     useEffect(() => {
-        const handleRouteStart = () => NProgress.start()
-        const handleRouteDone = () => NProgress.done()
+        const handleRouteStart = () => setLoading((prev) => !prev)
+        const handleRouteDone = () => setLoading((prev) => !prev)
 
         router.events.on('routeChangeStart', handleRouteStart)
         router.events.on('routeChangeComplete', handleRouteDone)
@@ -74,6 +81,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
                     <Component {...pageProps} />
                 </Layout>
             )}
+            {loading && <ReactPortal wrapperId="loading" className='' />}
         </>
     )
 }

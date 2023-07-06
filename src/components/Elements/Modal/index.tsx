@@ -81,7 +81,6 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                             exit="hide"
                             className={classNames(
                                 'absolute overflow-y-auto no-scrollbar flex max-h-[95%] h-full w-full max-w-2xl items-center justify-center px-4 mb:w-[500px] mb:px-0 ',
-
                                 wrapperClassName,
                             )}
                             ref={ref}
