@@ -36,7 +36,7 @@ module.exports = {
                 ...colors,
             },
             fontFamily: {
-                primary: ['var(--font-manrope)'],
+                sans: ['var(--font-manrope)'],
             },
             screens: {
                 '2k': '2160px',

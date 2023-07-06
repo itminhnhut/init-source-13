@@ -94,7 +94,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
             ) : (
                 <Layout>
                     <Component {...pageProps} />
-                </Layout>
+                </Layout >
             )}
         </>
     )

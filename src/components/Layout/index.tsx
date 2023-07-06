@@ -15,7 +15,6 @@ interface LayoutI {
 
 const Layout: FC<LayoutI> = ({ children }) => {
     const pathname = usePathname()
-
     return (
         <WrapperLayout>
             <Header />
