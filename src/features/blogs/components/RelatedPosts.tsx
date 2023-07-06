@@ -7,15 +7,7 @@ import { motion } from 'framer-motion'
 const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
     <Link href={`/blogs/${slug}`} className="inline-block">
         <div className="flex gap-3">
-            <Image
-                src={feature_image}
-                className="!static !w-1/2 rounded-lg object-cover"
-                fill
-                alt="blog-image"
-                onLoad={(e) => {
-                    console.log('aaaa', slug)
-                }}
-            />
+            <Image src={feature_image} className="!static !w-1/2 rounded-lg object-cover" fill alt="blog-image" />
             <div className="text-sm text-gray-2">{title}</div>
         </div>
     </Link>
@@ -45,7 +37,7 @@ const RelatedPosts = ({ tabPosts }: RelatedPostsProps) => {
             >
                 {tabPosts?.map((tag) => (
                     <motion.div
-                    className="hover:!opacity-80 transition-opacity"
+                        className="transition-opacity hover:!opacity-80"
                         key={tag.id}
                         variants={{
                             hidden: {
