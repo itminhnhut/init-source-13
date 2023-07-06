@@ -80,7 +80,7 @@ const TabsAbout = () => {
                 })}
                 className="mt-[108px] text-center text-4xl4 font-semibold lg:mt-[108px] lg:text-6xl4"
             >
-                About Us
+                {t('common:about_us')}
             </motion.h1>
             <section className="mt-[47px] w-full lg:w-[806px]">
                 <Tabs defaultIndex={tabIndex} className="mx-4 lg:mx-0">
