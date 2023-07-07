@@ -1,19 +1,13 @@
-import React from 'react'
-
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-
-import { useTranslation } from 'next-i18next'
-
 import { MENU } from '@/constants'
-
 import colors from '@/styles/colors'
-
-import { styled } from 'styled-components'
-import classNames from 'classnames'
-
 // ** Types
 import LANGUAGE from '@/types/language'
+import classNames from 'classnames'
+import { useTranslation } from 'next-i18next'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React from 'react'
+import { styled } from 'styled-components'
 
 const HeaderTabs = () => {
     const {

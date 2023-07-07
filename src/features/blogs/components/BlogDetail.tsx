@@ -1,9 +1,8 @@
-import React from 'react'
+import BackToSection from './BackToSection'
 import RelatedPosts from './RelatedPosts'
 import TeamSocials from '@/features/team/components/TeamSocials'
-import BackToSection from './BackToSection'
-
 import GHOST_DETAIL from '@/types/blogs'
+import React from 'react'
 
 type BlogDetailProps = {
     detail: GHOST_DETAIL

@@ -1,13 +1,12 @@
 import dynamic from 'next/dynamic'
-import React from 'react'
 
-import type { GetStaticProps, GetStaticPaths, InferGetStaticPropsType } from 'next'
+import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import Page from '@/components/Elements/Page'
 import BlogsApi from '@/src/services/GhostClient'
 
 import GHOST_DETAIL from '@/types/blogs'
-import Page from '@/components/Elements/Page'
 
 const BlogDetail = dynamic(() => import('@/features/blogs/components/BlogDetail'), { ssr: false })
 

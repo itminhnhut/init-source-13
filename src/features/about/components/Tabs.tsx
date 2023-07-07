@@ -1,15 +1,13 @@
-import { useState } from 'react'
-
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-
-import classNames from 'classnames'
-
+import { getOutScreenVariants } from '@/constants/motion-variants'
 // ** Types
 import LANGUAGE from '@/types/language'
-import { useTranslation } from 'next-i18next'
-import styled from 'styled-components'
+import classNames from 'classnames'
 import { motion } from 'framer-motion'
-import { getOutScreenVariants } from '@/constants/motion-variants'
+import { useTranslation } from 'next-i18next'
+import { useState } from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import styled from 'styled-components'
+
 const dataTabs = [
     {
         title: { vi: 'Câu chuyện', en: 'Our Story' },

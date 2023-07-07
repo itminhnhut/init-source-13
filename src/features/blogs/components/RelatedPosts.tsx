@@ -1,8 +1,7 @@
-import Image from 'next/image'
-import Link from 'next/link'
-
 import GHOST_DETAIL from '@/types/blogs'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const RelatedThumbnail = ({ title, feature_image, slug }: any) => (
     <Link href={`/blogs/${slug}`} className="inline-block">

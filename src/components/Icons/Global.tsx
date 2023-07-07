@@ -1,5 +1,5 @@
-import React from 'react'
 import { SVGTypes } from './type'
+import React from 'react'
 
 const Global: React.FC<SVGTypes> = ({ size = 24, color = 'currentColor' }) => {
     return (

@@ -1,6 +1,5 @@
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
 import dynamic from 'next/dynamic'
 
 const TabsAbout = dynamic(() => import('@/features/about/components/Tabs'), { ssr: false })

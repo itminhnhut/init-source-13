@@ -1,15 +1,30 @@
 {
-  "semi": false,
-  "trailingComma": "all",
-  "singleQuote": true,
-  "quoteProps": "as-needed",
-  "printWidth": 120,
-  "tabWidth": 4,
-  "useTabs": false,
-  "bracketSpacing": true,
-  "arrowParens": "always",
-  "endOfLine": "auto",
-  "plugins": [
-    "prettier-plugin-tailwindcss"
-  ]
+    "semi": false,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "tabWidth": 4,
+    "useTabs": false,
+    "bracketSpacing": true,
+    "arrowParent": "always",
+    "endOfLine": "auto",
+    "plugins": ["prettier-plugin-tailwindcss", "@trivago/prettier-plugin-sort-imports"],
+    "importOrder": [
+        "react",
+        "^(next/(app)$)",
+        "^(next/(router|dynamic|image)$)",
+        "^(next$)|^(next-(.*)$)",
+        "^(next-(.*)$)",
+        "^@/(src|components|features|constants|configs)/?(.*)$",
+        "<THIRD_PARTY_MODULES>",
+        "^[./]",
+        "^nprogress/(.*)$",
+        "^swiper/(.*)$",
+        "^[./].*(?<!\\.(c|le|sc)ss)$",
+        "^./(.*).scss$",
+        "^[.]/[-a-zA-Z0-9_]+[.](module)[.](css|scss|less)$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": false,
+    "printWidth": 120
 }

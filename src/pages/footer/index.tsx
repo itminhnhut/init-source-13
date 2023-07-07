@@ -1,15 +1,13 @@
-import { useState } from 'react'
-
 import Button from '@/components/Elements/Button'
 import IconButton from '@/components/Elements/Button/IconButton'
-import In from '@/components/Icons/LinkedIn'
 import Facebook from '@/components/Icons/Facebook'
+import In from '@/components/Icons/LinkedIn'
 import Twitter from '@/components/Icons/Twitter'
-
-import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { useTranslation } from 'next-i18next'
 import FormRegister from '@/features/form-register/FormRegister'
+import { GetStaticProps } from 'next'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useState } from 'react'
 
 const Footer = () => {
     const { t } = useTranslation()

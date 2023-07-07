@@ -1,7 +1,6 @@
-import { FC, ReactNode } from 'react'
-
-import Image from 'next/image'
 import classNames from 'classnames'
+import Image from 'next/image'
+import { FC, ReactNode } from 'react'
 
 interface LayoutI extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode

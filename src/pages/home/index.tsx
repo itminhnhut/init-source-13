@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
-import { GetStaticProps } from 'next'
-
 import dynamic from 'next/dynamic'
+
+import { GetStaticProps } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 

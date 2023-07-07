@@ -1,14 +1,12 @@
-import { useState } from 'react'
-import Image from 'next/image'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-
-import classNames from 'classnames'
-
+import { getOutScreenVariants } from '@/constants/motion-variants'
 // ** Types
 import LANGUAGE from '@/types/language'
-import { useTranslation } from 'next-i18next'
+import classNames from 'classnames'
 import { motion } from 'framer-motion'
-import { getOutScreenVariants } from '@/constants/motion-variants'
+import { useTranslation } from 'next-i18next'
+import Image from 'next/image'
+import { useState } from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
 const dataTabs = [
     {

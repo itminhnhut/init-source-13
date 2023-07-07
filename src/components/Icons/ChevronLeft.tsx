@@ -1,5 +1,5 @@
-import React from 'react'
 import type { SVGTypes } from './type'
+import React from 'react'
 
 const ChevronLeft: React.FC<SVGTypes> = ({ size, color = 'currentColor', className }) => {
     return (
