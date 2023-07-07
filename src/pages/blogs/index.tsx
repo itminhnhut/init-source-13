@@ -1,13 +1,14 @@
 import React from 'react'
 
 import dynamic from 'next/dynamic'
+
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { Params as GhostParams } from '@tryghost/content-api'
 
 import BlogsApi from '@/src/services/GhostClient'
 
 import GHOST_DETAIL from '@/types/blogs'
+import { Params as GhostParams } from '@tryghost/content-api'
 
 const Blogs = dynamic(() => import('@/features/blogs'), { ssr: false })
 

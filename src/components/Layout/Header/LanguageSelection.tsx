@@ -1,9 +1,11 @@
+import React, { useRef, useState } from 'react'
+
 import Global from '@/components/Icons/Global'
+
 import useLanguage, { LANGUAGE_KEY, LANGUAGE_NAME, LANGUAGE_TAG } from '@/hooks/useLanguage'
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
 import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { useRef, useState } from 'react'
 
 const LanguageSelection = () => {
     const [currentLanguage, setLanguage] = useLanguage()

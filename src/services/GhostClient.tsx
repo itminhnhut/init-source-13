@@ -1,7 +1,6 @@
-import GhostContentAPI from '@tryghost/content-api'
-
 import { runEnv } from '@/configs/ENV'
 
+import GhostContentAPI from '@tryghost/content-api'
 import { Params as GhostParams } from '@tryghost/content-api'
 
 const { GHOST_VERSION, GHOST_URL, GHOST_KEY } = runEnv

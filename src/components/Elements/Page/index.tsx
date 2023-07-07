@@ -1,7 +1,9 @@
 /* eslint-disable react/display-name */
-import { HEADER_DESKTOP_HEIGHT, HEADER_MOBILE_HEIGHT, MEDIA_QUERY_MOBILE } from '@/styles/constants'
 import React, { HTMLProps, PropsWithChildren } from 'react'
+
+import { HEADER_DESKTOP_HEIGHT, HEADER_MOBILE_HEIGHT, MEDIA_QUERY_MOBILE } from '@/styles/constants'
 import styled from 'styled-components'
+
 const Wrapper = styled.div`
     min-height: calc(100vh - ${HEADER_MOBILE_HEIGHT}px);
 

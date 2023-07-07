@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { SVGTypes } from './type'
 
 const X: React.FC<SVGTypes> = ({ size, color = 'currentColor' }) => {

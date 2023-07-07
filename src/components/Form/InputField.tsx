@@ -1,7 +1,6 @@
 import { ChangeEvent } from 'react'
 
 import { ErrorMessage } from '@hookform/error-message'
-
 import classNames from 'classnames'
 
 const inputFieldDefault = {

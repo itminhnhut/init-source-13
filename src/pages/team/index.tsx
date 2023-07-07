@@ -1,7 +1,7 @@
+import dynamic from 'next/dynamic'
+
 import type { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
-import dynamic from 'next/dynamic'
 
 const Team = dynamic(() => import('@/features/team'), { ssr: false })
 

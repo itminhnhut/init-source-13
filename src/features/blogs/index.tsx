@@ -1,11 +1,13 @@
-import Navigator from '@/components/Elements/SwiperNavigator'
 import React, { useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
-import BlogThumbnail from './components/BlogThumbnail'
+
+import Navigator from '@/components/Elements/SwiperNavigator'
+import { getOutScreenVariants } from '@/constants/motion-variants'
 
 import GHOST_DETAIL from '@/types/blogs'
 import { motion } from 'framer-motion'
-import { getOutScreenVariants } from '@/constants/motion-variants'
+
+import BlogThumbnail from './components/BlogThumbnail'
 
 const Blogs = ({ dataBlogs }: { dataBlogs: GHOST_DETAIL[] }) => {
     const [swiper, setSwiper] = useState<SwiperClass | null>(null)

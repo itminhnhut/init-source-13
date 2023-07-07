@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 
-import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 
-const ModalAlert = dynamic(() => import('@/features/form-register/ModalAlert'), { ssr: false })
+import { useTranslation } from 'next-i18next'
 
-import { useForm, Controller, SubmitHandler } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { Montserrat } from 'next/font/google'
 import * as yup from 'yup'
+
+const ModalAlert = dynamic(() => import('@/features/form-register/ModalAlert'), { ssr: false })
 
 const Button = dynamic(() => import('@/components/Elements/Button'), { ssr: false })
 const Modal = dynamic(() => import('@/components/Elements/Modal'), { ssr: false })
@@ -16,8 +18,6 @@ const TextAreaField = dynamic(() => import('@/components/Form/TextAreaField'), {
 
 const SOCIAL_REGEX =
     /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi
-
-import { Montserrat } from 'next/font/google'
 
 const montserrat = Montserrat({
     subsets: ['latin'],

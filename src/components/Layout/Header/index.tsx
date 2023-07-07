@@ -1,15 +1,20 @@
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
 import { useCallback, useEffect, useState } from 'react'
+
+import dynamic from 'next/dynamic'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+
+import Drawer from '@/components/Elements/Modal/Drawer'
+import Global from '@/components/Icons/Global'
+
+import { HEADER_DESKTOP_HEIGHT, HEADER_MOBILE_HEIGHT } from '@/styles/constants'
 import classNames from 'classnames'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { styled } from 'styled-components'
+
 import LanguageSelection from './LanguageSelection'
 import MobileLanguageSelection from './MobileLanguageSelection'
-import Global from '@/components/Icons/Global'
-import { styled } from 'styled-components'
-import { HEADER_DESKTOP_HEIGHT, HEADER_MOBILE_HEIGHT } from '@/styles/constants'
-import Drawer from '@/components/Elements/Modal/Drawer'
+
 const HeaderTabs = dynamic(() => import('./HeaderTabs'), { ssr: false })
 const HamburgerMenu = dynamic(() => import('./HamburgerMenu'), { ssr: false })
 const IconButton = dynamic(() => import('@/components/Elements/Button/IconButton'), { ssr: false })

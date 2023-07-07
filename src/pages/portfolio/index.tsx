@@ -1,10 +1,11 @@
-import { GetStaticProps } from 'next'
+import Image from 'next/image'
 
+import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import Image from 'next/image'
-import { motion } from 'framer-motion'
 import { getOutScreenVariants, transitionProps } from '@/constants/motion-variants'
+
+import { motion } from 'framer-motion'
 
 const TAB_PANEL_1 = [
     {
@@ -38,7 +39,7 @@ const Portfolio = () => {
                 <Image
                     key="title-portfolio"
                     className="h-auto w-auto"
-                    sizes="(max-width: 768px) 80vw, (max-width: 1200px) 60vw, 100vw"
+                    sizes="(min-width: 769px) 50vw, 80vw"
                     src="/images/portfolio/portfolio.png"
                     width={0}
                     height={0}
@@ -59,7 +60,7 @@ const Portfolio = () => {
                                 src={item.src}
                                 width="0"
                                 height="0"
-                                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 100vw"
+                                sizes="(max-width: 768px) 30vw, (max-width: 1200px) 20vw, 25vw"
                                 alt="partners"
                                 className="h-auto w-auto cursor-pointer opacity-50 hover:opacity-100"
                             />

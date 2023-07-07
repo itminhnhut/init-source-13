@@ -1,29 +1,30 @@
 import { useEffect, useState } from 'react'
 
-import { appWithTranslation } from 'next-i18next'
-
 import type { AppProps } from 'next/app'
-import { useRouter } from 'next/router'
-import { Manrope } from 'next/font/google'
-
-import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
 import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
 
-const Layout = dynamic(() => import('@/components/Layout'), { ssr: false })
+import { NextPage } from 'next'
+import { appWithTranslation } from 'next-i18next'
 
 import { BREAD_CRUMB_JSON_LD } from '@/constants'
+import { BreadcrumbJsonLd, NextSEO } from '@/features/SEO'
 
+import { AnimatePresence, motion } from 'framer-motion'
+import { Manrope } from 'next/font/google'
 import NProgress from 'nprogress'
 
-import '@/styles/globals.scss'
 import 'nprogress/nprogress.css'
+
 import 'swiper/css'
 import 'swiper/css/effect-coverflow'
-import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-import { NextPage } from 'next'
-import { AnimatePresence, motion } from 'framer-motion'
+import 'swiper/css/pagination'
+
+import '@/styles/globals.scss'
+
+const Layout = dynamic(() => import('@/components/Layout'), { ssr: false })
 
 NProgress.configure({ showSpinner: false })
 

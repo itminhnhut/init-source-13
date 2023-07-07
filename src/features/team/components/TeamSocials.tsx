@@ -1,8 +1,9 @@
+import React from 'react'
+
 import IconButton from '@/components/Elements/Button/IconButton'
 import Facebook from '@/components/Icons/Facebook'
 import LinkedIn from '@/components/Icons/LinkedIn'
 import Twitter from '@/components/Icons/Twitter'
-import React from 'react'
 
 const TeamSocials = () => {
     return (

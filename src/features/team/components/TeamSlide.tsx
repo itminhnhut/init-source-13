@@ -1,9 +1,12 @@
 /* eslint-disable react/display-name */
+import React from 'react'
+
+import Image from 'next/image'
+
 import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
-import React from 'react'
 import { styled } from 'styled-components'
+
 import TeamSocials from './TeamSocials'
 
 interface ITeamSlide {

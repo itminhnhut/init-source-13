@@ -1,10 +1,9 @@
 import { FC, ReactNode } from 'react'
 
-import { usePathname } from 'next/navigation'
-
-import styled from 'styled-components'
-
 import dynamic from 'next/dynamic'
+
+import { usePathname } from 'next/navigation'
+import styled from 'styled-components'
 
 const Header = dynamic(() => import('./Header'), { ssr: false })
 const Footer = dynamic(() => import('./Footer'), { ssr: false })

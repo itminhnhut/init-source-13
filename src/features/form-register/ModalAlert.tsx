@@ -1,8 +1,9 @@
 import { FC } from 'react'
 
-import { useTranslation } from 'next-i18next'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
+
+import { useTranslation } from 'next-i18next'
 
 const Modal = dynamic(() => import('@/components/Elements/Modal'), { ssr: false })
 

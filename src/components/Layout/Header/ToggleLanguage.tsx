@@ -1,6 +1,8 @@
 import React from 'react'
-import classNames from 'classnames'
+
 import useLanguage, { LANGUAGE_KEY, LANGUAGE_TAG } from '@/hooks/useLanguage'
+import classNames from 'classnames'
+
 const ToggleLanguage = () => {
     const [currentLanguage, setLanguage] = useLanguage()
 

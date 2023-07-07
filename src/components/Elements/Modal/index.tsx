@@ -1,12 +1,14 @@
 import { ReactNode, useRef } from 'react'
-import classNames from 'classnames'
-import { styled } from 'styled-components'
 
 import ReactPortal from '@/components/Elements/Portal'
 import X from '@/components/Icons/X'
-import IconButton from '../Button/IconButton'
-import { AnimatePresence, motion } from 'framer-motion'
+
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
+import classNames from 'classnames'
+import { AnimatePresence, motion } from 'framer-motion'
+import { styled } from 'styled-components'
+
+import IconButton from '../Button/IconButton'
 
 type ModalProps = {
     children: ReactNode
@@ -81,17 +83,7 @@ const Modal = ({ children, isOpen, onClose, wrapperClassName }: ModalProps) => {
                             )}
                             ref={ref}
                         >
-                            <section
-                                className="relative
-                                h-full
-                                w-full overflow-y-auto rounded-lg 
-                            border-[1px] border-solid border-gray-1
-                                bg-black-1 px-6
-                                py-4 text-white
-                                shadow
-                        lg:h-auto
-                    "
-                            >
+                            <section className="relative h-full max-h-full w-full overflow-y-auto rounded-lg border-[1px] border-solid border-gray-1 bg-black-1 px-6 py-4 text-white shadow lg:h-auto">
                                 <section className="mb-2 flex cursor-pointer justify-end">
                                     <IconButton onClick={onClose}>
                                         <X size={16} />

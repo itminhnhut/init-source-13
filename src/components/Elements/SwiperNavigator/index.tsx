@@ -1,8 +1,10 @@
+import React, { memo } from 'react'
+
 import IconButton from '@/components/Elements/Button/IconButton'
 import ChevronLeft from '@/components/Icons/ChevronLeft'
 import ChevronRight from '@/components/Icons/ChevronRight'
+
 import classNames from 'classnames'
-import React, { memo } from 'react'
 
 interface INavigator {
     slidePrev: () => void

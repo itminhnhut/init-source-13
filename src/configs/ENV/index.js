@@ -4,11 +4,15 @@
  * @property {string} API_BASE_HOST - API_BASE_HOST
  * @property {number} UPLOAD_BASE_HOST - UPLOAD_BASE_HOST
  */
+
+// GHOST_URL: 'https://demo.ghost.io',
+// GHOST_KEY: '22444f78447824223cefc48062',
+
 const ENV = {
     development: {
         GHOST_VERSION: 'v5.0',
-        GHOST_URL: 'https://demo.ghost.io',
-        GHOST_KEY: '22444f78447824223cefc48062',
+        GHOST_URL: 'https://blog.scilabs.io',
+        GHOST_KEY: '7cbcd42b3777ec6cacc94574c2',
         GHOST_KEY_ADMIN: '64a39d5953e78511119e3c82:166621be9ae16879bbc0a7420d2023e70a8d34ec4dcbe66546cdc42c88907b36',
         NEXT_PUBLIC_APP_URL: 'http://localhost:3000',
     },
