@@ -1,7 +1,9 @@
+import { useMemo } from 'react'
+
+import { NextSeo } from 'next-seo'
+
 import { runEnv } from '@/configs/ENV'
 import DEFAULT_SEO from '@/configs/SEO'
-import { NextSeo } from 'next-seo'
-import { useMemo } from 'react'
 
 const { NEXT_PUBLIC_APP_URL } = runEnv
 

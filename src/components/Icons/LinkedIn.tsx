@@ -1,5 +1,6 @@
-import { SVGTypes } from './type'
 import React from 'react'
+
+import { SVGTypes } from './type'
 
 const LinkedIn: React.FC<SVGTypes> = ({ size, color = 'currentColor' }) => {
     return (

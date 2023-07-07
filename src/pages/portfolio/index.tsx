@@ -1,8 +1,11 @@
-import { getOutScreenVariants, transitionProps } from '@/constants/motion-variants'
-import { motion } from 'framer-motion'
+import Image from 'next/image'
+
 import { GetStaticProps } from 'next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import Image from 'next/image'
+
+import { getOutScreenVariants, transitionProps } from '@/constants/motion-variants'
+
+import { motion } from 'framer-motion'
 
 const TAB_PANEL_1 = [
     {

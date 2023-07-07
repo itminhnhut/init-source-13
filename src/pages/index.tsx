@@ -1,9 +1,12 @@
-import { transitionProps } from '@/constants/motion-variants'
-import { motion } from 'framer-motion'
-import { GetStaticProps } from 'next'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+
+import { GetStaticProps } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+
+import { transitionProps } from '@/constants/motion-variants'
+
+import { motion } from 'framer-motion'
 
 export default function Home() {
     const router = useRouter()

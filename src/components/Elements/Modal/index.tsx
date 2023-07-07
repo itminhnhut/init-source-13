@@ -1,11 +1,14 @@
-import IconButton from '../Button/IconButton'
+import { ReactNode, useRef } from 'react'
+
 import ReactPortal from '@/components/Elements/Portal'
 import X from '@/components/Icons/X'
+
 import { useOnClickOutside } from '@/hooks/useOnClickOutside'
 import classNames from 'classnames'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ReactNode, useRef } from 'react'
 import { styled } from 'styled-components'
+
+import IconButton from '../Button/IconButton'
 
 type ModalProps = {
     children: ReactNode

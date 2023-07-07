@@ -1,7 +1,10 @@
+/* eslint-disable prettier/prettier */
 import { useState } from 'react'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 
 import dynamic from 'next/dynamic'
+
+import { useTranslation } from 'next-i18next'
 
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Montserrat } from 'next/font/google'

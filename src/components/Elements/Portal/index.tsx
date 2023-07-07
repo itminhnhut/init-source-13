@@ -1,6 +1,7 @@
-import classNames from 'classnames'
 import { ReactNode, useState, useLayoutEffect } from 'react'
 import { createPortal } from 'react-dom'
+
+import classNames from 'classnames'
 
 const defaultPortalReact = {
     wrapperId: 'react-portal',

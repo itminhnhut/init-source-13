@@ -1,11 +1,14 @@
-import TeamSwiper from './components/TeamSwiper'
-import type { SetTeamState, TeamState } from './types'
+import { useCallback, useMemo, useState } from 'react'
+
 import Modal from '@/components/Elements/Modal'
 import Page from '@/components/Elements/Page'
 import Navigator from '@/components/Elements/SwiperNavigator'
 import { getOutScreenVariants } from '@/constants/motion-variants'
+
 import { motion } from 'framer-motion'
-import { useCallback, useMemo, useState } from 'react'
+
+import TeamSwiper from './components/TeamSwiper'
+import type { SetTeamState, TeamState } from './types'
 
 const initState = {
     swiper: null,

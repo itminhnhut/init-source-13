@@ -1,9 +1,12 @@
+import React, { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import Navigator from '@/components/Elements/SwiperNavigator'
+
+import { EffectCoverflow } from 'swiper'
+
 import { SetTeamState } from '../types'
 import TeamSlide from './TeamSlide'
-import Navigator from '@/components/Elements/SwiperNavigator'
-import React, { useEffect, useState } from 'react'
-import { EffectCoverflow } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
 
 interface ITeamSwiper {
     setState: (_state: SetTeamState) => void
